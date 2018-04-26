@@ -87,7 +87,7 @@ public class Model {
 
     public void conectar() throws SQLException, IOException, Exception {
         setDriver("oracle.jdbc.OracleDriver");
-        setUrl("jdbc:oracle:thin:@10.2.0.1:1521:ORCLCIV");
+        setUrl("jdbc:oracle:thin:@192.168.0.208:1521:ORCLCIV");
         //setUrl("jdbc:oracle:thin:@localhost:1521:xe");
         setUser("transito");
         String pass = "", encript = "";
@@ -121,6 +121,7 @@ public class Model {
 
         encript = KeyStore.Desencriptar(cadena);//Encrypt.desencriptar(cadena);
         setPassword(encript);
+        setPassword("desarrollo");
 
         if (!hayConexion()) {
             if (driver == null) {
