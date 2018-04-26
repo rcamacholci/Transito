@@ -24,6 +24,7 @@
 						 </tr>
   				   <% } %>
                                    <% if(request.getParameter("tipo").equals("2")){
+                                       
                                             String msg = request.getParameter("msgError");
                                             msg = msg!=null?msg:""; %>
 						 <tr>
