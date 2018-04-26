@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Resolucion_sancion_sub1"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="552"
+		 pageHeight="1008"
+		 columnWidth="552"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="SUBREPORT_DIR" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["C:/Civitrans/Civitrans14092012/transito/web/paginas/reports/"]]></defaultValueExpression>
+	</parameter>
+	<queryString><![CDATA[select 1 from dual]]></queryString>
+
+	<field name="1" class="java.math.BigDecimal"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="830"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="148"
+						y="7"
+						width="249"
+						height="57"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[INPECCIÓN ÚNICA
+INSTITUTO DE TRÁNSITO DEL ATLÁNTICO
+AUDIENCIA PÚBLICA
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12"
+						y="88"
+						width="375"
+						height="69"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Fecha y hora de la infracción: 24 de Mayo de 2012 a las 16:40
+Placa del vehículo: CNM86C
+Código de la Infracción: C 24
+Número de Comparendo: 99999999000000788206
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="181"
+						width="417"
+						height="15"
+						key="staticText-3"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[En el municipio de Sabanagrande el 23 de Abril de 2012  siendo las 9:30 A.M. procede la ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="195"
+						width="417"
+						height="15"
+						key="staticText-4"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[titular del despacho a constituirse en audiencia pública con ocasión al comparendo de la ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="209"
+						width="417"
+						height="15"
+						key="staticText-5"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[referencia, de conformidad con lo previsto en el artículo 136 de la ley 769 de 2002, ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="225"
+						width="417"
+						height="15"
+						key="staticText-6"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[modificado por el artículo 24 de la ley 1383 de 2010. Siendo el treintaiunavo  (31) día hábil ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="239"
+						width="417"
+						height="15"
+						key="staticText-7"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[siguiente a la notificación del aviso de comparendo, por la presunta  comisión de la ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="253"
+						width="417"
+						height="15"
+						key="staticText-8"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[infracción  de tránsito consagrada en el articulo 131 literal C29 de la ley 769 de 2002, ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="449"
+						width="417"
+						height="15"
+						key="staticText-9"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[la comisión de la infracción, este despacho decidirá lo que en derecho corresponda.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="435"
+						width="417"
+						height="15"
+						key="staticText-10"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[teniendo en cuenta que está demostrado su inasistencia, las pruebas que dan cuenta de la comisión ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="421"
+						width="417"
+						height="15"
+						key="staticText-11"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[rindió descargos o solicitó pruebas que desvirtuaran la comisión de la infracción, y teniendo en cuenta ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="407"
+						width="425"
+						height="15"
+						key="staticText-12"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[. El citado no atendió la orden, ni aporto excusa que justificara su no concurrencia, ni  descargos o solicitó pruebas ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="393"
+						width="417"
+						height="15"
+						key="staticText-13"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[del Atlántico, con el objeto de ejercer su derecho a la defensa y rendir descargos. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="379"
+						width="417"
+						height="15"
+						key="staticText-14"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[siguientes a la imposición del comparendo, en las instalaciones del Instituto de Tránsito del Atlántico,  Tránsitoel Atlántico, ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="365"
+						width="417"
+						height="15"
+						key="staticText-15"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[contravencional, y a quien se le ordenó comparecer dentro de los cinco ( 5) días hábiles siguientes a la ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="351"
+						width="416"
+						height="15"
+						key="staticText-16"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[se cometió la infracción, quien se encuentra vinculado en el presente  proceso ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="337"
+						width="196"
+						height="15"
+						key="staticText-17"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[identificado con cedula de ciudadanía No.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="58"
+						y="324"
+						width="101"
+						height="15"
+						key="staticText-18"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[vehículo  de placas  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="309"
+						width="417"
+						height="15"
+						key="staticText-19"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ley 769 de 2002 modificado por  la ley 1383 de 2010 art. 22, al conductor del ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="295"
+						width="417"
+						height="15"
+						key="staticText-20"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[2012, por la autoridad de tránsito, de conformidad a lo normado por el artículo 135 ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="58"
+						y="282"
+						width="83"
+						height="15"
+						key="staticText-21"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[comparendo No. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="267"
+						width="417"
+						height="15"
+						key="staticText-22"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[modificado por el artículo 21 de la ley 1382 de 2010, de acuerdo con la orden de ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="261"
+						y="281"
+						width="214"
+						height="15"
+						key="staticText-23"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[, la cual le fue impuesta el día 24 de Mayo de 2012, por la ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="141"
+						y="281"
+						width="120"
+						height="15"
+						key="staticText-24"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[9999999000000123456]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="159"
+						y="323"
+						width="47"
+						height="15"
+						key="staticText-25"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[COA27C]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="206"
+						y="323"
+						width="49"
+						height="15"
+						key="staticText-26"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Señor (a) ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="255"
+						y="323"
+						width="220"
+						height="15"
+						key="staticText-27"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[NELSON FIGUEROA CABALLERO ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="254"
+						y="337"
+						width="66"
+						height="15"
+						key="staticText-28"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[1043843736]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="320"
+						y="336"
+						width="154"
+						height="15"
+						key="staticText-29"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[, en el que presuntamente ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="177"
+						y="486"
+						width="96"
+						height="16"
+						key="staticText-30"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[RESOLUCIÓN No.  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="273"
+						y="486"
+						width="49"
+						height="16"
+						key="staticText-31"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[123456]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="322"
+						y="486"
+						width="16"
+						height="16"
+						key="staticText-32"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="340"
+						y="486"
+						width="25"
+						height="16"
+						key="staticText-33"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[2012]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="162"
+						y="502"
+						width="98"
+						height="16"
+						key="staticText-34"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[COMPARENDO No.  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="260"
+						y="503"
+						width="120"
+						height="15"
+						key="staticText-35"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[9999999000000123456]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="57"
+						y="519"
+						width="424"
+						height="42"
+						key="staticText-36"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[EL SUSCRITO INSPECTOR UNICO  DE TRÁNSITO DEL ATLÁNTICO, EN USO DE SUS FACULTADES CONSTITUCIONALES, LEGALES Y REGLAMENTARIAS  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="58"
+						y="599"
+						width="426"
+						height="93"
+						key="staticText-37"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Que el día 1 de enero de 2012 a las 09.30, el conductor del vehículo mencionado incurrió en la presunta comisión de la infracción de tránsito contemplada en el artículo 131 literal  C24 “Conducir motocicleta sin observar las normas establecidas en el presente codigo”   De la ley 769 de 2002, modificado por la ley 1383 de 2010, tal como consta en el comparendo No. 788206, impuesta por el patrullero el señor PT. PATERNOSTRO SOLANO E, No. de placa 11905 en la CALAMAR-BARRANQUILLA KM 55 .]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="197"
+						y="572"
+						width="98"
+						height="16"
+						key="staticText-38"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CONSIDERA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="719"
+						width="426"
+						height="49"
+						key="staticText-39"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Que el artículo 3º de la ley 769 de 2002, modificado por el art. 2º de la ley 1383 de 2010, establece: Autoridades de tránsito. Para los efectos de la presente ley entiéndase que son autoridades de tránsito en su orden, las siguientes:
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="58"
+						y="782"
+						width="426"
+						height="14"
+						key="staticText-40"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" isBold="false"/>
+					</textElement>
+				<text><![CDATA[- El Ministro de transporte.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="59"
+						y="806"
+						width="426"
+						height="14"
+						key="staticText-41"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" isBold="false"/>
+					</textElement>
+				<text><![CDATA[- Los gobernadores y los Alcaldes.]]></text>
+				</staticText>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="823"
+						width="552"
+						height="6"
+						key="subreport-1"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "resolucion/Resolucion_sancion_sub2.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

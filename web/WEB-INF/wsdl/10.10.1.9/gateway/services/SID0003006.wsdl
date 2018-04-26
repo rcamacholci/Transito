@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://client.sinc.runt.heinsohn.com/" name="SincronizacionService" targetNamespace="http://client.sinc.runt.heinsohn.com/">
+    <types>
+        <xsd:schema xmlns:Q3="http://consultas.general.runt.heinsohn.com" xmlns:Q2="http://sincronizacion.general.runt.heinsohn.com" xmlns:Q1="http://identificaciones.general.runt.heinsohn.com" targetNamespace="http://client.sinc.runt.heinsohn.com/">
+            <xsd:import schemaLocation="SID0003006/N68354002/OwsmImport.xsd" namespace="http://consultas.general.runt.heinsohn.com"/>
+            <xsd:import schemaLocation="SID0003006/P1901936405/OwsmImport.xsd" namespace="http://sincronizacion.general.runt.heinsohn.com"/>
+            <xsd:import schemaLocation="SID0003006/P724965611/OwsmImport.xsd" namespace="http://identificaciones.general.runt.heinsohn.com"/>
+            <xsd:element name="actualizarDatosAutomotor">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="header" type="Q1:CommonHeaderDTO" minOccurs="0"/>
+                        <xsd:element name="in" type="Q2:SincronizarAutomotorDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="actualizarDatosAutomotorResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="Q1:StatusDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="actualizarDatosConductor">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="header" type="Q1:CommonHeaderDTO" minOccurs="0"/>
+                        <xsd:element name="in" type="Q3:ConductorDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="actualizarDatosConductorResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="Q1:StatusDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="verificarEstadoWS">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="header" type="Q1:CommonHeaderDTO" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="verificarEstadoWSResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="Q1:StatusDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </types>
+    <message name="actualizarDatosAutomotorRequest">
+        <part name="parameters" element="tns:actualizarDatosAutomotor"/>
+    </message>
+    <message name="actualizarDatosAutomotorResponse">
+        <part name="parameters" element="tns:actualizarDatosAutomotorResponse"/>
+    </message>
+    <message name="actualizarDatosConductorRequest">
+        <part name="parameters" element="tns:actualizarDatosConductor"/>
+    </message>
+    <message name="actualizarDatosConductorResponse">
+        <part name="parameters" element="tns:actualizarDatosConductorResponse"/>
+    </message>
+    <message name="verificarEstadoWSRequest">
+        <part name="parameters" element="tns:verificarEstadoWS"/>
+    </message>
+    <message name="verificarEstadoWSResponse">
+        <part name="parameters" element="tns:verificarEstadoWSResponse"/>
+    </message>
+    <portType name="SincronizacionService">
+        <operation name="actualizarDatosAutomotor">
+            <input message="tns:actualizarDatosAutomotorRequest"/>
+            <output message="tns:actualizarDatosAutomotorResponse"/>
+        </operation>
+        <operation name="actualizarDatosConductor">
+            <input message="tns:actualizarDatosConductorRequest"/>
+            <output message="tns:actualizarDatosConductorResponse"/>
+        </operation>
+        <operation name="verificarEstadoWS">
+            <input message="tns:verificarEstadoWSRequest"/>
+            <output message="tns:verificarEstadoWSResponse"/>
+        </operation>
+    </portType>
+    <binding name="SincronizacionServiceSOAP" type="tns:SincronizacionService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="actualizarDatosAutomotor">
+            <soap:operation soapAction="http://client.sinc.runt.heinsohn.com//actualizarDatosAutomotor"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="actualizarDatosConductor">
+            <soap:operation soapAction="http://client.sinc.runt.heinsohn.com//actualizarDatosConductor"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="verificarEstadoWS">
+            <soap:operation soapAction="http://client.sinc.runt.heinsohn.com//verificarEstadoWS"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="SincronizacionService">
+        <port name="SincronizacionServiceSOAP" binding="tns:SincronizacionServiceSOAP">
+            <soap:address location="http://wsm.runt.com.co:80/gateway/services/SID0003006"/>
+        </port>
+    </service>
+</definitions>

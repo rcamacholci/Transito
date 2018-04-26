@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="LicenciaTransitoProvisional"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="486"  isSplitAllowed="true" >
+				<rectangle>
+					<reportElement
+						x="67"
+						y="82"
+						width="396"
+						height="284"
+						key="rectangle-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="71"
+						y="86"
+						width="66"
+						height="88"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["..\\html\\images\\colombia.png"]]></imageExpression>
+				</image>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="397"
+						y="92"
+						width="61"
+						height="49"
+						key="image-2"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["..\\html\\images\\mintransporte.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="159"
+						y="100"
+						width="220"
+						height="20"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="16" isBold="true"/>
+					</textElement>
+				<text><![CDATA[REPUBLICA DE COLOMBIA ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="159"
+						y="120"
+						width="220"
+						height="13"
+						key="staticText-2"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="9" isBold="true"/>
+					</textElement>
+				<text><![CDATA[MINISTERIO DE TRANSPORTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="145"
+						y="147"
+						width="313"
+						height="13"
+						key="staticText-3"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="9" isBold="true"/>
+					</textElement>
+				<text><![CDATA[LICENCIA DE TRANSITO PROVISIONAL No 09-08634000-01706]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="175"
+						width="60"
+						height="13"
+						key="staticText-4"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[PLACA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="163"
+						y="175"
+						width="60"
+						height="13"
+						key="staticText-10"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[MARCA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="175"
+						width="60"
+						height="13"
+						key="staticText-11"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[LINEA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="371"
+						y="175"
+						width="60"
+						height="13"
+						key="staticText-12"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[MODELO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="202"
+						width="60"
+						height="13"
+						key="staticText-13"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CILINDRADA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="163"
+						y="202"
+						width="60"
+						height="13"
+						key="staticText-14"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[COLOR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="371"
+						y="202"
+						width="60"
+						height="13"
+						key="staticText-16"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[SERVICIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="231"
+						width="60"
+						height="13"
+						key="staticText-17"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CLASE VEHICULO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="163"
+						y="231"
+						width="60"
+						height="13"
+						key="staticText-18"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TIPO CARROCERIA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="231"
+						width="60"
+						height="13"
+						key="staticText-19"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[COMBUSTIBLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="371"
+						y="231"
+						width="60"
+						height="13"
+						key="staticText-20"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CAPACIDAD KG/PSJ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="259"
+						width="60"
+						height="13"
+						key="staticText-21"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NUMERO MOTOR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="259"
+						width="28"
+						height="13"
+						key="staticText-23"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[REG]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="327"
+						y="259"
+						width="60"
+						height="13"
+						key="staticText-24"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VIN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="287"
+						width="60"
+						height="13"
+						key="staticText-25"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NUMERO SERIE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="287"
+						width="28"
+						height="13"
+						key="staticText-26"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[REG]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="327"
+						y="287"
+						width="60"
+						height="13"
+						key="staticText-27"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NUMERO DE CHASIS  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="316"
+						width="172"
+						height="13"
+						key="staticText-28"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[PROPIETARIO(APELLIDO Y NOMBRE)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="373"
+						y="316"
+						width="60"
+						height="13"
+						key="staticText-30"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[IDENTIFICACION]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="77"
+						y="189"
+						width="60"
+						height="13"
+						key="textField-1"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["PLACA"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="163"
+						y="189"
+						width="60"
+						height="13"
+						key="staticText-32"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[MARCA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="189"
+						width="60"
+						height="13"
+						key="staticText-33"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[LINEA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="371"
+						y="189"
+						width="60"
+						height="13"
+						key="staticText-34"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[MODELO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="216"
+						width="60"
+						height="13"
+						key="staticText-35"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CILINDRADA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="163"
+						y="216"
+						width="60"
+						height="13"
+						key="staticText-36"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[COLOR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="371"
+						y="216"
+						width="60"
+						height="13"
+						key="staticText-37"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[SERVICIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="371"
+						y="245"
+						width="60"
+						height="13"
+						key="staticText-38"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CAPACIDAD KG/PSJ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="245"
+						width="60"
+						height="13"
+						key="staticText-39"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[COMBUSTIBKE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="163"
+						y="245"
+						width="60"
+						height="13"
+						key="staticText-40"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TIPO CARROCERIA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="245"
+						width="60"
+						height="13"
+						key="staticText-41"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CLASE VEHICULO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="273"
+						width="60"
+						height="13"
+						key="staticText-42"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NUMERO MOTOR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="273"
+						width="28"
+						height="13"
+						key="staticText-43"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[REG]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="327"
+						y="273"
+						width="60"
+						height="13"
+						key="staticText-44"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VIN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="327"
+						y="301"
+						width="60"
+						height="13"
+						key="staticText-45"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NUMERO DE CHASIS  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="301"
+						width="28"
+						height="13"
+						key="staticText-46"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[REG]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="301"
+						width="60"
+						height="13"
+						key="staticText-47"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NUMERO SERIE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="77"
+						y="330"
+						width="172"
+						height="13"
+						key="staticText-48"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[PROPIETARIO(APELLIDO Y NOMBRE)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="373"
+						y="330"
+						width="60"
+						height="13"
+						key="staticText-49"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[IDENTIFICACION]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

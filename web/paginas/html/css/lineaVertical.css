@@ -1,0 +1,7 @@
+#div-border {
+position:fixed;
+border-left: 1px solid #ccc;
+left:500px;
+width:1px;
+height:500px;
+}

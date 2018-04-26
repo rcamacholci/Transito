@@ -1,0 +1,138 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://rnma.tramite.general.runt.heinsohn.com"
+     xmlns:tramite="http://tramite.general.runt.heinsohn.com" xmlns:persona="http://personas.general.runt.heinsohn.com"
+     xmlns:identificador="http://identificaciones.general.runt.heinsohn.com" targetNamespace="http://rnma.tramite.general.runt.heinsohn.com"
+     elementFormDefault="qualified">
+    <xsd:import namespace="http://tramite.general.runt.heinsohn.com" schemaLocation="Tramite.xsd"/>
+    <xsd:import namespace="http://personas.general.runt.heinsohn.com" schemaLocation="Personas.xsd"/>
+    <xsd:import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="Identificadores.xsd"/>
+    <xsd:complexType name="TramiteRegistroMaquinariaImportacionTemporalDTO">
+        <xsd:complexContent>
+            <xsd:extension base="tramite:TramiteBasicoDTO">
+                <xsd:sequence>
+                    <xsd:element name="fechaSolicitud" type="xsd:dateTime" nillable="false"/>
+                    <xsd:element name="nroUnicoIdentificacion" type="xsd:string" nillable="true"/>
+                    <xsd:element name="propietariosDTO" type="persona:PropietarioRNMADTO" nillable="false"
+                         minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="paisRegistroMaquinaria" type="xsd:int" nillable="false">
+                        <xsd:annotation>
+                            <xsd:documentation>33</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="validacionDocumental" type="xsd:string" nillable="false">
+                        <xsd:annotation>
+                            <xsd:documentation>S,N</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="puertoIngresoMaquinaria" type="xsd:string" nillable="true"/>
+                    <xsd:element name="nroAceptacion" type="xsd:string" nillable="false"/>
+                    <xsd:element name="nroSerie" type="xsd:string" nillable="true"/>
+                    <xsd:element name="nroChasis" type="xsd:string" nillable="true"/>
+                    <xsd:element name="nroMotor" type="xsd:string" nillable="true"/>
+                    <xsd:element name="nroVin" type="xsd:string" nillable="true"/>
+                    <xsd:element name="tipoCarroceria" type="xsd:string" nillable="true"/>
+                    <xsd:element name="colorMaquinaria" type="xsd:string" nillable="true"/>
+                    <xsd:element name="condicionIngreso" type="xsd:string" nillable="false"/>
+                    <xsd:element name="resultadoRevisionTecnica" type="xsd:string" nillable="true"/>
+                    <xsd:element name="nroDocumentoRevision" type="xsd:string" nillable="true"/>
+                    <xsd:element name="fechaRevision" type="xsd:dateTime" nillable="true"/>
+                    <xsd:element name="entidadRevision" type="xsd:string" nillable="true"/>
+                    <xsd:element name="fechaExpedicion" type="xsd:dateTime" nillable="true"/>
+                    <xsd:element name="fechaVencimiento" type="xsd:dateTime" nillable="true"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="TramiteMatriculaInicialRNMADTO">
+        <xsd:complexContent>
+            <xsd:extension base="tramite:TramiteBasicoDTO">
+                <xsd:sequence>
+                    <xsd:element name="numeroDeclaracionImportacion" type="xsd:string" nillable="true"/>
+                    <xsd:element name="nombreTipoRegistro" type="xsd:string" nillable="false">
+                        <xsd:annotation>
+                            <xsd:documentation>128</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="idColor" type="xsd:int" nillable="true">
+                        <xsd:annotation>
+                            <xsd:documentation>1</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="numeroVin" type="xsd:string" nillable="true"/>
+                    <xsd:element name="numeroRegrabacionSerie" type="xsd:string" nillable="true"/>
+                    <xsd:element name="numeroRegrabacionChasis" type="xsd:string" nillable="true"/>
+                    <xsd:element name="fechaIngreso" type="xsd:dateTime" nillable="true"/>
+                    <xsd:element name="claseMaquinaria" type="xsd:int" nillable="true"/>
+                    <xsd:element name="numeroRegistroMotor" type="xsd:string" nillable="true"/>
+                    <xsd:element name="numeroFacturaVendedor" type="xsd:string" nillable="true"/>
+                    <xsd:element name="fechaFacturaVendedor" type="xsd:dateTime" nillable="true"/>
+                    <xsd:element name="idRodaje" type="xsd:int" nillable="true">
+                        <xsd:annotation>
+                            <xsd:documentation>124</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="idTipoCabina" type="xsd:int" nillable="true">
+                        <xsd:annotation>
+                            <xsd:documentation>123</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="idTipoCombustible" type="xsd:string" nillable="true">
+                        <xsd:annotation>
+                            <xsd:documentation>41</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="nroSubPartidaArancelaria" type="xsd:string" nillable="true"/>
+                    <xsd:element name="valorFacturaVendedor" type="xsd:string" nillable="true"/>
+                    <xsd:element name="tipoDocVendedor" type="xsd:string" nillable="true">
+                        <xsd:annotation>
+                            <xsd:documentation>7</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="numeroDocVendedor" type="xsd:string" nillable="true"/>
+                    <xsd:element name="nroIdentificacionGPS" type="xsd:string" nillable="true"/>
+                    <xsd:element name="idEmpresaHabilitacion" type="xsd:long" nillable="true"/>
+                    <xsd:element name="tipoDocSoporte" type="xsd:string" nillable="true">
+                        <xsd:annotation>
+                            <xsd:documentation>130</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="nroDocSoporte" type="xsd:string" nillable="true"/>
+                    <xsd:element name="fechaExpedicionSoporte" type="xsd:dateTime" nillable="true"/>
+                    <xsd:element name="entidadExpideDocumentoSoporte" type="xsd:string" nillable="true"/>
+                    <xsd:element name="tramiteMaquinaria" type="TramiteRegistroMaquinariaImportacionTemporalDTO"
+                         nillable="true"/>
+                    <xsd:element name="propietariosDTO" type="persona:PropietarioRNMADTO" nillable="false"
+                         minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="idTipoPropiedad" type="xsd:int" nillable="true">
+                        <xsd:annotation>
+                            <xsd:documentation>47</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="locatarios" type="identificador:IdentificacionPersonaDTO" nillable="true"
+                         minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="TramiteRegrabacionRNMADTO">
+        <xsd:complexContent>
+            <xsd:extension base="tramite:TramiteBasicoDTO">
+                <xsd:sequence>
+                    <xsd:element name="tipoRegrabacion" type="xsd:string" nillable="true">
+                        <xsd:annotation>
+                            <xsd:documentation>48</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="motivoRegrabacion" type="xsd:string" nillable="true">
+                        <xsd:annotation>
+                            <xsd:documentation>28</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="numeroSerie" type="xsd:string" nillable="true"/>
+                    <xsd:element name="numeroMotor" type="xsd:string" nillable="true"/>
+                    <xsd:element name="numeroVIN" type="xsd:string" nillable="true"/>
+                    <xsd:element name="numeroRevisionTecnicaSijinDijin" type="xsd:string" nillable="true"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+</xsd:schema>

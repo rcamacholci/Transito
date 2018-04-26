@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="multipleDetallePagosDistribucionReport"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="595"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="NUMERO" isForPrompting="true" class="java.lang.Integer"/>
+	<parameter name="FECHA" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="CARTERA" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="TRAMITE" isForPrompting="true" class="java.lang.Long"/>
+	<parameter name="CONCEPTO" isForPrompting="true" class="java.lang.Long"/>
+	<parameter name="VALOR" isForPrompting="true" class="java.lang.Float"/>
+	<parameter name="TIQUETE" isForPrompting="false" class="java.lang.Long"/>
+	<queryString><![CDATA[SELECT P.ID_CONCEPTO CODIGO,P.NOMBRE CONCEPTO,1 CANTIDAD,R.REFERENCIA REFERENCIA,SUM(R.VALOR) VALOR
+FROM TIQUETES T,DETALLE_TIQUETES D,CARTERAS C,CONCEPTOS P,DETALLE_CARTERAS R,PAGOS G
+WHERE T.ID_TIQUETE = D.FK_TIQUETE
+AND G.FK_TIQUETE = T.ID_TIQUETE
+AND D.FK_CARTERA = C.ID_CARTERA
+AND C.ID_CARTERA = R.FK_CARTERA
+AND R.FK_PAGO = G.ID_PAGO
+AND C.FK_CONCEPTO = P.ID_CONCEPTO
+AND ((C.REFERENCIA != '2010' AND C.TIPO = 2) OR (C.TIPO != 2))
+AND T.ID_TIQUETE = $P{TIQUETE}
+AND R.FK_CONCEPTO NOT IN(249,318,319,276,302,303)
+AND $P{CARTERA} = 'S'
+GROUP BY P.ID_CONCEPTO,P.NOMBRE,R.REFERENCIA
+UNION
+SELECT P.ID_CONCEPTO CODIGO,P.NOMBRE CONCEPTO,COUNT(D.CANTIDAD) CANTIDAD,R.REFERENCIA REFERENCIA,SUM(R.VALOR) VALOR
+FROM TIQUETES T,DETALLE_TIQUETES D,CARTERAS C,CONCEPTOS P,DETALLE_CARTERAS R,PAGOS G
+WHERE T.ID_TIQUETE = D.FK_TIQUETE
+AND G.FK_TIQUETE = T.ID_TIQUETE
+AND D.FK_CARTERA = C.ID_CARTERA
+AND C.ID_CARTERA = R.FK_CARTERA
+AND R.FK_PAGO = G.ID_PAGO
+AND R.FK_CONCEPTO = P.ID_CONCEPTO
+AND C.REFERENCIA = '2010'
+AND C.TIPO = 2
+AND T.ID_TIQUETE = $P{TIQUETE}
+AND R.FK_CONCEPTO NOT IN(249,318,319,276,302,303)
+AND $P{CARTERA} = 'S'
+GROUP BY P.ID_CONCEPTO,P.NOMBRE,R.REFERENCIA
+UNION
+SELECT CO.ID_CONCEPTO CODIGO,CO.NOMBRE CONCEPTO,COUNT(CO.ID_CONCEPTO) CANTIDAD,MIN(DC.REFERENCIA)||'-'||MAX(DC.REFERENCIA) REFERENCIA,SUM(DC.VALOR) VALOR
+FROM PAGOS PA,TIQUETES TI,DETALLE_TIQUETES DT,DETALLE_CARTERAS DC,CONCEPTOS CO
+WHERE DC.FK_PAGO = PA.ID_PAGO
+AND DT.FK_CARTERA = DC.FK_CARTERA
+AND PA.FK_TIQUETE = TI.ID_TIQUETE
+AND TI.ID_TIQUETE = DT.FK_TIQUETE
+AND DC.FK_CONCEPTO = CO.ID_CONCEPTO
+AND DC.FK_CONCEPTO IN(249,318,319)
+AND TI.ID_TIQUETE = $P{TIQUETE}
+AND $P{CARTERA} = 'S'
+GROUP BY CO.ID_CONCEPTO,CO.NOMBRE
+UNION
+SELECT CO.ID_CONCEPTO CODIGO,CO.NOMBRE CONCEPTO,COUNT(CO.ID_CONCEPTO) CANTIDAD,
+NVL(DECODE(COUNT(CO.ID_CONCEPTO),1,MIN(DC.REFERENCIA)),MIN(DC.REFERENCIA)||'-'||MAX(DC.REFERENCIA)) REFERENCIA,SUM(DC.VALOR) VALOR
+FROM PAGOS PA,TIQUETES TI,DETALLE_TIQUETES DT,DETALLE_CARTERAS DC,CONCEPTOS CO
+WHERE DC.FK_PAGO = PA.ID_PAGO
+AND DT.FK_CARTERA = DC.FK_CARTERA
+AND PA.FK_TIQUETE = TI.ID_TIQUETE
+AND TI.ID_TIQUETE = DT.FK_TIQUETE
+AND DC.FK_CONCEPTO = CO.ID_CONCEPTO
+AND DC.FK_CONCEPTO IN(276,302,303)
+AND TI.ID_TIQUETE = $P{TIQUETE}
+AND $P{CARTERA} = 'S'
+GROUP BY CO.ID_CONCEPTO,CO.NOMBRE
+UNION
+SELECT P.ID_CONCEPTO CODIGO, P.NOMBRE CONCEPTO,COUNT(TC.SECUENCIA) CANTIDAD,MAX(M.ABREVIATURA) REFERENCIA,SUM(TC.VALOR) VALOR
+FROM TIQUETES T,DETALLE_TIQUETES D,TIQUETE_CONCEPTOS TC,CONCEPTOS P,TRAMITES M
+WHERE T.ID_TIQUETE = D.FK_TIQUETE
+AND D.ID_DET_TIQUETE = TC.FK_DETALLE_TIQUETE
+AND TC.FK_CONCEPTO = P.ID_CONCEPTO
+AND D.FK_TRAMITE = M.ID_TRAMITE
+AND T.ID_TIQUETE = $P{TIQUETE}
+AND M.ID_TRAMITE = $P{TRAMITE}
+AND $P{TRAMITE} != 1
+GROUP BY P.ID_CONCEPTO,P.NOMBRE
+UNION
+SELECT P.ID_CONCEPTO CODIGO, P.NOMBRE CONCEPTO,COUNT(TC.SECUENCIA) CANTIDAD,DECODE($P{CONCEPTO},2,'DER. TRANSITO 2010',4,'MATRIC. INICIAL') REFERENCIA,SUM(TC.VALOR) VALOR
+FROM TIQUETES T,DETALLE_TIQUETES D,TIQUETE_CONCEPTOS TC,CONCEPTOS P,TRAMITES M
+WHERE T.ID_TIQUETE = D.FK_TIQUETE
+AND D.ID_DET_TIQUETE = TC.FK_DETALLE_TIQUETE
+AND TC.FK_CONCEPTO = P.ID_CONCEPTO
+AND D.FK_TRAMITE = M.ID_TRAMITE
+AND T.ID_TIQUETE = $P{TIQUETE}
+AND M.ID_TRAMITE = $P{TRAMITE}
+AND $P{TRAMITE} = 1
+AND P.CLASE_CONCEPTO = $P{CONCEPTO}
+GROUP BY P.ID_CONCEPTO,P.NOMBRE
+UNION
+SELECT P.ID_CONCEPTO CODIGO,P.NOMBRE CONCEPTO,COUNT(D.CANTIDAD) CANTIDAD,'' REFERENCIA,SUM(D.VALOR_TOTAL) VALOR
+FROM TIQUETES T,DETALLE_TIQUETES D,CONCEPTOS P
+WHERE T.ID_TIQUETE = D.FK_TIQUETE
+AND D.FK_CONCEPTO = P.ID_CONCEPTO
+AND T.ID_TIQUETE = $P{TIQUETE}
+AND P.ID_CONCEPTO = $P{CONCEPTO}
+AND $P{TRAMITE} IS NULL
+GROUP BY P.ID_CONCEPTO,P.NOMBRE
+ORDER BY CODIGO,CONCEPTO]]></queryString>
+
+	<field name="CODIGO" class="java.lang.Integer"/>
+	<field name="CONCEPTO" class="java.lang.String"/>
+	<field name="CANTIDAD" class="java.lang.Integer"/>
+	<field name="REFERENCIA" class="java.lang.String"/>
+	<field name="VALOR" class="java.lang.Float"/>
+
+	<variable name="SUMA" class="java.lang.Float" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALOR}]]></variableExpression>
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="9"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="0"
+						width="40"
+						height="9"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Integer"><![CDATA[$F{CODIGO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="108"
+						y="0"
+						width="224"
+						height="9"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CONCEPTO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="316"
+						y="0"
+						width="81"
+						height="9"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{REFERENCIA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="40"
+						y="0"
+						width="45"
+						height="9"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Integer"><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="0"
+						width="85"
+						height="9"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Float"><![CDATA[$F{VALOR}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="15"  isSplitAllowed="false" >
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="436"
+						y="1"
+						width="85"
+						height="14"
+						key="textField-1"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Float"><![CDATA[$V{SUMA}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="416"
+						y="1"
+						width="105"
+						height="0"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

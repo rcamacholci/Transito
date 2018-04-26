@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://personas.general.runt.heinsohn.com" xmlns:identificador="http://identificaciones.general.runt.heinsohn.com" targetNamespace="http://personas.general.runt.heinsohn.com" elementFormDefault="qualified">
+    <xsd:import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="SID0003003/P724965611/OwsmImport.xsd"/>
+ </xsd:schema>

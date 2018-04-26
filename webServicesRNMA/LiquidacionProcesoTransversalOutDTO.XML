@@ -1,0 +1,158 @@
+public class LiquidacionProcesoTransversalOutDTO implements java.io.Serializable {
+    protected liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.identificaciones.StatusDTO status;
+    protected java.lang.String numeroLiquidacion;
+    protected liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.personas.AutoridadTransitoDTO autoridadTransito;
+    protected java.util.Calendar fechaSolicitud;
+    protected java.util.Calendar fechaRegistro;
+    protected java.util.Calendar fechaVigencia;
+    protected java.lang.String codigoBarras;
+    protected java.lang.String tipoComprobantePago;
+    protected java.lang.Double valorRUNT;
+    protected java.lang.Double valorMT;
+    protected java.lang.Double valorTotal;
+    protected java.lang.String estadoLiquidacion;
+    protected byte[] liquidacionPDF;
+    protected liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.solicitudes.ValorRUNTDTO[] detalleValorRUNT;
+    protected liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.solicitudes.ValorMTDTO[] detalleValorMT;
+    protected java.lang.Integer cantidad;
+    protected liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.identificaciones.IdentificacionPersonaDTO solicitante;
+    
+    public LiquidacionProcesoTransversalOutDTO() {
+    }
+    
+    public liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.identificaciones.StatusDTO getStatus() {
+        return status;
+    }
+    
+    public void setStatus(liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.identificaciones.StatusDTO status) {
+        this.status = status;
+    }
+    
+    public java.lang.String getNumeroLiquidacion() {
+        return numeroLiquidacion;
+    }
+    
+    public void setNumeroLiquidacion(java.lang.String numeroLiquidacion) {
+        this.numeroLiquidacion = numeroLiquidacion;
+    }
+    
+    public liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.personas.AutoridadTransitoDTO getAutoridadTransito() {
+        return autoridadTransito;
+    }
+    
+    public void setAutoridadTransito(liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.personas.AutoridadTransitoDTO autoridadTransito) {
+        this.autoridadTransito = autoridadTransito;
+    }
+    
+    public java.util.Calendar getFechaSolicitud() {
+        return fechaSolicitud;
+    }
+    
+    public void setFechaSolicitud(java.util.Calendar fechaSolicitud) {
+        this.fechaSolicitud = fechaSolicitud;
+    }
+    
+    public java.util.Calendar getFechaRegistro() {
+        return fechaRegistro;
+    }
+    
+    public void setFechaRegistro(java.util.Calendar fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+    
+    public java.util.Calendar getFechaVigencia() {
+        return fechaVigencia;
+    }
+    
+    public void setFechaVigencia(java.util.Calendar fechaVigencia) {
+        this.fechaVigencia = fechaVigencia;
+    }
+    
+    public java.lang.String getCodigoBarras() {
+        return codigoBarras;
+    }
+    
+    public void setCodigoBarras(java.lang.String codigoBarras) {
+        this.codigoBarras = codigoBarras;
+    }
+    
+    public java.lang.String getTipoComprobantePago() {
+        return tipoComprobantePago;
+    }
+    
+    public void setTipoComprobantePago(java.lang.String tipoComprobantePago) {
+        this.tipoComprobantePago = tipoComprobantePago;
+    }
+    
+    public java.lang.Double getValorRUNT() {
+        return valorRUNT;
+    }
+    
+    public void setValorRUNT(java.lang.Double valorRUNT) {
+        this.valorRUNT = valorRUNT;
+    }
+    
+    public java.lang.Double getValorMT() {
+        return valorMT;
+    }
+    
+    public void setValorMT(java.lang.Double valorMT) {
+        this.valorMT = valorMT;
+    }
+    
+    public java.lang.Double getValorTotal() {
+        return valorTotal;
+    }
+    
+    public void setValorTotal(java.lang.Double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+    
+    public java.lang.String getEstadoLiquidacion() {
+        return estadoLiquidacion;
+    }
+    
+    public void setEstadoLiquidacion(java.lang.String estadoLiquidacion) {
+        this.estadoLiquidacion = estadoLiquidacion;
+    }
+    
+    public byte[] getLiquidacionPDF() {
+        return liquidacionPDF;
+    }
+    
+    public void setLiquidacionPDF(byte[] liquidacionPDF) {
+        this.liquidacionPDF = liquidacionPDF;
+    }
+    
+    public liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.solicitudes.ValorRUNTDTO[] getDetalleValorRUNT() {
+        return detalleValorRUNT;
+    }
+    
+    public void setDetalleValorRUNT(liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.solicitudes.ValorRUNTDTO[] detalleValorRUNT) {
+        this.detalleValorRUNT = detalleValorRUNT;
+    }
+    
+    public liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.solicitudes.ValorMTDTO[] getDetalleValorMT() {
+        return detalleValorMT;
+    }
+    
+    public void setDetalleValorMT(liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.solicitudes.ValorMTDTO[] detalleValorMT) {
+        this.detalleValorMT = detalleValorMT;
+    }
+    
+    public java.lang.Integer getCantidad() {
+        return cantidad;
+    }
+    
+    public void setCantidad(java.lang.Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+    
+    public liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.identificaciones.IdentificacionPersonaDTO getSolicitante() {
+        return solicitante;
+    }
+    
+    public void setSolicitante(liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.identificaciones.IdentificacionPersonaDTO solicitante) {
+        this.solicitante = solicitante;
+    }
+}

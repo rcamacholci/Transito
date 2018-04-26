@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Resolucion_sancion_sub2"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="552"
+		 pageHeight="1008"
+		 columnWidth="552"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<queryString><![CDATA[select * from dual]]></queryString>
+
+	<field name="DUMMY" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="860"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="9"
+						width="552"
+						height="18"
+						key="staticText-1"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+				<text><![CDATA[-  Los organismos de tránsito de carácter de departamental, municipal o distrital.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="38"
+						width="552"
+						height="18"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[-La policía nacional a través de la dirección de Tránsito y Transporte.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="71"
+						width="552"
+						height="28"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[- Los inspectores de policía, los inspectores de Tránsito, corregidores o quien haga sus  veces en cada ente territorial.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="113"
+						width="552"
+						height="16"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[- La superintendencia general de Puertos y Transporte.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="138"
+						width="552"
+						height="18"
+						key="staticText-5"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[- Las fuerzas militares para cumplir exclusivamente lo dispuesto en el parágrafo 5º de este  artículo.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="167"
+						width="552"
+						height="13"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[- Los agentes de tránsito y transporte.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="192"
+						width="552"
+						height="45"
+						key="staticText-7"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[Parágrafo 1º. Las entidades públicas o privadas a las que mediante delegación o convenio les sean asignadas determinadas funciones de tránsito, constituirán organismos de apoyo a las autoridades de tránsito.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="250"
+						width="552"
+						height="30"
+						key="staticText-8"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[Parágrafo 2º. El gobierno nacional podrá delegar en los organismos de tránsito las funciones que por ley le correspondan al Ministerio de Transporte.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="293"
+						width="552"
+						height="42"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[Parágrafo 3º. Las autoridades, los organismos de transito, las entidades públicas o privadas que constituyan organismos de apoyo serán vigiladas y controladas por la superintendencia de puertos y transporte.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="349"
+						width="552"
+						height="42"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[Parágrafo 4º. La facultad de autoridad de transito otorgada a los cuerpos especializados de la policía nacional se ejercerá como una competencia a prevención.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="404"
+						width="552"
+						height="42"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[Parágrafo 5º. Las fuerzas militares podrán ejecutar la labor de regulación del tránsito, en aquellas áreas donde no haya presencia de autoridad de tránsito.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="458"
+						width="552"
+						height="173"
+						key="staticText-12"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[Que el artículo  135 de la ley 769 de 2002 modificado por  el art. 22 de la ley 1383 de 2010 establece: Ante la comisión de una contravención, la autoridad de tránsito debe seguir le procedimiento siguiente para imponer el comparendo: Ordenará detener la marcha del vehículo y le extenderá al conductor la orden de comparendo en la que ordenará al infractor presentarse ante la autoridad de tránsito competente dentro de los cinco (5) días hábiles siguiente (…) y el Artículo 136 de la ley 769 de 2002 modificado por  el art. 24 de la ley 1383  si el inculpado rechaza la comisión de la infracción, el inculpado deberá comparecer ante el funcionario en audiencia pública para que este decrete las pruebas conducentes que le sean solicitadas y las de oficio que considere útiles. Si el contraventor  no comparece sin justa causa comprobada dentro de los cinco (5) días hábiles siguientes, la autoridad de transito después de treinta (30) días de ocurrida la presunta infracción  seguirá el proceso, entendiéndose que queda vinculada al mismo, fallándose en audiencia pública y notificándose en estrados.”]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="647"
+						width="552"
+						height="47"
+						key="staticText-13"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[Que transcurrido treinta y un (31) días hábiles desde la imposición del aviso de comparendo, el citado conductor del vehículo mencionado,  no se presentó en este despacho, ni justifico su inasistencia, ni desvirtúo la comisión de la infracción.  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="708"
+						width="552"
+						height="82"
+						key="staticText-14"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[Que habiéndosele concedido las oportunidades procesales para hacer uso de su derecho a la defensa y contradicción, a fin de desvirtuar su responsabilidad en los hechos que se investigan, éste  hizo caso omiso  a los llamados de la autoridad, por lo que se concluye que no existe rechazo de la comisión de la infracción, teniendo en cuenta que la norma impone la carga a quien la rechace, de comparecer ante el funcionario competente y manifestar su inconformidad  con la imputación. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="802"
+						width="552"
+						height="32"
+						key="staticText-15"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+				<text><![CDATA[Que para la conducta descrita, el articulo 131 literal C24 de la ley 769 de 2002, modificada por el artículo 21 de la ley 1383 de 2010 (Conducir motocicleta sin observar las normas ]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

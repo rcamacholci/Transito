@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-1b01  svn-revision#13094. --><xs:schema xmlns:tns="http://webservice.ita.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.ita.org/">
+
+<xs:element name="actualizarPagosAplicados" type="tns:actualizarPagosAplicados"/>
+
+<xs:element name="actualizarPagosAplicadosResponse" type="tns:actualizarPagosAplicadosResponse"/>
+
+<xs:element name="consultarPagosEfectivos" type="tns:consultarPagosEfectivos"/>
+
+<xs:element name="consultarPagosEfectivosResponse" type="tns:consultarPagosEfectivosResponse"/>
+
+<xs:complexType name="actualizarPagosAplicados">
+<xs:sequence>
+<xs:element name="lstIdPagos" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarPagosAplicadosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:processStatus" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="processStatus">
+<xs:sequence>
+<xs:element name="estado" type="xs:boolean"/>
+<xs:element name="mensaje" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarPagosEfectivos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultarPagosEfectivosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:pago" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pago">
+<xs:sequence>
+<xs:element name="fechaProceso" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreBanco" type="xs:string" minOccurs="0"/>
+<xs:element name="placa" type="xs:string" minOccurs="0"/>
+<xs:element name="referencia" type="xs:string" minOccurs="0"/>
+<xs:element name="valorPagado" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

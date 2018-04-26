@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="CertificadoPazYSalvo"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="612"
+		 pageHeight="792"
+		 columnWidth="552"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="NUMERO" isForPrompting="true" class="java.lang.String"/>
+	<queryString><![CDATA[SELECT PA.NOMBRE,PER.DOCUMENTO,PER.NOMBRE_1 ||' '|| PER.APELLIDO_1,COM.NUMERO,COM.FECHA,COM.LUGAR,INF.NUMERO AS NUMEROINF, INF.DESCRIPCION, CA.VALOR, CA.SALDO,DC.VALOR AS DESCUENTO, CON.NOMBRE CONCEPTODES
+FROM PERSONAS PER, COMPARENDOS COM, PARAMETROS PA, INFRACCIONES INF, CARTERAS CA, DETALLE_CARTERAS DC,CONCEPTOS CON
+WHERE PER.ID_PERSONA = COM.FK_PERSONA
+AND CA.ID_CARTERA = COM.FK_CARTERA
+AND CON.ID_CONCEPTO = DC.FK_CONCEPTO
+AND PA.FK_GRUPO = 5
+AND DC.FK_CARTERA = CA.ID_CARTERA
+AND DC.FK_CONCEPTO IN(8546,8547)
+AND PA.CODIGO = PER.TIPO_DOCUMENTO
+AND INF.ID_INFRACCION = COM.FK_INFRACCION
+AND COM.NUMERO =$P{NUMERO}]]></queryString>
+
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="DOCUMENTO" class="java.lang.String"/>
+	<field name="PER.NOMBRE_1||''||PER.APELLIDO_1" class="java.lang.String"/>
+	<field name="NUMERO" class="java.lang.String"/>
+	<field name="FECHA" class="java.util.Date"/>
+	<field name="LUGAR" class="java.lang.String"/>
+	<field name="NUMEROINF" class="java.math.BigDecimal"/>
+	<field name="DESCRIPCION" class="java.lang.String"/>
+	<field name="VALOR" class="java.math.BigDecimal"/>
+	<field name="SALDO" class="java.math.BigDecimal"/>
+	<field name="DESCUENTO" class="java.math.BigDecimal"/>
+	<field name="CONCEPTODES" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="50"  isSplitAllowed="true" >
+				<rectangle>
+					<reportElement
+						x="0"
+						y="5"
+						width="550"
+						height="45"
+						key="rectangle-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="148"
+						y="9"
+						width="47"
+						height="36"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\html\\images\\colombia.png"]]></imageExpression>
+				</image>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="138"
+						y="8"
+						width="62"
+						height="36"
+						key="image-2"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\html\\images\\RUNT.PNG"]]></imageExpression>
+				</image>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="257"
+						y="8"
+						width="105"
+						height="37"
+						key="image-4"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\html\\images\\transito1.png"]]></imageExpression>
+				</image>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="500"  isSplitAllowed="true" >
+				<rectangle>
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="16"
+						width="550"
+						height="481"
+						key="rectangle-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						x="116"
+						y="7"
+						width="285"
+						height="23"
+						key="rectangle-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="127"
+						y="10"
+						width="259"
+						height="18"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CERTIFICADO DE PAZ Y SALVO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="67"
+						y="75"
+						width="412"
+						height="38"
+						key="staticText-8"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[EL SUSCRITO TECNICO OPERATIVO DE LA OFICINA ADMINISTRATIVA Y FINANCIERA DEL ITA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="166"
+						y="130"
+						width="187"
+						height="18"
+						key="staticText-11"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[CERTIFICA]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="20"
+						y="170"
+						width="505"
+						height="99"
+						key="textField"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Que al vehiculo de placas "+$P{PLACA}+" de propiedad del señor "+$P{PROPIETARIO}+" identificado con c.c. "+$P{DOCUMENTO}+", el "+$P{FECHA_PAGO}+" canceló la suma de "+$P{VALOR_PAGO}+" con el recibo oficial de caja N° "+$P{RECIBO}+" por concepto de Derechos de Transito correspondiente a la vigencia 2010. A la fecha se encuentra a paz y salvo por concepto de Derechos de Transito de todas las vigencias anteriores, incluidos los últimos cinco (5) años, hasta el 31 de diciembre del 2010."]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="184"
+						y="470"
+						width="172"
+						height="0"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="232"
+						y="476"
+						width="65"
+						height="13"
+						key="staticText-29"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FIRMA]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="20"
+						y="301"
+						width="503"
+						height="99"
+						key="textField-1"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Se expide la presente certificación el día "+$P{FECHA}+" "
+
+
+cordialmente,]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="138"
+						y="42"
+						width="237"
+						height="17"
+						key="staticText-31"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[OAF-JO-"+$P{CONSECUTIVO}+"-]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

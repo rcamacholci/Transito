@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="PRUEBA"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="552"
+		 pageHeight="1008"
+		 columnWidth="552"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="2" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="id_sancion" isForPrompting="true" class="java.lang.Long"/>
+	<queryString><![CDATA[SELECT C.NUMERO,C.FECHA,C.LUGAR,C.PLACA,C.LICENCIA_CONDUCCION,C.LICENCIA_TRANSITO,to_char(C.fecha,'YYYY') año,
+(SELECT CL.NOMBRE FROM PARAMETROS CL WHERE CL.CODIGO = C.CLASE AND CL.FK_GRUPO = 1) CLASE,
+(SELECT S.NOMBRE FROM PARAMETROS S WHERE S.CODIGO = C.SERVICIO AND S.FK_GRUPO = 3) SERVICIO,
+(SELECT P.DOCUMENTO FROM PERSONAS P WHERE P.ID_PERSONA = C.FK_PERSONA) DOCUMENTO,
+(SELECT P.NOMBRE_1||' '||P.APELLIDO_1 FROM PERSONAS P WHERE P.ID_PERSONA = C.FK_PERSONA) PERSONA,
+(SELECT S.NOMBRE FROM PARAMETROS S WHERE S.CODIGO = C.SERVICIO AND S.FK_GRUPO = 6) TIPO_INFRACTOR,
+(SELECT  A.PLACA FROM AGENTES A WHERE A.ID_AGENTE = C.FK_AGENTE) PLACA_AGENTE,
+(SELECT I.NUMERO FROM INFRACCIONES I WHERE I.ID_INFRACCION = C.FK_INFRACCION) COD_INFRACCION,
+(SELECT '"'||I.DESCRIPCION||'"' FROM INFRACCIONES I WHERE I.ID_INFRACCION = C.FK_INFRACCION) INFRACCION,
+(SELECT  A.NOMBRE FROM AGENTES A WHERE A.ID_AGENTE = C.FK_AGENTE) AGENTE,C.OBSERVACIONES,
+(Select ss.numero_sancion from sancionados ss where ss.id_sancion=$P{id_sancion}) Numero_sancion
+FROM COMPARENDOS C WHERE C.ID_comparendo in (Select fk_comparendo from sancionados where id_sancion=$P{id_sancion})]]></queryString>
+
+	<field name="NUMERO" class="java.lang.String"/>
+	<field name="FECHA" class="java.sql.Timestamp"/>
+	<field name="LUGAR" class="java.lang.String"/>
+	<field name="PLACA" class="java.lang.String"/>
+	<field name="LICENCIA_CONDUCCION" class="java.lang.String"/>
+	<field name="LICENCIA_TRANSITO" class="java.lang.String"/>
+	<field name="AÑO" class="java.lang.String"/>
+	<field name="CLASE" class="java.lang.String"/>
+	<field name="SERVICIO" class="java.lang.String"/>
+	<field name="DOCUMENTO" class="java.lang.String"/>
+	<field name="PERSONA" class="java.lang.String"/>
+	<field name="TIPO_INFRACTOR" class="java.lang.String"/>
+	<field name="PLACA_AGENTE" class="java.math.BigDecimal"/>
+	<field name="COD_INFRACCION" class="java.lang.String"/>
+	<field name="INFRACCION" class="java.lang.String"/>
+	<field name="AGENTE" class="java.lang.String"/>
+	<field name="OBSERVACIONES" class="java.lang.String"/>
+	<field name="NUMERO_SANCION" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="830"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="58"
+						y="359"
+						width="470"
+						height="382"
+						key="textField-1"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font fontName="Arial" size="13"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["En el municipio de Sabanagrande el 23 de Abril de 2012  siendo las 9:30 A.M. procede la titular del despacho a constituirse en audiencia pública con ocasión al comparendo de la referencia, de conformidad con lo previsto en el artículo 136 de la ley 769 de 2002, modificado por el artículo 24 de la ley 1383 de 2010. Siendo el treintaiunavo  (31) día hábil siguiente a la notificación del aviso de comparendo, por la presunta  comisión de la infracción  de tránsito consagrada en el articulo 131 literal "+$F{COD_INFRACCION}+" de la ley 769 de 2002, modificado por el artículo 21 de la ley 1382 de 2010, de acuerdo con la orden de comparendo No."+$F{NUMERO}+", la cual le fue impuesta el día 24 de Mayo de 2012, por la autoridad de tránsito, de conformidad a lo normado por el artículo 135 ley 769 de 2002 modificado por  la ley 1383 de 2010 art. 22, al conductor del vehículo  de placas "+$F{PLACA}+" Señor (a) "+$F{PERSONA}+" identificado con cedula de ciudadanía No. "+$F{DOCUMENTO}+", en el que presuntamente se cometió la infracción, quien se encuentra vinculado en el presente proceso contravencional, y a quien se le ordenó comparecer dentro de los cinco ( 5) días hábiles siguientes a la imposición del comparendo, en las instalaciones del Instituto de Tránsito del Atlántico, con el objeto de ejercer su derecho a la defensa y rendir descargos. El citado no atendió la orden, ni aporto excusa que justificara su no concurrencia, ni rindió descargos o solicitó pruebas que desvirtuaran la comisión de la infracción, y teniendo en cuenta que está demostrado su inasistencia, las pruebas que dan cuenta de la comisión de la infracción, este despacho decidirá lo que en derecho corresponda"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="79"
+						y="201"
+						width="417"
+						height="15"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[En el municipio de Sabanagrande el 23 de Abril de 2012  siendo las 9:30 A.M. procede la ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="215"
+						width="417"
+						height="15"
+						key="staticText-2"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[titular del despacho a constituirse en audiencia pública con ocasión al comparendo de la ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="229"
+						width="417"
+						height="15"
+						key="staticText-3"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[referencia, de conformidad con lo previsto en el artículo 136 de la ley 769 de 2002, ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="245"
+						width="417"
+						height="15"
+						key="staticText-4"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[modificado por el artículo 24 de la ley 1383 de 2010. Siendo el treintaiunavo  (31) día hábil ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="259"
+						width="417"
+						height="15"
+						key="staticText-5"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[siguiente a la notificación del aviso de comparendo, por la presunta  comisión de la ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="273"
+						width="286"
+						height="15"
+						key="staticText-6"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[infracción  de tránsito consagrada en el articulo 131 literal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="387"
+						y="273"
+						width="115"
+						height="15"
+						key="staticText-7"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ de la ley 769 de 2002, ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="365"
+						y="274"
+						width="22"
+						height="14"
+						key="textField-2"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COD_INFRACCION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="79"
+						y="469"
+						width="417"
+						height="15"
+						key="staticText-8"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[la comisión de la infracción, este despacho decidirá lo que en derecho corresponda.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="455"
+						width="417"
+						height="15"
+						key="staticText-9"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[teniendo en cuenta que está demostrado su inasistencia, las pruebas que dan cuenta de la comisión ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="441"
+						width="417"
+						height="15"
+						key="staticText-10"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[rindió descargos o solicitó pruebas que desvirtuaran la comisión de la infracción, y teniendo en cuenta ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="427"
+						width="425"
+						height="15"
+						key="staticText-11"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[. El citado no atendió la orden, ni aporto excusa que justificara su no concurrencia, ni  descargos o solicitó pruebas ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="413"
+						width="417"
+						height="15"
+						key="staticText-12"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[del Atlántico, con el objeto de ejercer su derecho a la defensa y rendir descargos. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="399"
+						width="417"
+						height="15"
+						key="staticText-13"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[siguientes a la imposición del comparendo, en las instalaciones del Instituto de Tránsito del Atlántico,  Tránsitoel Atlántico, ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="385"
+						width="417"
+						height="15"
+						key="staticText-14"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[contravencional, y a quien se le ordenó comparecer dentro de los cinco ( 5) días hábiles siguientes a la ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="371"
+						width="416"
+						height="15"
+						key="staticText-15"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[se cometió la infracción, quien se encuentra vinculado en el presente  proceso ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="357"
+						width="196"
+						height="15"
+						key="staticText-16"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[identificado con cedula de ciudadanía No.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="78"
+						y="344"
+						width="101"
+						height="15"
+						key="staticText-17"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[vehículo  de placas  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="329"
+						width="417"
+						height="15"
+						key="staticText-18"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ley 769 de 2002 modificado por  la ley 1383 de 2010 art. 22, al conductor del ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="315"
+						width="417"
+						height="15"
+						key="staticText-19"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[2012, por la autoridad de tránsito, de conformidad a lo normado por el artículo 135 ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="78"
+						y="302"
+						width="83"
+						height="15"
+						key="staticText-20"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[comparendo No. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="287"
+						width="417"
+						height="15"
+						key="staticText-21"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[modificado por el artículo 21 de la ley 1382 de 2010, de acuerdo con la orden de ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="162"
+						y="302"
+						width="119"
+						height="13"
+						key="textField-3"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="281"
+						y="301"
+						width="214"
+						height="15"
+						key="staticText-22"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[, la cual le fue impuesta el día 24 de Mayo de 2012, por la ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="179"
+						y="344"
+						width="47"
+						height="13"
+						key="textField-4"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PLACA}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="227"
+						y="343"
+						width="54"
+						height="15"
+						key="staticText-23"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Señor (a) ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="281"
+						y="344"
+						width="214"
+						height="13"
+						key="textField-5"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PERSONA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="275"
+						y="357"
+						width="69"
+						height="14"
+						key="textField-6"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DOCUMENTO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="343"
+						y="357"
+						width="154"
+						height="15"
+						key="staticText-24"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[, en el que presuntamente ]]></text>
+				</staticText>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="10"
+						y="829"
+						width="552"
+						height="7"
+						key="subreport-1"/>
+					<subreportParameter  name="id_sancion">
+						<subreportParameterExpression><![CDATA[$P{id_sancion}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "resolucion/ResolucionSancion_sub2.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="10"
+						y="829"
+						width="552"
+						height="7"
+						key="subreport-2"/>
+					<subreportParameter  name="id_sancion">
+						<subreportParameterExpression><![CDATA[$P{id_sancion}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "resolucion/ResolucionSancion_sub2.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="822"
+						width="552"
+						height="7"
+						key="subreport-3"/>
+					<subreportParameter  name="id_sancion">
+						<subreportParameterExpression><![CDATA[$P{id_sancion}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "resolucion/ResolucionSancion_sub2.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="20"
+						y="829"
+						width="552"
+						height="7"
+						key="subreport-4"/>
+					<subreportParameter  name="id_sancion">
+						<subreportParameterExpression><![CDATA[$P{id_sancion}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "resolucion/ResolucionSancion_sub2.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement
+						x="78"
+						y="619"
+						width="426"
+						height="29"
+						key="staticText-25"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Que el día 1 de enero de 2012 a las 09.30, el conductor del vehículo mencionado incurrió en la presunta comisión de la infracción de tránsito contemplada en el artículo ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="648"
+						width="52"
+						height="15"
+						key="staticText-26"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[131 literal]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="131"
+						y="647"
+						width="22"
+						height="15"
+						key="textField-7"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COD_INFRACCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="153"
+						y="648"
+						width="351"
+						height="15"
+						key="textField-8"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INFRACCION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="79"
+						y="660"
+						width="426"
+						height="15"
+						key="staticText-27"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ De la ley 769 de 2002, modificado por la ley 1383 de 2010, tal como consta en el]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="674"
+						width="89"
+						height="15"
+						key="staticText-28"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[comparendo No. ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="162"
+						y="675"
+						width="119"
+						height="13"
+						key="textField-9"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="281"
+						y="674"
+						width="223"
+						height="15"
+						key="staticText-29"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ impuesta por el patrullero el señor ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="79"
+						y="689"
+						width="127"
+						height="15"
+						key="textField-10"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{AGENTE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="206"
+						y="689"
+						width="58"
+						height="15"
+						key="staticText-30"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[No. de placa ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="264"
+						y="689"
+						width="32"
+						height="15"
+						key="textField-11"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PLACA_AGENTE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="295"
+						y="689"
+						width="22"
+						height="15"
+						key="staticText-31"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[en]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="318"
+						y="689"
+						width="186"
+						height="15"
+						key="textField-12"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{LUGAR}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="78"
+						y="619"
+						width="426"
+						height="29"
+						key="staticText-32"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Que el día 1 de enero de 2012 a las 09.30, el conductor del vehículo mencionado incurrió en la presunta comisión de la infracción de tránsito contemplada en el artículo ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="648"
+						width="52"
+						height="15"
+						key="staticText-33"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[131 literal]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="131"
+						y="647"
+						width="22"
+						height="15"
+						key="textField-13"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COD_INFRACCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="153"
+						y="648"
+						width="351"
+						height="15"
+						key="textField-14"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INFRACCION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="79"
+						y="660"
+						width="426"
+						height="15"
+						key="staticText-34"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ De la ley 769 de 2002, modificado por la ley 1383 de 2010, tal como consta en el]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="79"
+						y="674"
+						width="89"
+						height="15"
+						key="staticText-35"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[comparendo No. ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="162"
+						y="675"
+						width="119"
+						height="13"
+						key="textField-15"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="281"
+						y="674"
+						width="223"
+						height="15"
+						key="staticText-36"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ impuesta por el patrullero el señor ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="79"
+						y="689"
+						width="127"
+						height="15"
+						key="textField-16"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{AGENTE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="206"
+						y="689"
+						width="58"
+						height="15"
+						key="staticText-37"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[No. de placa ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="264"
+						y="689"
+						width="32"
+						height="15"
+						key="textField-17"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PLACA_AGENTE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="295"
+						y="689"
+						width="22"
+						height="15"
+						key="staticText-38"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[en]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="318"
+						y="689"
+						width="186"
+						height="15"
+						key="textField-18"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{LUGAR}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="68"
+						y="609"
+						width="426"
+						height="29"
+						key="staticText-39"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Que el día 1 de enero de 2012 a las 09.30, el conductor del vehículo mencionado incurrió en la presunta comisión de la infracción de tránsito contemplada en el artículo ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="69"
+						y="638"
+						width="52"
+						height="15"
+						key="staticText-40"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[131 literal]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="121"
+						y="637"
+						width="22"
+						height="15"
+						key="textField-19"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COD_INFRACCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="143"
+						y="638"
+						width="351"
+						height="15"
+						key="textField-20"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INFRACCION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="69"
+						y="650"
+						width="426"
+						height="15"
+						key="staticText-41"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ De la ley 769 de 2002, modificado por la ley 1383 de 2010, tal como consta en el]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="69"
+						y="664"
+						width="89"
+						height="15"
+						key="staticText-42"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[comparendo No. ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="152"
+						y="665"
+						width="119"
+						height="13"
+						key="textField-21"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="271"
+						y="664"
+						width="223"
+						height="15"
+						key="staticText-43"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ impuesta por el patrullero el señor ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="69"
+						y="679"
+						width="127"
+						height="15"
+						key="textField-22"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{AGENTE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="196"
+						y="679"
+						width="58"
+						height="15"
+						key="staticText-44"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[No. de placa ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="254"
+						y="679"
+						width="32"
+						height="15"
+						key="textField-23"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PLACA_AGENTE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="285"
+						y="679"
+						width="22"
+						height="15"
+						key="staticText-45"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[en]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="308"
+						y="679"
+						width="186"
+						height="15"
+						key="textField-24"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{LUGAR}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="68"
+						y="741"
+						width="426"
+						height="29"
+						key="staticText-46"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Que el día 1 de enero de 2012 a las 09.30, el conductor del vehículo mencionado incurrió en la presunta comisión de la infracción de tránsito contemplada en el artículo ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="69"
+						y="770"
+						width="52"
+						height="15"
+						key="staticText-47"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[131 literal]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="121"
+						y="769"
+						width="22"
+						height="15"
+						key="textField-25"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COD_INFRACCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="143"
+						y="770"
+						width="351"
+						height="15"
+						key="textField-26"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INFRACCION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="69"
+						y="782"
+						width="426"
+						height="15"
+						key="staticText-48"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ De la ley 769 de 2002, modificado por la ley 1383 de 2010, tal como consta en el]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="69"
+						y="796"
+						width="89"
+						height="15"
+						key="staticText-49"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[comparendo No. ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="152"
+						y="797"
+						width="119"
+						height="13"
+						key="textField-27"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="271"
+						y="796"
+						width="223"
+						height="15"
+						key="staticText-50"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[ impuesta por el patrullero el señor ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="69"
+						y="811"
+						width="127"
+						height="15"
+						key="textField-28"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{AGENTE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="196"
+						y="811"
+						width="58"
+						height="15"
+						key="staticText-51"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[No. de placa ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="254"
+						y="811"
+						width="32"
+						height="15"
+						key="textField-29"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PLACA_AGENTE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="285"
+						y="811"
+						width="22"
+						height="15"
+						key="staticText-52"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[en]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="308"
+						y="811"
+						width="186"
+						height="15"
+						key="textField-30"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{LUGAR}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

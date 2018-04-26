@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/TMP/WS-20090319/BancosService.wsdl" uri="src/conf/xml-resources/web-services/BancosService/wsdl/BancosService.wsdl"/>
+    <system systemId="file:/C:/TMP/WS-20090319/XSD/Bancos.xsd" uri="src/conf/xml-resources/web-services/BancosService/wsdl/XSD/Bancos.xsd"/>
+    <system systemId="file:/C:/TMP/WS-20090319/XSD/Identificadores.xsd" uri="src/conf/xml-resources/web-services/BancosService/wsdl/XSD/Identificadores.xsd"/>
+    <system systemId="http://200.74.150.26:8080/simit/services/WSValidaUsuario?wsdl" uri="src/conf/xml-resources/web-service-references/WSValidaUsuario/wsdl/200.74.150.26_8080/simit/services/WSValidaUsuario.wsdl"/>
+    <system systemId="http://www.simit.org.co/Simit/services/WSPazSalvo?WSDL" uri="src/conf/xml-resources/web-service-references/WSPazSalvo/wsdl/www.simit.org.co/Simit/services/WSPazSalvo.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/RadicacionServiceSoapHttpPort?WSDL" uri="src/conf/xml-resources/web-service-references/RadicacionServiceSoapHttpPort/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/RadicacionServiceSoapHttpPort.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/RegistrarInformacionServiceSOAP?WSDL" uri="src/conf/xml-resources/web-service-references/RegistrarInformacionServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/RegistrarInformacionServiceSOAP.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/RegistroInformacion.xsd" uri="src/conf/xml-resources/web-service-references/RegistrarInformacionServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/RegistroInformacion.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/BancosServiceSoapHttpPort?WSDL" uri="src/conf/xml-resources/web-service-references/BancosServiceSoapHttpPort/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/BancosServiceSoapHttpPort.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/Bancos.xsd" uri="src/conf/xml-resources/web-service-references/BancosServiceSoapHttpPort/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/Bancos.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/DatosParametricosServiceSOAP?WSDL" uri="src/conf/xml-resources/web-service-references/DatosParametricosServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/DatosParametricosServiceSOAP.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/DatosParametricos.xsd" uri="src/conf/xml-resources/web-service-references/DatosParametricosServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/DatosParametricos.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/ServicioConsultaRUNTSoapHttpPort?WSDL" uri="src/conf/xml-resources/web-service-references/ServicioConsultaRUNTSoapHttpPort/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/ServicioConsultaRUNTSoapHttpPort.wsdl"/>
+    <system systemId="http://localhost:4035/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort?WSDL" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_4035/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort.wsdl"/>
+    <system systemId="http://localhost:4035/ServiciosMediacionWeb/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_4035/ServiciosMediacionWeb/Solicitudes.xsd"/>
+    <system systemId="http://localhost:4035/ServiciosMediacionWeb/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_4035/ServiciosMediacionWeb/Identificadores.xsd"/>
+    <system systemId="http://localhost:4035/ServiciosMediacionWeb/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_4035/ServiciosMediacionWeb/Consultas.xsd"/>
+    <system systemId="http://localhost:4035/ServiciosMediacionWeb/Personas.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_4035/ServiciosMediacionWeb/Personas.xsd"/>
+    <system systemId="http://localhost:4035/ServiciosMediacionWeb/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_4035/ServiciosMediacionWeb/Tramite.xsd"/>
+    <system systemId="http://localhost:4035/ServiciosMediacionWeb/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_4035/ServiciosMediacionWeb/TramitesRNA.xsd"/>
+    <system systemId="http://localhost:4035/ServiciosMediacionWeb/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_4035/ServiciosMediacionWeb/TramitesRNC.xsd"/>
+    <system systemId="http://localhost:6000/ServiciosMediacionWeb/ServicioConsultaRUNTSoapHttpPort?WSDL" uri="src/conf/xml-resources/web-service-references/ServicioConsultaRUNTSoapHttpPort_1/wsdl/localhost_6000/ServiciosMediacionWeb/ServicioConsultaRUNTSoapHttpPort.wsdl"/>
+    <system systemId="http://localhost:6000/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort?WSDL" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_6000/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort.wsdl"/>
+    <system systemId="http://localhost:6000/ServiciosMediacionWeb/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_6000/ServiciosMediacionWeb/Solicitudes.xsd"/>
+    <system systemId="http://localhost:6000/ServiciosMediacionWeb/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_6000/ServiciosMediacionWeb/Identificadores.xsd"/>
+    <system systemId="http://localhost:6000/ServiciosMediacionWeb/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_6000/ServiciosMediacionWeb/Consultas.xsd"/>
+    <system systemId="http://localhost:6000/ServiciosMediacionWeb/Personas.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_6000/ServiciosMediacionWeb/Personas.xsd"/>
+    <system systemId="http://localhost:6000/ServiciosMediacionWeb/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_6000/ServiciosMediacionWeb/Tramite.xsd"/>
+    <system systemId="http://localhost:6000/ServiciosMediacionWeb/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_6000/ServiciosMediacionWeb/TramitesRNA.xsd"/>
+    <system systemId="http://localhost:6000/ServiciosMediacionWeb/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_6000/ServiciosMediacionWeb/TramitesRNC.xsd"/>
+    <system systemId="http://localhost:9080/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort?WSDL" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_9080/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort.wsdl"/>
+    <system systemId="http://localhost:9080/ServiciosMediacionWeb/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_9080/ServiciosMediacionWeb/Solicitudes.xsd"/>
+    <system systemId="http://localhost:9080/ServiciosMediacionWeb/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_9080/ServiciosMediacionWeb/Identificadores.xsd"/>
+    <system systemId="http://localhost:9080/ServiciosMediacionWeb/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_9080/ServiciosMediacionWeb/Consultas.xsd"/>
+    <system systemId="http://localhost:9080/ServiciosMediacionWeb/Personas.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_9080/ServiciosMediacionWeb/Personas.xsd"/>
+    <system systemId="http://localhost:9080/ServiciosMediacionWeb/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_9080/ServiciosMediacionWeb/Tramite.xsd"/>
+    <system systemId="http://localhost:9080/ServiciosMediacionWeb/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_9080/ServiciosMediacionWeb/TramitesRNA.xsd"/>
+    <system systemId="http://localhost:9080/ServiciosMediacionWeb/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort_1/wsdl/localhost_9080/ServiciosMediacionWeb/TramitesRNC.xsd"/>
+    <system systemId="http://127.0.0.1:9080/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort?WSDL" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/127.0.0.1_9080/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort.wsdl"/>
+    <system systemId="http://127.0.0.1:9080/ServiciosMediacionWeb/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/127.0.0.1_9080/ServiciosMediacionWeb/Solicitudes.xsd"/>
+    <system systemId="http://127.0.0.1:9080/ServiciosMediacionWeb/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/127.0.0.1_9080/ServiciosMediacionWeb/Identificadores.xsd"/>
+    <system systemId="http://127.0.0.1:9080/ServiciosMediacionWeb/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/127.0.0.1_9080/ServiciosMediacionWeb/Consultas.xsd"/>
+    <system systemId="http://127.0.0.1:9080/ServiciosMediacionWeb/Personas.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/127.0.0.1_9080/ServiciosMediacionWeb/Personas.xsd"/>
+    <system systemId="http://127.0.0.1:9080/ServiciosMediacionWeb/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/127.0.0.1_9080/ServiciosMediacionWeb/Tramite.xsd"/>
+    <system systemId="http://127.0.0.1:9080/ServiciosMediacionWeb/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/127.0.0.1_9080/ServiciosMediacionWeb/TramitesRNA.xsd"/>
+    <system systemId="http://127.0.0.1:9080/ServiciosMediacionWeb/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/127.0.0.1_9080/ServiciosMediacionWeb/TramitesRNC.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort?WSDL" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/LiquidacionServiceSoapHttpPort.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/Solicitudes.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/Tramite.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/TramitesRNA.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/LiquidacionServiceSoapHttpPort/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/TramitesRNC.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/SincronizacionServiceSOAP?WSDL" uri="src/conf/xml-resources/web-service-references/SincronizacionServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/SincronizacionServiceSOAP.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/sincronizacion.xsd" uri="src/conf/xml-resources/web-service-references/SincronizacionServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/sincronizacion.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/CommonServiceSOAP?wsdl" uri="src/conf/xml-resources/web-service-references/CommonServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/CommonServiceSOAP.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/CommonServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/Identificadores.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/CommonServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/Consultas.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/Personas.xsd" uri="src/conf/xml-resources/web-service-references/CommonServiceSOAP/wsdl/190.66.24.245_7779/ServiciosMediacionWeb/Personas.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003?WSDL" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003.wsdl"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://pilotoseg.runt.com.co:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/pilotoseg.runt.com.co_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003?WSDL" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003.wsdl"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://localhost:9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/localhost_9080/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/ServiciosMediacionWeb/ServicioConsultaRUNTSoapHttpPort" uri="src/conf/xml-resources/web-service-references/ServicioConsultaRUNTSoapHttpPort/wsdl/190.66.24.245_7779/serviciosmediacionweb/servicioconsultaruntsoaphttpport"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003002?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/190.66.24.245_7779/gateway/services/SID0003002.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003002/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/190.66.24.245_7779/gateway/services/SID0003002/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003002/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/190.66.24.245_7779/gateway/services/SID0003002/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003002/P949822309/SID0003002/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/190.66.24.245_7779/gateway/services/SID0003002/P949822309/SID0003002/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003002/P949822309/SID0003002/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/190.66.24.245_7779/gateway/services/SID0003002/P949822309/SID0003002/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003002/P949822309/SID0003002/P2060901302/SID0003002/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/190.66.24.245_7779/gateway/services/SID0003002/P949822309/SID0003002/P2060901302/SID0003002/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/N1171945922/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/N1171945922/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/P949822309/SID0003006/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/P949822309/SID0003006/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/P949822309/SID0003006/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/P949822309/SID0003006/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/N1171945922/SID0003006/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/N1171945922/SID0003006/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/N1171945922/SID0003006/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/N1171945922/SID0003006/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/N1171945922/SID0003006/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/N1171945922/SID0003006/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/P949822309/SID0003006/P2060901302/SID0003006/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/P949822309/SID0003006/P2060901302/SID0003006/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/N1171945922/SID0003006/P949822309/SID0003006/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/N1171945922/SID0003006/P949822309/SID0003006/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/N1171945922/SID0003006/P949822309/SID0003006/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/N1171945922/SID0003006/P949822309/SID0003006/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/N1171945922/SID0003006/P2060901302/SID0003006/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/N1171945922/SID0003006/P2060901302/SID0003006/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003006/N1171945922/SID0003006/P949822309/SID0003006/P2060901302/SID0003006/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/190.66.24.245_7779/gateway/services/SID0003006/N1171945922/SID0003006/P949822309/SID0003006/P2060901302/SID0003006/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P949822309/SID0003004/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P949822309/SID0003004/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P949822309/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P949822309/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P949822309/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P949822309/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P949822309/SID0003004/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P949822309/SID0003004/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P949822309/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P949822309/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/SID0003004/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/SID0003004/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/SID0003004/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/SID0003004/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/SID0003004/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/SID0003004/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/SID0003004/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/SID0003004/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P949822309/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P949822309/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2137604777/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/190.66.24.245_7779/gateway/services/SID0003004/P104870809/SID0003004/P2139451819/SID0003004/P2060901302/SID0003004/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009?WSDL" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/N1722642959/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/N1722642959/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/P949822309/SID0003009/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/P949822309/SID0003009/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/P949822309/SID0003009/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/P949822309/SID0003009/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/N1722642959/SID0003009/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/N1722642959/SID0003009/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/N1722642959/SID0003009/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/N1722642959/SID0003009/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/N1722642959/SID0003009/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/N1722642959/SID0003009/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/P949822309/SID0003009/P2060901302/SID0003009/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/P949822309/SID0003009/P2060901302/SID0003009/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/N1722642959/SID0003009/P949822309/SID0003009/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/N1722642959/SID0003009/P949822309/SID0003009/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/N1722642959/SID0003009/P949822309/SID0003009/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/N1722642959/SID0003009/P949822309/SID0003009/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/N1722642959/SID0003009/P2060901302/SID0003009/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/N1722642959/SID0003009/P2060901302/SID0003009/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003009/N1722642959/SID0003009/P949822309/SID0003009/P2060901302/SID0003009/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/190.66.24.245_7779/gateway/services/SID0003009/N1722642959/SID0003009/P949822309/SID0003009/P2060901302/SID0003009/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://www.simit.org.co/Simit/services/WSPazSalvo" uri="src/conf/xml-resources/web-service-references/WSPazSalvo/wsdl/www.simit.org.co/simit/services/wspazsalvo"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003005?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/190.66.24.245_7779/gateway/services/SID0003005.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003005/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/190.66.24.245_7779/gateway/services/SID0003005/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003005/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/190.66.24.245_7779/gateway/services/SID0003005/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003005/P949822309/SID0003005/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/190.66.24.245_7779/gateway/services/SID0003005/P949822309/SID0003005/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003005/P949822309/SID0003005/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/190.66.24.245_7779/gateway/services/SID0003005/P949822309/SID0003005/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003005/P949822309/SID0003005/P2060901302/SID0003005/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/190.66.24.245_7779/gateway/services/SID0003005/P949822309/SID0003005/P2060901302/SID0003005/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003001?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003001/wsdl/190.66.24.245_7779/gateway/services/SID0003001.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003001/N306843385/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003001/wsdl/190.66.24.245_7779/gateway/services/SID0003001/N306843385/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003001/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003001/wsdl/190.66.24.245_7779/gateway/services/SID0003001/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003001/N306843385/SID0003001/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003001/wsdl/190.66.24.245_7779/gateway/services/SID0003001/N306843385/SID0003001/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003.wsdl"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N930851465/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N930851465/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P949822309/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2137604777/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://190.66.24.245:7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/190.66.24.245_7779/gateway/services/SID0003003/P104870809/SID0003003/P2139451819/SID0003003/P2060901302/SID0003003/N76106014/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003001?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003001/wsdl/10.10.1.9/gateway/services/SID0003001.wsdl"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003001/P694382814/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003001/wsdl/10.10.1.9/gateway/services/SID0003001/P694382814/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003001/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003001/wsdl/10.10.1.9/gateway/services/SID0003001/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003001/P694382814/SID0003001/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003001/wsdl/10.10.1.9/gateway/services/SID0003001/P694382814/SID0003001/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003002?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/10.10.1.9/gateway/services/SID0003002.wsdl"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003002/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/10.10.1.9/gateway/services/SID0003002/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003002/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/10.10.1.9/gateway/services/SID0003002/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003002/N68354002/SID0003002/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/10.10.1.9/gateway/services/SID0003002/N68354002/SID0003002/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003002/N68354002/SID0003002/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/10.10.1.9/gateway/services/SID0003002/N68354002/SID0003002/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003002/N68354002/SID0003002/N2128363059/SID0003002/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/10.10.1.9/gateway/services/SID0003002/N68354002/SID0003002/N2128363059/SID0003002/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004.wsdl"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/N68354002/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/N68354002/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/N68354002/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/N68354002/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/N68354002/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/N68354002/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.10.1.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003005?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/10.10.1.9/gateway/services/SID0003005.wsdl"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003005/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/10.10.1.9/gateway/services/SID0003005/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003005/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/10.10.1.9/gateway/services/SID0003005/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003005/N68354002/SID0003005/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/10.10.1.9/gateway/services/SID0003005/N68354002/SID0003005/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003005/N68354002/SID0003005/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/10.10.1.9/gateway/services/SID0003005/N68354002/SID0003005/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003005/N68354002/SID0003005/N2128363059/SID0003005/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/10.10.1.9/gateway/services/SID0003005/N68354002/SID0003005/N2128363059/SID0003005/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006.wsdl"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/P1901936405/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/P1901936405/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/N68354002/SID0003006/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/N68354002/SID0003006/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/N68354002/SID0003006/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/N68354002/SID0003006/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/N68354002/SID0003006/N2128363059/SID0003006/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/N68354002/SID0003006/N2128363059/SID0003006/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N68354002/SID0003006/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N68354002/SID0003006/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N68354002/SID0003006/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N68354002/SID0003006/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N2128363059/SID0003006/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N2128363059/SID0003006/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N68354002/SID0003006/N2128363059/SID0003006/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003006/wsdl/10.10.1.9/gateway/services/SID0003006/P1901936405/SID0003006/N68354002/SID0003006/N2128363059/SID0003006/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009.wsdl"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/P923779962/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/P923779962/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/N68354002/SID0003009/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/N68354002/SID0003009/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/N68354002/SID0003009/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/N68354002/SID0003009/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/N68354002/SID0003009/N2128363059/SID0003009/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/N68354002/SID0003009/N2128363059/SID0003009/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N68354002/SID0003009/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N68354002/SID0003009/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N68354002/SID0003009/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N68354002/SID0003009/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N2128363059/SID0003009/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N2128363059/SID0003009/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N68354002/SID0003009/N2128363059/SID0003009/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/10.10.1.9/gateway/services/SID0003009/P923779962/SID0003009/N68354002/SID0003009/N2128363059/SID0003009/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003010?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003010/wsdl/10.10.1.9/gateway/services/SID0003010.wsdl"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003010/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003010/wsdl/10.10.1.9/gateway/services/SID0003010/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003010/N2103348129/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003010/wsdl/10.10.1.9/gateway/services/SID0003010/N2103348129/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003010/N2103348129/SID0003010/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003010/wsdl/10.10.1.9/gateway/services/SID0003010/N2103348129/SID0003010/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/SID0003009.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/SID0003009.wsdl"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/RegistroInformacion.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/RegistroInformacion.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/SID0003003.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003.wsdl"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003.wsdl"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003.wsdl"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N68354002/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/P42389632/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1372253902/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1370406860/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1078496035/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N68354002/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N68354002/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/P42389632/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/P42389632/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/P42389632/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/N2128363059/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N68354002/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N68354002/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1372253902/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1370406860/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Civitrans/transitoBueno/src/conf/xml-resources/web-service-references/SID0003003/wsdl/10.10.1.9/gateway/services/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003/P889979426/SID0003003/N1078496035/SID0003003/N2128363059/SID0003003/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/SID0003002.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/SID0003002.wsdl"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004?wsdl" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004.wsdl"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/N68354002/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/N68354002/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/N68354002/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/N68354002/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/N68354002/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/N68354002/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/P42389632/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/P42389632/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/N2128363059/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/N2128363059/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N68354002/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1372253902/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1370406860/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="http://10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/10.11.200.9/gateway/services/SID0003004/P889979426/SID0003004/N1078496035/SID0003004/N2128363059/SID0003004/P724965611/OwsmImport.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/SID0003004.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/SID0003004.wsdl"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Consultas.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Solicitudes.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Identificadores.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/Personas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Personas.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Tramite.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNA.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNC.xsd"/>
+    <system systemId="file:/C:/Users/Servidor/Desktop/common/TramitesRNRYS.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNRYS.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/SID0003002.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/SID0003002.wsdl"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/SID0003003.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003.wsdl"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/SID0003004.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/SID0003004.wsdl"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/act2/SID0003004.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/SID0003004.wsdl"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/act2/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Consultas.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/act2/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Solicitudes.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/act2/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Identificadores.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/act2/Personas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Personas.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/act2/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Tramite.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/act2/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNA.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/act2/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNC.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/act2/TramitesRNRYS.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNRYS.xsd"/>
+    <system systemId="http://192.168.69.131:8080/Civitrans/PagosEnLinea?wsdl" uri="src/conf/xml-resources/web-service-references/PagosEnLinea/wsdl/192.168.69.131_8080/Civitrans/PagosEnLinea.wsdl"/>
+    <system systemId="http://192.168.69.131:8080/Civitrans/PagosEnLinea?xsd=1" uri="src/conf/xml-resources/web-service-references/PagosEnLinea/wsdl/192.168.69.131_8080/Civitrans/PagosEnLinea.xsd_1.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/SID0003002.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/SID0003002.wsdl"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/SID0003003.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003.wsdl"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/SID0003004.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/SID0003004.wsdl"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Consultas.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Solicitudes.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Identificadores.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Personas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Personas.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNC.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Tramite.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNA.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/TramitesRNRYS.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNRYS.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/TramitesRNMA.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNMA.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/SID0003009.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/SID0003009.wsdl"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/SID0003009.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/SID0003009.wsdl"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/Consultas.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/RegistroInformacion.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/RegistroInformacion.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/Identificadores.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/Personas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/Personas.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/Solicitudes.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/Tramite.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/TramitesRNA.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/TramitesRNC.xsd"/>
+    <system systemId="file:/C:/Documents%20and%20Settings/Administrador/Escritorio/common/TramitesRNRYS.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/TramitesRNRYS.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/SID0003004.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/SID0003004.wsdl"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Consultas.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Solicitudes.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Identificadores.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/Personas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Personas.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNC.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Tramite.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNA.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/TramitesRNRYS.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNRYS.xsd"/>
+    <system systemId="file:/C:/Civitrans/ServiciosWeb/Nueva%20carpeta/TramitesRNMA.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNMA.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/SID0003002.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003002/wsdl/SID0003002.wsdl"/>
+    <system systemId="http://www2.simit.org.co:8080/WSSimitCurso/WS_Simit_Curso?wsdl" uri="src/conf/xml-resources/web-service-references/WS_Simit_Curso/wsdl/www2.simit.org.co_8080/WSSimitCurso/WS_Simit_Curso.wsdl"/>
+    <system systemId="http://www2.simit.org.co:8080/WSSimitCurso/WS_Simit_Curso?xsd=1" uri="src/conf/xml-resources/web-service-references/WS_Simit_Curso/wsdl/www2.simit.org.co_8080/WSSimitCurso/WS_Simit_Curso.xsd_1.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/SID0003003.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003003/wsdl/SID0003003.wsdl"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/SID0003005.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003005/wsdl/SID0003005.wsdl"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/SID0003009.WSDL" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/SID0003009.WSDL.wsdl"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/RegistroInformacion.xsd" uri="src/conf/xml-resources/web-service-references/SID0003009/wsdl/RegistroInformacion.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/SID0003004.wsdl" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/SID0003004.wsdl"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/Consultas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Consultas.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/Solicitudes.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Solicitudes.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/Identificadores.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Identificadores.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/Personas.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Personas.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/Tramite.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/Tramite.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/TramitesRNA.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNA.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/TramitesRNC.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNC.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/TramitesRNRYS.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNRYS.xsd"/>
+    <system systemId="file:/C:/Civitrans/transito/webServicesRNMA/TramitesRNMA.xsd" uri="src/conf/xml-resources/web-service-references/SID0003004/wsdl/TramitesRNMA.xsd"/>
+</catalog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,399 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns0="http://consultasgeneralesrunt.runt.heinsohn.com/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://consultasgeneralesrunt.runt.heinsohn.com/" name="ServicioConsultaRUNT" targetNamespace="http://consultasgeneralesrunt.runt.heinsohn.com/">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="SID0003005/P724965611/OwsmImport.xsd"/>
+        </schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://consultas.general.runt.heinsohn.com" schemaLocation="SID0003005/N68354002/OwsmImport.xsd"/>
+        </schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:identificador="http://identificaciones.general.runt.heinsohn.com" xmlns:consulta="http://consultas.general.runt.heinsohn.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:persona="http://personas.general.runt.heinsohn.com" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://consultasgeneralesrunt.runt.heinsohn.com/types/" targetNamespace="http://consultasgeneralesrunt.runt.heinsohn.com/types/" elementFormDefault="qualified">
+            <import namespace="http://consultas.general.runt.heinsohn.com" schemaLocation="SID0003005/N68354002/OwsmImport.xsd"/>
+            <import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="SID0003005/P724965611/OwsmImport.xsd"/>
+            <element name="consultarDatosAseguradoraElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0" nillable="false"/>
+                        <element name="identificadorAseguradora" type="identificador:IdentificadorAseguradoraDTO" nillable="false"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosAseguradoraResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="consulta:AseguradoraOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosAutomotorElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="identificacionAutomotor" type="identificador:IdentificacionAutomotorDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosAutomotorResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="consulta:AutomotorOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosConductorElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="consultarDatosConductorInDTO" type="consulta:ConsultarDatosConductorInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosConductorResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="consulta:ConductorOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosPersonaJuridicaElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="identificacionPersonaDTO" type="identificador:IdentificacionPersonaDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosPersonaJuridicaResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="consulta:PersonaJuridicaOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosPersonaNaturalElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="identificacionPersona" type="identificador:IdentificacionPersonaDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosPersonaNaturalResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="consulta:PersonaNaturalOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosPolizaElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="consultarDatosPoliza" type="consulta:ConsultarDatosPolizaInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosPolizaResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="consulta:PolizaSeguroOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarLicenciaTransitoElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="identificacionAutomotor" type="identificador:IdentificacionAutomotorDTO" nillable="true"/>
+                        <element name="numeroLicenciaTransito" type="xsd:string" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarLicenciaTransitoResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="consulta:LicenciaTransitoOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="verificarEstadoWS">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="verificarEstadoWSResponse">
+                <complexType>
+                    <sequence>
+                        <element name="status" type="identificador:StatusDTO" minOccurs="0" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarAutomotoresPorSerieMotorChasisVIN">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0" nillable="true"/>
+                        <element name="identificacionAutomotor" type="identificador:IdentificacionAutomotorDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <xsd:element name="consultarAutomotoresPorSerieMotorChasisVINResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="result" type="consulta:DetalleAutomotorOutDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <element name="consultarDatosRTM">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0" nillable="true"/>
+                        <element name="numeroPlaca" type="string" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <xsd:element name="consultarDatosRTMResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="result" type="consulta:ConsultarDatosRTMOutDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <element name="consultarDatosCertificadoRegistroRemolques">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="informacionConsultaCertificadoInDTO" type="consulta:InformacionConsultaCertificadoInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosCertificadoRegistroRemolquesResponse">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="consulta:InformacionCertificadoRegistroOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+    <message name="ServicioConsultaRUNT_consultarDatosAseguradora">
+        <part name="parameters" element="tns0:consultarDatosAseguradoraElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosAseguradoraResponse">
+        <part name="parameters" element="tns0:consultarDatosAseguradoraResponseElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosAutomotor">
+        <part name="parameters" element="tns0:consultarDatosAutomotorElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosAutomotorResponse">
+        <part name="parameters" element="tns0:consultarDatosAutomotorResponseElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosConductor">
+        <part name="parameters" element="tns0:consultarDatosConductorElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosConductorResponse">
+        <part name="parameters" element="tns0:consultarDatosConductorResponseElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosPersonaJuridica">
+        <part name="parameters" element="tns0:consultarDatosPersonaJuridicaElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosPersonaJuridicaResponse">
+        <part name="parameters" element="tns0:consultarDatosPersonaJuridicaResponseElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosPersonaNatural">
+        <part name="parameters" element="tns0:consultarDatosPersonaNaturalElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosPersonaNaturalResponse">
+        <part name="parameters" element="tns0:consultarDatosPersonaNaturalResponseElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosPoliza">
+        <part name="parameters" element="tns0:consultarDatosPolizaElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarDatosPolizaResponse">
+        <part name="parameters" element="tns0:consultarDatosPolizaResponseElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarLicenciaTransito">
+        <part name="parameters" element="tns0:consultarLicenciaTransitoElement"/>
+    </message>
+    <message name="ServicioConsultaRUNT_consultarLicenciaTransitoResponse">
+        <part name="parameters" element="tns0:consultarLicenciaTransitoResponseElement"/>
+    </message>
+    <message name="verificarEstadoWSRequest">
+        <part name="parameters" element="tns0:verificarEstadoWS"/>
+    </message>
+    <message name="verificarEstadoWSResponse">
+        <part name="parameters" element="tns0:verificarEstadoWSResponse"/>
+    </message>
+    <message name="consultarAutomotoresPorSerieMotorChasisVINRequest">
+        <part name="parameters" element="tns0:consultarAutomotoresPorSerieMotorChasisVIN"/>
+    </message>
+    <message name="consultarAutomotoresPorSerieMotorChasisVINResponse">
+        <part name="parameters" element="tns0:consultarAutomotoresPorSerieMotorChasisVINResponse"/>
+    </message>
+    <message name="consultarDatosRTMRequest">
+        <part name="parameters" element="tns0:consultarDatosRTM"/>
+    </message>
+    <message name="consultarDatosRTMResponse">
+        <part name="parameters" element="tns0:consultarDatosRTMResponse"/>
+    </message>
+    <message name="consultarDatosCertificadoRegistroRemolquesRequest">
+        <part name="parameters" element="tns0:consultarDatosCertificadoRegistroRemolques"/>
+    </message>
+    <message name="consultarDatosCertificadoRegistroRemolquesResponse">
+        <part name="parameters" element="tns0:consultarDatosCertificadoRegistroRemolquesResponse"/>
+    </message>
+    <portType name="ServicioConsultaRUNT">
+        <operation name="consultarDatosAseguradora">
+            <input message="tns:ServicioConsultaRUNT_consultarDatosAseguradora"/>
+            <output message="tns:ServicioConsultaRUNT_consultarDatosAseguradoraResponse"/>
+        </operation>
+        <operation name="consultarDatosAutomotor">
+            <input message="tns:ServicioConsultaRUNT_consultarDatosAutomotor"/>
+            <output message="tns:ServicioConsultaRUNT_consultarDatosAutomotorResponse"/>
+        </operation>
+        <operation name="consultarDatosConductor">
+            <input message="tns:ServicioConsultaRUNT_consultarDatosConductor"/>
+            <output message="tns:ServicioConsultaRUNT_consultarDatosConductorResponse"/>
+        </operation>
+        <operation name="consultarDatosPersonaJuridica">
+            <input message="tns:ServicioConsultaRUNT_consultarDatosPersonaJuridica"/>
+            <output message="tns:ServicioConsultaRUNT_consultarDatosPersonaJuridicaResponse"/>
+        </operation>
+        <operation name="consultarDatosPersonaNatural">
+            <input message="tns:ServicioConsultaRUNT_consultarDatosPersonaNatural"/>
+            <output message="tns:ServicioConsultaRUNT_consultarDatosPersonaNaturalResponse"/>
+        </operation>
+        <operation name="consultarDatosPoliza">
+            <input message="tns:ServicioConsultaRUNT_consultarDatosPoliza"/>
+            <output message="tns:ServicioConsultaRUNT_consultarDatosPolizaResponse"/>
+        </operation>
+        <operation name="consultarLicenciaTransito">
+            <input message="tns:ServicioConsultaRUNT_consultarLicenciaTransito"/>
+            <output message="tns:ServicioConsultaRUNT_consultarLicenciaTransitoResponse"/>
+        </operation>
+        <operation name="verificarEstadoWS">
+            <input message="tns:verificarEstadoWSRequest"/>
+            <output message="tns:verificarEstadoWSResponse"/>
+        </operation>
+        <operation name="consultarAutomotoresPorSerieMotorChasisVIN">
+            <input message="tns:consultarAutomotoresPorSerieMotorChasisVINRequest"/>
+            <output message="tns:consultarAutomotoresPorSerieMotorChasisVINResponse"/>
+        </operation>
+        <operation name="consultarDatosRTM">
+            <input message="tns:consultarDatosRTMRequest"/>
+            <output message="tns:consultarDatosRTMResponse"/>
+        </operation>
+        <operation name="consultarDatosCertificadoRegistroRemolques">
+            <input message="tns:consultarDatosCertificadoRegistroRemolquesRequest"/>
+            <output message="tns:consultarDatosCertificadoRegistroRemolquesResponse"/>
+        </operation>
+    </portType>
+    <binding name="ServicioConsultaRUNTSoapHttp" type="tns:ServicioConsultaRUNT">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="consultarDatosAseguradora">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarDatosAseguradora"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarDatosAutomotor">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarDatosAutomotor"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarDatosConductor">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarDatosConductor"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarDatosPersonaJuridica">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarDatosPersonaJuridica"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarDatosPersonaNatural">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarDatosPersonaNatural"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarDatosPoliza">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarDatosPoliza"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarLicenciaTransito">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarLicenciaTransito"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="verificarEstadoWS">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//verificarEstadoWS"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarAutomotoresPorSerieMotorChasisVIN">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarAutomotoresPorSerieMotorChasisVIN"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarDatosRTM">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarDatosRTM"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarDatosCertificadoRegistroRemolques">
+            <soap:operation soapAction="http://consultasgeneralesrunt.runt.heinsohn.com//consultarDatosCertificadoRegistroRemolques"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="ServicioConsultaRUNT">
+        <port name="ServicioConsultaRUNTSoapHttpPort" binding="tns:ServicioConsultaRUNTSoapHttp">
+            <soap:address location="http://wsm.runt.com.co:80/gateway/services/SID0003005"/>
+        </port>
+    </service>
+</definitions>

@@ -1,0 +1,30 @@
+ public void IngresarColor(Long id_color, String nombre) throws SQLException {
+        System.out.println("Entro en el registro del grupo");
+        if (!hayConexion()) {
+            throw new SQLException(" No existe conexion abierta");
+        }
+
+        PreparedStatement pst = null;
+
+        try {
+
+            pst = con.prepareStatement("insert into colores values(?,?)");
+            pst.setLong(1, id_color);
+            pst.setString(2, nombre);
+
+            pst.execute();
+
+        } catch (Exception e) {
+
+
+            throw new SQLException(" Error! " + e);
+
+        } finally {
+
+            if (pst != null) {
+                pst.close();
+                pst = null;
+
+            }
+        }
+    }

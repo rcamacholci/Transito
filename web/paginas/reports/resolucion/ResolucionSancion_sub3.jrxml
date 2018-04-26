@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="ResolucionSancion_sub3"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="552"
+		 pageHeight="1008"
+		 columnWidth="552"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="id_sancion" isForPrompting="false" class="java.lang.Long"/>
+	<queryString><![CDATA[SELECT C.NUMERO,C.FECHA,C.LUGAR,C.PLACA,C.LICENCIA_CONDUCCION,C.LICENCIA_TRANSITO,to_char(C.fecha,'YYYY') año,
+(SELECT CL.NOMBRE FROM PARAMETROS CL WHERE CL.CODIGO = C.CLASE AND CL.FK_GRUPO = 1) CLASE,
+(SELECT S.NOMBRE FROM PARAMETROS S WHERE S.CODIGO = C.SERVICIO AND S.FK_GRUPO = 3) SERVICIO,
+(SELECT P.DOCUMENTO FROM PERSONAS P WHERE P.ID_PERSONA = C.FK_PERSONA) DOCUMENTO,
+(SELECT P.NOMBRE_1||' '||P.APELLIDO_1 FROM PERSONAS P WHERE P.ID_PERSONA = C.FK_PERSONA) PERSONA,
+(SELECT S.NOMBRE FROM PARAMETROS S WHERE S.CODIGO = C.SERVICIO AND S.FK_GRUPO = 6) TIPO_INFRACTOR,
+(SELECT  A.PLACA FROM AGENTES A WHERE A.ID_AGENTE = C.FK_AGENTE) PLACA_AGENTE,
+(SELECT I.NUMERO FROM INFRACCIONES I WHERE I.ID_INFRACCION = C.FK_INFRACCION) COD_INFRACCION,
+(SELECT '"'||I.DESCRIPCION||'"' FROM INFRACCIONES I WHERE I.ID_INFRACCION = C.FK_INFRACCION) INFRACCION,
+(SELECT  A.NOMBRE FROM AGENTES A WHERE A.ID_AGENTE = C.FK_AGENTE) AGENTE,C.OBSERVACIONES,
+(Select ss.numero_sancion from sancionados ss where ss.id_sancion=$P{id_sancion}) Numero_sancion,
+(SELECT I.salarios_minimos FROM INFRACCIONES I WHERE I.ID_INFRACCION = C.FK_INFRACCION) saliorios_minimos
+FROM COMPARENDOS C WHERE C.ID_comparendo in (Select fk_comparendo from sancionados where id_sancion=$P{id_sancion})]]></queryString>
+
+	<field name="NUMERO" class="java.lang.String"/>
+	<field name="FECHA" class="java.sql.Timestamp"/>
+	<field name="LUGAR" class="java.lang.String"/>
+	<field name="PLACA" class="java.lang.String"/>
+	<field name="LICENCIA_CONDUCCION" class="java.lang.String"/>
+	<field name="LICENCIA_TRANSITO" class="java.lang.String"/>
+	<field name="AÑO" class="java.lang.String"/>
+	<field name="CLASE" class="java.lang.String"/>
+	<field name="SERVICIO" class="java.lang.String"/>
+	<field name="DOCUMENTO" class="java.lang.String"/>
+	<field name="PERSONA" class="java.lang.String"/>
+	<field name="TIPO_INFRACTOR" class="java.lang.String"/>
+	<field name="PLACA_AGENTE" class="java.math.BigDecimal"/>
+	<field name="COD_INFRACCION" class="java.lang.String"/>
+	<field name="INFRACCION" class="java.lang.String"/>
+	<field name="AGENTE" class="java.lang.String"/>
+	<field name="OBSERVACIONES" class="java.lang.String"/>
+	<field name="NUMERO_SANCION" class="java.lang.String"/>
+	<field name="SALIORIOS_MINIMOS" class="java.math.BigDecimal"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="false" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="830"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="2"
+						width="552"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INFRACCION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="17"
+						width="237"
+						height="15"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<text><![CDATA[contempla una sanción consistente en multa de (]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="236"
+						y="17"
+						width="15"
+						height="15"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{SALIORIOS_MINIMOS}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="251"
+						y="17"
+						width="268"
+						height="15"
+						key="staticText-2"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<text><![CDATA[) Salarios Mínimos Diarios Legales Vigentes.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12"
+						y="75"
+						width="307"
+						height="15"
+						key="staticText-3"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<text><![CDATA[Que en merito a lo anterior expuesto este despacho, ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="112"
+						y="140"
+						width="307"
+						height="15"
+						key="staticText-4"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="13" isBold="true"/>
+					</textElement>
+				<text><![CDATA[RESUELVE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12"
+						y="195"
+						width="125"
+						height="15"
+						key="staticText-49"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ARTICULO PRIMERO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12"
+						y="287"
+						width="125"
+						height="15"
+						key="staticText-50"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ARTICULO SEGUNDO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12"
+						y="356"
+						width="125"
+						height="15"
+						key="staticText-57"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ARTICULO TERCERO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12"
+						y="429"
+						width="113"
+						height="15"
+						key="staticText-60"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ARTICULO CUARTO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="125"
+						y="429"
+						width="406"
+						height="15"
+						key="staticText-61"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Archívese el expediente.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="64"
+						y="679"
+						width="427"
+						height="15"
+						key="staticText-63"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" size="11" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Inspector Único de Tránsito y transporte  ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12"
+						y="210"
+						width="519"
+						height="57"
+						key="textField-15"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Declárese contraventor de la norma de tránsito al conductor del vehículo de placa "+$F{PLACA}+"  señor (a)  "+$F{PERSONA}+",  identificada con cédula de ciudadanía No. "+$F{DOCUMENTO}+",  por la comisión de la infracción de tránsito de que trata el   artículo 131 literal "+$F{COD_INFRACCION}+" la ley 769 de 2002,  modificado por la  de la ley 1383 de 2010."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12"
+						y="302"
+						width="519"
+						height="39"
+						key="textField-16"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Sanciónese al señor (a) "+$F{PERSONA}+",  identificada con cédula de ciudadanía No. "+$F{DOCUMENTO}+", con multa de quince ("+$F{SALIORIOS_MINIMOS}+") Salarios Mínimos Diarios Legales Vigentes."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13"
+						y="371"
+						width="519"
+						height="45"
+						key="textField-17"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Contra la presente no procede recurso de apelación  de acuerdo a lo estipulado en el artículo 134, 142 de la Ley 769 de Agosto 6 de 2002, quedando la misma debidamente ejecutoriada y notificada en estrados."]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="ResolucionSancion_sub1"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="552"
+		 pageHeight="1008"
+		 columnWidth="552"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="id_sancion" isForPrompting="true" class="java.lang.Long"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["N:/Civitrans/Civitrans14092012/transito/web/paginas/reports/resolucion/"]]></defaultValueExpression>
+	</parameter>
+	<queryString><![CDATA[SELECT C.NUMERO,C.FECHA,C.LUGAR,C.PLACA,C.LICENCIA_CONDUCCION,C.LICENCIA_TRANSITO,to_char(C.fecha,'YYYY') año,
+(SELECT CL.NOMBRE FROM PARAMETROS CL WHERE CL.CODIGO = C.CLASE AND CL.FK_GRUPO = 1) CLASE,
+(SELECT S.NOMBRE FROM PARAMETROS S WHERE S.CODIGO = C.SERVICIO AND S.FK_GRUPO = 3) SERVICIO,
+(SELECT P.DOCUMENTO FROM PERSONAS P WHERE P.ID_PERSONA = C.FK_PERSONA) DOCUMENTO,
+(SELECT P.NOMBRE_1||' '||P.APELLIDO_1 FROM PERSONAS P WHERE P.ID_PERSONA = C.FK_PERSONA) PERSONA,
+(SELECT S.NOMBRE FROM PARAMETROS S WHERE S.CODIGO = C.SERVICIO AND S.FK_GRUPO = 6) TIPO_INFRACTOR,
+(SELECT  A.PLACA FROM AGENTES A WHERE A.ID_AGENTE = C.FK_AGENTE) PLACA_AGENTE,
+(SELECT I.NUMERO FROM INFRACCIONES I WHERE I.ID_INFRACCION = C.FK_INFRACCION) COD_INFRACCION,
+(SELECT '"'||I.DESCRIPCION||'"' FROM INFRACCIONES I WHERE I.ID_INFRACCION = C.FK_INFRACCION) INFRACCION,
+(SELECT  A.NOMBRE FROM AGENTES A WHERE A.ID_AGENTE = C.FK_AGENTE) AGENTE,C.OBSERVACIONES,
+(Select ss.numero_sancion from sancionados ss where ss.id_sancion=$P{id_sancion}) Numero_sancion
+FROM COMPARENDOS C WHERE C.ID_comparendo in (Select fk_comparendo from sancionados where id_sancion=$P{id_sancion})]]></queryString>
+
+	<field name="NUMERO" class="java.lang.String"/>
+	<field name="FECHA" class="java.sql.Timestamp"/>
+	<field name="LUGAR" class="java.lang.String"/>
+	<field name="PLACA" class="java.lang.String"/>
+	<field name="LICENCIA_CONDUCCION" class="java.lang.String"/>
+	<field name="LICENCIA_TRANSITO" class="java.lang.String"/>
+	<field name="AÑO" class="java.lang.String"/>
+	<field name="CLASE" class="java.lang.String"/>
+	<field name="SERVICIO" class="java.lang.String"/>
+	<field name="DOCUMENTO" class="java.lang.String"/>
+	<field name="PERSONA" class="java.lang.String"/>
+	<field name="TIPO_INFRACTOR" class="java.lang.String"/>
+	<field name="PLACA_AGENTE" class="java.math.BigDecimal"/>
+	<field name="COD_INFRACCION" class="java.lang.String"/>
+	<field name="INFRACCION" class="java.lang.String"/>
+	<field name="AGENTE" class="java.lang.String"/>
+	<field name="OBSERVACIONES" class="java.lang.String"/>
+	<field name="NUMERO_SANCION" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="830"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="152"
+						y="4"
+						width="249"
+						height="57"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[INPECCIÓN ÚNICA
+INSTITUTO DE TRÁNSITO DEL ATLÁNTICO
+AUDIENCIA PÚBLICA
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10"
+						y="85"
+						width="170"
+						height="16"
+						key="staticText-3"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Fecha y hora de la infracción:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10"
+						y="100"
+						width="111"
+						height="16"
+						key="staticText-7"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Placa del vehículo:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10"
+						y="115"
+						width="140"
+						height="16"
+						key="staticText-8"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Código de la Infracción:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10"
+						y="130"
+						width="148"
+						height="16"
+						key="staticText-9"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Número de Comparendo:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="121"
+						y="101"
+						width="203"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PLACA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="150"
+						y="116"
+						width="174"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COD_INFRACCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="158"
+						y="131"
+						width="166"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="172"
+						y="512"
+						width="98"
+						height="16"
+						key="staticText-39"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[COMPARENDO No.  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="67"
+						y="529"
+						width="424"
+						height="42"
+						key="staticText-41"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[EL SUSCRITO INSPECTOR UNICO  DE TRÁNSITO DEL ATLÁNTICO, EN USO DE SUS FACULTADES CONSTITUCIONALES, LEGALES Y REGLAMENTARIAS  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="207"
+						y="582"
+						width="98"
+						height="16"
+						key="staticText-42"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CONSIDERA:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="271"
+						y="512"
+						width="130"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="180"
+						y="85"
+						width="144"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{FECHA}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="69"
+						y="719"
+						width="426"
+						height="49"
+						key="staticText-50"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Que el artículo 3º de la ley 769 de 2002, modificado por el art. 2º de la ley 1383 de 2010, establece: Autoridades de tránsito. Para los efectos de la presente ley entiéndase que son autoridades de tránsito en su orden, las siguientes:
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="69"
+						y="779"
+						width="426"
+						height="14"
+						key="staticText-51"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" isBold="false"/>
+					</textElement>
+				<text><![CDATA[- El Ministro de transporte.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="70"
+						y="803"
+						width="426"
+						height="14"
+						key="staticText-52"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" pdfFontName="Helvetica" isBold="false"/>
+					</textElement>
+				<text><![CDATA[- Los gobernadores y los Alcaldes.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="69"
+						y="171"
+						width="417"
+						height="287"
+						key="textField-4"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["En el municipio de Sabanagrande el 23 de Abril de 2012  siendo las 9:30 A.M. procede la titular del despacho a constituirse en audiencia pública con ocasión al comparendo de la referencia, de conformidad con lo previsto en el artículo 136 de la ley 769 de 2002, modificado por el artículo 24 de la ley 1383 de 2010. Siendo el treintaiunavo  (31) día hábil siguiente a la notificación del aviso de comparendo, por la presunta  comisión de la infracción  de tránsito consagrada en el articulo 131 literal "+$F{COD_INFRACCION}+" de la ley 769 de 2002, modificado por el artículo 21 de la ley 1382 de 2010, de acuerdo con la orden de comparendo No."+$F{NUMERO}+", la cual le fue impuesta el día 24 de Mayo de 2012, por la autoridad de tránsito, de conformidad a lo normado por el artículo 135 ley 769 de 2002 modificado por  la ley 1383 de 2010 art. 22, al conductor del vehículo  de placas "+$F{PLACA}+" Señor (a) "+$F{PERSONA}+" identificado con cedula de ciudadanía No. "+$F{DOCUMENTO}+", en el que presuntamente se cometió la infracción, quien se encuentra vinculado en el presente proceso contravencional, y a quien se le ordenó comparecer dentro de los cinco ( 5) días hábiles siguientes a la imposición del comparendo, en las instalaciones del Instituto de Tránsito del Atlántico, con el objeto de ejercer su derecho a la defensa y rendir descargos. El citado no atendió la orden, ni aporto excusa que justificara su no concurrencia, ni rindió descargos o solicitó pruebas que desvirtuaran la comisión de la infracción, y teniendo en cuenta que está demostrado su inasistencia, las pruebas que dan cuenta de la comisión de la infracción, este despacho decidirá lo que en derecho corresponda"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="67"
+						y="611"
+						width="427"
+						height="92"
+						key="textField-5"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Que el día "+$F{FECHA}+", el conductor del vehículo mencionado incurrió en la presunta comisión de la infracción de tránsito contemplada en el artículo 131 literal "+$F{COD_INFRACCION}+" "+$F{INFRACCION}+"   De la ley 769 de 2002, modificado por la ley 1383 de 2010, tal como consta en el comparendo No."+$F{NUMERO}+", impuesta por el patrullero el señor "+$F{AGENTE}+", No. de placa "+$F{PLACA_AGENTE}+" en la "+$F{LUGAR}]]></textFieldExpression>
+				</textField>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="821"
+						width="552"
+						height="7"
+						key="subreport-1"/>
+					<subreportParameter  name="id_sancion">
+						<subreportParameterExpression><![CDATA[$P{id_sancion}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "resolucion/ResolucionSancion_sub2.jasper"]]></subreportExpression>
+				</subreport>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="183"
+						y="492"
+						width="261"
+						height="15"
+						key="textField-6"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["RESOLUCIÓN No.  "+$F{NUMERO_SANCION}+" DE "+$F{AÑO}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

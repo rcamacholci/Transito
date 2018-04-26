@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="distribucionCajasGeneralEntidades"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="612"
+		 pageHeight="792"
+		 columnWidth="612"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="FECHA_INI" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="FECHA_FIN" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["C:\\Piloto\\transito\\build\\web\\paginas\\reports\\recaudoycartera\\pagos\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="USUARIO" isForPrompting="true" class="java.lang.Long"/>
+	<parameter name="CAJA" isForPrompting="true" class="java.lang.Long"/>
+	<queryString><![CDATA[select ed.id_entidad_distribucion,p.documento as nit,p.nombre_1 ||' '|| p.apellido_1 as entidad,sum(d.valor)as total,
+NVL((SELECT NOMBRE FROM USUARIOS WHERE ID_USUARIO = $P{USUARIO}),'GENERAL') NOMBRE
+from distribucion d, entidad_distribucion ed, personas p, pagos pa
+where ed.id_entidad_distribucion=d.fk_entidad_distribucion
+and  p.id_persona=ed.fk_persona
+and pa.id_pago=d.fk_pago
+and pa.FK_TAQUILLA IN(SELECT ID_TAQUILLA FROM TAQUILLAS 
+WHERE (FK_USUARIO = $P{USUARIO} OR $P{USUARIO} = 0) 
+AND TO_DATE(TO_CHAR(FECHA_INI,'dd/MM/yyyy'),'dd/MM/yyyy')
+ BETWEEN TO_DATE($P{FECHA_INI},'dd/MM/yyyy') 
+AND TO_DATE($P{FECHA_FIN},'dd/MM/yyyy') 
+AND ESTADO = 5 AND FK_CAJA = $P{CAJA})
+group by ed.id_entidad_distribucion,p.documento, p.nombre_1 ||' '|| p.apellido_1
+order by 1]]></queryString>
+
+	<field name="ID_ENTIDAD_DISTRIBUCION" class="java.math.BigDecimal"/>
+	<field name="NIT" class="java.lang.String"/>
+	<field name="ENTIDAD" class="java.lang.String"/>
+	<field name="TOTAL" class="java.math.BigDecimal"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+
+	<variable name="SUMA" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL}]]></variableExpression>
+	</variable>
+
+		<group  name="TOTL" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="66"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="4"
+						width="120"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NIT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="4"
+						width="271"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ENTIDAD}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="463"
+						y="47"
+						width="72"
+						height="15"
+						key="textField"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="9" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{TOTAL}]]></textFieldExpression>
+				</textField>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="3"
+						y="23"
+						width="541"
+						height="16"
+						key="subreport-1"/>
+					<subreportParameter  name="FECHA_INI">
+						<subreportParameterExpression><![CDATA[$P{FECHA_INI}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="FECHA_FIN">
+						<subreportParameterExpression><![CDATA[$P{FECHA_FIN}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="ID_ENTIDAD">
+						<subreportParameterExpression><![CDATA[$F{ID_ENTIDAD_DISTRIBUCION}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="USUARIO">
+						<subreportParameterExpression><![CDATA[$P{USUARIO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="CAJA">
+						<subreportParameterExpression><![CDATA[$P{CAJA}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "recaudoycartera/distribucion/detalleDistribucionCajaGeneralEntidades.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement
+						x="385"
+						y="47"
+						width="79"
+						height="15"
+						forecolor="#000000"
+						key="staticText-2"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="9" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TOTAL ENTIDAD]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="354"
+						y="44"
+						width="189"
+						height="0"
+						key="line-3"
+						positionType="Float"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<rectangle radius="10" >
+					<reportElement
+						mode="Transparent"
+						x="3"
+						y="4"
+						width="541"
+						height="16"
+						key="rectangle-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

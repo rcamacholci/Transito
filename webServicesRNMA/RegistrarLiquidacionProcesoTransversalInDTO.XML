@@ -1,0 +1,41 @@
+public class RegistrarLiquidacionProcesoTransversalInDTO implements java.io.Serializable {
+    protected liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.personas.AutoridadTransitoDTO autoridadTransito;
+    protected liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.identificaciones.IdentificacionPersonaDTO solicitante;
+    protected java.lang.String tipoConcepto;
+    protected java.lang.Integer cantidad;
+    
+    public RegistrarLiquidacionProcesoTransversalInDTO() {
+    }
+    
+    public liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.personas.AutoridadTransitoDTO getAutoridadTransito() {
+        return autoridadTransito;
+    }
+    
+    public void setAutoridadTransito(liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.personas.AutoridadTransitoDTO autoridadTransito) {
+        this.autoridadTransito = autoridadTransito;
+    }
+    
+    public liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.identificaciones.IdentificacionPersonaDTO getSolicitante() {
+        return solicitante;
+    }
+    
+    public void setSolicitante(liquidacion_e39_25062015.proxy.types.com.heinsohn.runt.general.identificaciones.IdentificacionPersonaDTO solicitante) {
+        this.solicitante = solicitante;
+    }
+    
+    public java.lang.String getTipoConcepto() {
+        return tipoConcepto;
+    }
+    
+    public void setTipoConcepto(java.lang.String tipoConcepto) {
+        this.tipoConcepto = tipoConcepto;
+    }
+    
+    public java.lang.Integer getCantidad() {
+        return cantidad;
+    }
+    
+    public void setCantidad(java.lang.Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+}

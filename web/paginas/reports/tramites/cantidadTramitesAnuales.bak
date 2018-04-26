@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="cantidadTramitesAnuales"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Landscape"
+		 pageWidth="900"
+		 pageHeight="612"
+		 columnWidth="840"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="ANO" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="USUARIO" isForPrompting="true" class="java.lang.String"/>
+	<queryString><![CDATA[SELECT NOMBRE TRAMITE,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '01/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) ENERO,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '02/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) FEBRERO,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '03/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) MARZO,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '04/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) ABRIL,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '05/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) MAYO,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '06/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) JUNIO,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '07/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) JULIO,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '08/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) AGOSTO,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '09/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) SEPTIEMBRE,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '10/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) OCTUBRE,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '11/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) NOVIEMBRE,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '12/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) DICIEMBRE,
+(SELECT COUNT(*) FROM RADICACIONES R,FORMULARIOS F WHERE R.ID_RADICACION = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'YYYY') = $P{ANO} AND ID_TRAMITE = FK_TRAMITE) TOTAL
+FROM TRAMITES T
+WHERE 
+T.CLASE_TRAMITE IN (1)
+UNION
+SELECT NOMBRE TRAMITE,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '01/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) ENERO,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '02/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) FEBRERO,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '03/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) MARZO,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '04/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) ABRIL,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '05/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) MAYO,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '06/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) JUNIO,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '07/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) JULIO,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '08/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) AGOSTO,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '09/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) SEPTIEMBRE,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '10/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) OCTUBRE,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '11/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) NOVIEMBRE,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'MM/YYYY') = '12/'||$P{ANO} AND ID_TRAMITE = FK_TRAMITE) DICIEMBRE,
+(SELECT COUNT(*) FROM RADICACION_LICENCIAS R,FORMULARIO_LICENCIAS F WHERE R.ID_RADICACION_LICENCIA = F.FK_RADICACION AND R.ESTADO IN(5,4) AND TO_CHAR(R.FECHA,'YYYY') = $P{ANO} AND ID_TRAMITE = FK_TRAMITE) TOTAL
+FROM TRAMITES T
+WHERE 
+T.CLASE_TRAMITE IN(2)]]></queryString>
+
+	<field name="TRAMITE" class="java.lang.String"/>
+	<field name="ENERO" class="java.math.BigDecimal"/>
+	<field name="FEBRERO" class="java.math.BigDecimal"/>
+	<field name="MARZO" class="java.math.BigDecimal"/>
+	<field name="ABRIL" class="java.math.BigDecimal"/>
+	<field name="MAYO" class="java.math.BigDecimal"/>
+	<field name="JUNIO" class="java.math.BigDecimal"/>
+	<field name="JULIO" class="java.math.BigDecimal"/>
+	<field name="AGOSTO" class="java.math.BigDecimal"/>
+	<field name="SEPTIEMBRE" class="java.math.BigDecimal"/>
+	<field name="OCTUBRE" class="java.math.BigDecimal"/>
+	<field name="NOVIEMBRE" class="java.math.BigDecimal"/>
+	<field name="DICIEMBRE" class="java.math.BigDecimal"/>
+	<field name="TOTAL" class="java.math.BigDecimal"/>
+
+	<variable name="T_ENERO" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{ENERO}]]></variableExpression>
+	</variable>
+	<variable name="T_FEBRERO" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{FEBRERO}]]></variableExpression>
+	</variable>
+	<variable name="T_MARZO" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{MARZO}]]></variableExpression>
+	</variable>
+	<variable name="T_ABRIL" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{ABRIL}]]></variableExpression>
+	</variable>
+	<variable name="T_MAYO" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{MAYO}]]></variableExpression>
+	</variable>
+	<variable name="T_JUNIO" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{JUNIO}]]></variableExpression>
+	</variable>
+	<variable name="T_JULIO" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{JULIO}]]></variableExpression>
+	</variable>
+	<variable name="T_AGOSTO" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{AGOSTO}]]></variableExpression>
+	</variable>
+	<variable name="T_SEPT" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{SEPTIEMBRE}]]></variableExpression>
+	</variable>
+	<variable name="T_OCTUBRE" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{OCTUBRE}]]></variableExpression>
+	</variable>
+	<variable name="T_NOVIEMBRE" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{NOVIEMBRE}]]></variableExpression>
+	</variable>
+	<variable name="T_DICIEMBRE" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{DICIEMBRE}]]></variableExpression>
+	</variable>
+	<variable name="T_TOTAL" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL}]]></variableExpression>
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="83"  isSplitAllowed="true" >
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="249"
+						y="2"
+						width="359"
+						height="22"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\reports\\images\\logo_.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="245"
+						y="26"
+						width="359"
+						height="14"
+						forecolor="#000000"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="9" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[NIT. 800.115.102 - 1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="245"
+						y="44"
+						width="359"
+						height="14"
+						forecolor="#000000"
+						key="staticText-2"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[REPORTE ESTADISTICO ANUAL DE TRAMITES REALIZADOS]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="EEEEE dd MMMMM yyyy" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="379"
+						y="62"
+						width="149"
+						height="18"
+						key="textField-1"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="269"
+						y="62"
+						width="100"
+						height="18"
+						key="textField-2"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{USUARIO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="160"
+						y="62"
+						width="95"
+						height="19"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[GENERADO POR :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="544"
+						y="62"
+						width="42"
+						height="19"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[AÑO : ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="596"
+						y="62"
+						width="76"
+						height="18"
+						key="textField-3"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{ANO}]]></textFieldExpression>
+				</textField>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="14"  isSplitAllowed="true" >
+				<rectangle radius="10" >
+					<reportElement
+						mode="Transparent"
+						x="1"
+						y="2"
+						width="837"
+						height="12"
+						forecolor="#000000"
+						backcolor="#000000"
+						key="element-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="4"
+						y="3"
+						width="109"
+						height="11"
+						forecolor="#0066CC"
+						key="element-2"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TRAMITE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="112"
+						y="3"
+						width="53"
+						height="11"
+						forecolor="#0066CC"
+						key="element-3"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ENERO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="164"
+						y="3"
+						width="52"
+						height="11"
+						forecolor="#0066CC"
+						key="element-4"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FEBRERO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="328"
+						y="3"
+						width="53"
+						height="11"
+						forecolor="#0066CC"
+						key="element-5"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[MAYO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="272"
+						y="3"
+						width="56"
+						height="11"
+						forecolor="#0066CC"
+						key="element-6"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ABRIL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="216"
+						y="3"
+						width="57"
+						height="11"
+						forecolor="#0066CC"
+						key="element-7"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[MARZO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="494"
+						y="3"
+						width="55"
+						height="11"
+						forecolor="#0066CC"
+						key="element-8"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[AGOSTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="548"
+						y="3"
+						width="59"
+						height="11"
+						forecolor="#0066CC"
+						key="element-9"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[SEPTIEMBRE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="606"
+						y="3"
+						width="57"
+						height="11"
+						forecolor="#0066CC"
+						key="element-10"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[OCTUBRE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="662"
+						y="3"
+						width="53"
+						height="11"
+						forecolor="#0066CC"
+						key="element-11"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NOVIEMBRE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="714"
+						y="3"
+						width="54"
+						height="11"
+						forecolor="#0066CC"
+						key="element-12"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DICIEMBRE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="438"
+						y="3"
+						width="57"
+						height="11"
+						forecolor="#0066CC"
+						key="element-13"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[JULIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="381"
+						y="3"
+						width="57"
+						height="11"
+						forecolor="#0066CC"
+						key="element-14"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[JUNIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="768"
+						y="3"
+						width="70"
+						height="11"
+						forecolor="#0066CC"
+						key="element-15"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TOTAL]]></text>
+				</staticText>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="14"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12"
+						y="1"
+						width="101"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TRAMITE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="113"
+						y="1"
+						width="52"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ENERO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="164"
+						y="1"
+						width="52"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{FEBRERO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="216"
+						y="1"
+						width="57"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MARZO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="273"
+						y="1"
+						width="57"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ABRIL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="330"
+						y="1"
+						width="50"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MAYO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="381"
+						y="1"
+						width="57"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{JUNIO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="438"
+						y="1"
+						width="57"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{JULIO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="495"
+						y="1"
+						width="54"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{AGOSTO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="548"
+						y="1"
+						width="59"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{SEPTIEMBRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="607"
+						y="1"
+						width="55"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{OCTUBRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="715"
+						y="1"
+						width="54"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DICIEMBRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="769"
+						y="1"
+						width="69"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{TOTAL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="662"
+						y="1"
+						width="52"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NOVIEMBRE}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="14"
+						y="13"
+						width="823"
+						height="0"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+</graphicElement>
+				</line>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="16"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="23"
+						y="2"
+						width="85"
+						height="12"
+						forecolor="#0066CC"
+						key="element-16"/>
+					<box leftPadding="2" rightPadding="2">					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TOTALES :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="113"
+						y="2"
+						width="51"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_ENERO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="165"
+						y="2"
+						width="50"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_FEBRERO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="216"
+						y="2"
+						width="56"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_MARZO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="274"
+						y="1"
+						width="54"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_ABRIL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="330"
+						y="2"
+						width="50"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_MAYO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="380"
+						y="2"
+						width="58"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_JUNIO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="438"
+						y="2"
+						width="56"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_JULIO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="494"
+						y="1"
+						width="55"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_AGOSTO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="549"
+						y="1"
+						width="58"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_SEPT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="608"
+						y="1"
+						width="53"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_OCTUBRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="662"
+						y="1"
+						width="52"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_NOVIEMBRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="715"
+						y="1"
+						width="53"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_DICIEMBRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="769"
+						y="1"
+						width="68"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{T_TOTAL}]]></textFieldExpression>
+				</textField>
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

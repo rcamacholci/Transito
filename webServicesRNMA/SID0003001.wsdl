@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+ <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns0="http://client.bancos.runt.heinsohn.com/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://client.bancos.runt.heinsohn.com/" name="BancosService" targetNamespace="http://client.bancos.runt.heinsohn.com/">
+ <types>
+ <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:identificador="http://identificaciones.general.runt.heinsohn.com" xmlns:banco="http://bancos.general.runt.heinsohn.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://client.bancos.runt.heinsohn.com/types/" targetNamespace="http://client.bancos.runt.heinsohn.com/types/" elementFormDefault="qualified">
+  <import namespace="http://bancos.general.runt.heinsohn.com" schemaLocation="Bancos.xsd" /> 
+  <import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="Identificadores.xsd" /> 
+ <element name="consultarLiquidacionesBancosElement">
+ <complexType>
+ <sequence>
+  <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0" /> 
+  <element name="consultarIn" type="banco:ConsultarLiquidacionesBancosInDTO" /> 
+  </sequence>
+  </complexType>
+  </element>
+ <element name="consultarLiquidacionesBancosResponseElement">
+ <complexType>
+ <sequence>
+  <element name="result" type="banco:ConsultarLiquidacionesBancosOutDTO" nillable="true" /> 
+  </sequence>
+  </complexType>
+  </element>
+ <element name="registrarPagoElement">
+ <complexType>
+ <sequence>
+  <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0" /> 
+  <element name="registrarPagoBancosIn" type="banco:RegistrarPagoBancosInDTO" nillable="true" /> 
+  </sequence>
+  </complexType>
+  </element>
+ <element name="registrarPagoResponseElement">
+ <complexType>
+ <sequence>
+  <element name="result" type="banco:RegistrarPagoBancosOutDTO" nillable="true" /> 
+  </sequence>
+  </complexType>
+  </element>
+ <element name="registrarPagosBatchElement">
+ <complexType>
+ <sequence>
+  <element name="header" type="identificador:CommonHeaderDTO" minOccurs="0" /> 
+  <element name="in" type="banco:RegistrarPagosBatchInDTO" nillable="true" /> 
+  </sequence>
+  </complexType>
+  </element>
+ <element name="registrarPagosBatchResponseElement">
+ <complexType>
+ <sequence>
+  <element name="result" type="identificador:StatusDTO" nillable="true" /> 
+  </sequence>
+  </complexType>
+  </element>
+ <xsd:element name="anularPago">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="header" type="identificador:CommonHeaderDTO" minOccurs="0" /> 
+  <xsd:element name="in" type="banco:AnularPagoInDTO" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="anularPagoResponse">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="out" type="banco:AnularPagoOutDTO" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="verificarEstadoWS">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="header" type="identificador:CommonHeaderDTO" minOccurs="0" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="verificarEstadoWSResponse">
+ <xsd:complexType>
+ <xsd:sequence>
+  <element name="result" type="identificador:StatusDTO" nillable="true" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+  </schema>
+  </types>
+ <message name="BancosService_consultarLiquidacionesBancos">
+  <part name="parameters" element="tns0:consultarLiquidacionesBancosElement" /> 
+  </message>
+ <message name="BancosService_consultarLiquidacionesBancosResponse">
+  <part name="parameters" element="tns0:consultarLiquidacionesBancosResponseElement" /> 
+  </message>
+ <message name="BancosService_registrarPago">
+  <part name="parameters" element="tns0:registrarPagoElement" /> 
+  </message>
+ <message name="BancosService_registrarPagoResponse">
+  <part name="parameters" element="tns0:registrarPagoResponseElement" /> 
+  </message>
+ <message name="BancosService_registrarPagosBatch">
+  <part name="parameters" element="tns0:registrarPagosBatchElement" /> 
+  </message>
+ <message name="BancosService_registrarPagosBatchResponse">
+  <part name="parameters" element="tns0:registrarPagosBatchResponseElement" /> 
+  </message>
+ <message name="anularPagoRequest">
+  <part name="parameters" element="tns0:anularPago" /> 
+  </message>
+ <message name="anularPagoResponse">
+  <part name="parameters" element="tns0:anularPagoResponse" /> 
+  </message>
+ <message name="verificarEstadoWSRequest">
+  <part name="parameters" element="tns0:verificarEstadoWS" /> 
+  </message>
+ <message name="verificarEstadoWSResponse">
+  <part name="parameters" element="tns0:verificarEstadoWSResponse" /> 
+  </message>
+ <portType name="BancosService">
+ <operation name="consultarLiquidacionesBancos">
+  <input message="tns:BancosService_consultarLiquidacionesBancos" /> 
+  <output message="tns:BancosService_consultarLiquidacionesBancosResponse" /> 
+  </operation>
+ <operation name="registrarPago">
+  <input message="tns:BancosService_registrarPago" /> 
+  <output message="tns:BancosService_registrarPagoResponse" /> 
+  </operation>
+ <operation name="registrarPagosBatch">
+  <input message="tns:BancosService_registrarPagosBatch" /> 
+  <output message="tns:BancosService_registrarPagosBatchResponse" /> 
+  </operation>
+ <operation name="anularPago">
+  <input message="tns:anularPagoRequest" /> 
+  <output message="tns:anularPagoResponse" /> 
+  </operation>
+ <operation name="verificarEstadoWS">
+  <input message="tns:verificarEstadoWSRequest" /> 
+  <output message="tns:verificarEstadoWSResponse" /> 
+  </operation>
+  </portType>
+ <binding name="BancosServiceSoapHttp" type="tns:BancosService">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+ <operation name="consultarLiquidacionesBancos">
+  <soap:operation soapAction="http://client.bancos.runt.heinsohn.com//consultarLiquidacionesBancos" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+ <operation name="registrarPago">
+  <soap:operation soapAction="http://client.bancos.runt.heinsohn.com//registrarPago" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+ <operation name="registrarPagosBatch">
+  <soap:operation soapAction="http://client.bancos.runt.heinsohn.com//registrarPagosBatch" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+ <operation name="anularPago">
+  <soap:operation soapAction="http://client.bancos.runt.heinsohn.com//anularPago" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+ <operation name="verificarEstadoWS">
+  <soap:operation soapAction="http://client.bancos.runt.heinsohn.com//verificarEstadoWS" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+  </binding>
+ <service name="BancosService">
+ <port name="BancosServiceSoapHttpPort" binding="tns:BancosServiceSoapHttp">
+  <soap:address location="http://wsm.runt.com.co:80/gateway/services/SID0003001" /> 
+  </port>
+  </service>
+  </definitions>

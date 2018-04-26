@@ -1,0 +1,98 @@
+#apDiv4 {
+    position:absolute;
+    width:100%;
+    height:67px;
+    z-index:3;
+    top: 592px;
+    left: 0px;
+    bottom: 0;
+    margin: 0 auto;
+    text-align:center;
+    background-color:#F0F0F0;
+}
+
+#apDiv5 {
+	position:absolute;
+	width:100%px;
+	height:561px;
+	z-index:4;
+	top:25px;
+	left:0px;
+	right:0px;
+}
+#apDiv1 {
+    position:absolute;
+    width:100%;
+    height:27px;
+    z-index:5;
+    background-color:#606060;
+    left:0px;
+    top:0px;
+    right:0px;
+	text-align:right;
+}
+
+input[type=text] {padding:5px; border:2px solid #ccc; 
+                  -webkit-border-radius: 5px;
+                  border-radius: 5px;
+}
+input[type=text]:focus {border-color:#333; }
+
+input[type=password] {padding:5px; border:2px solid #ccc; 
+                      -webkit-border-radius: 5px;
+                      border-radius: 5px;
+}
+input[type=password]:focus {border-color:#333; }
+
+input[type=button] {padding:5px 15px; background:#ccc; border:0 none;
+                    cursor:pointer;
+                    -webkit-border-radius: 5px;background:#E8784E;
+                    border-radius: 5px; color:white;
+}
+
+input[type=submit] {padding:5px 15px; background:#6BBA70; border:0 none;
+                    cursor:pointer;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px; 
+                    color: white;
+}
+
+fieldset{
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    box-shadow:0 0 10px #999;
+
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+#titulo{
+    font:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.contenido{
+    background-color:white;
+}
+
+th{
+    font:"Trebuchet MS", Arial, Helvetica, sans-serif;	
+}
+
+
+#inputCancelar {
+    background:#DE4237;
+}
+
+#siguiente{
+    background: #5A90E0;
+}
+
+#anterior{
+    background: #9230F5;
+}

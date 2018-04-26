@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+ <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://client.common.runt.heinsohn.com/" name="CommonService" targetNamespace="http://client.common.runt.heinsohn.com/">
+ <types>
+ <xsd:schema xmlns:identificadores="http://identificaciones.general.runt.heinsohn.com" xmlns:consultas="http://consultas.general.runt.heinsohn.com" targetNamespace="http://client.common.runt.heinsohn.com/">
+  <xsd:import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="Identificadores.xsd" /> 
+  <xsd:import namespace="http://consultas.general.runt.heinsohn.com" schemaLocation="Consultas.xsd" /> 
+ <xsd:element name="verificarEstadoWS">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="verificarEstadoWSResponse">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="status" type="identificadores:VerificarEstadoDTO" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="consultarTemplateHuellaDigital">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0" /> 
+  <xsd:element name="in" type="consultas:ConsultarTemplateHuellaDigitalInDTO" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="consultarTemplateHuellaDigitalResponse">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="out" type="consultas:ConsultarTemplateHuellaDigitalOutDTO" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="consultarTemplateHuellaDigitalUsuario">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="header" type="identificadores:CommonHeaderDTO" nillable="true" /> 
+  <xsd:element name="loginUsuario" type="xsd:string" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="NewOperationResponse">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="out" type="xsd:string" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="consultarTemplateHuellaDigitalUsuarioResponse">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="templateHuellaUsuario" type="consultas:ConsultarTemplateHuellaDigitalOutDTO" nillable="true" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="consultarParametroValidacionBiometricaRequest">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="header" type="identificadores:CommonHeaderDTO" nillable="true" /> 
+  <xsd:element name="tokenAutorizacion" type="consultas:ConsultarTokenValidacionBiometricaInDTO" minOccurs="0" maxOccurs="unbounded" nillable="true" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="consultarParametroValidacionBiometricaResponse">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="parametroValidacionBiometrica" type="consultas:ConsultarTokenValidacionBiometricaOutDTO" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="prevalidarTokenBiometricoRequest">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="header" type="identificadores:CommonHeaderDTO" nillable="true" /> 
+  <xsd:element name="persona" type="consultas:PrevalidarTokenBiometricoInDTO" minOccurs="0" maxOccurs="unbounded" nillable="true" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="prevalidarTokenBiometricoResponse">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="parametroValidacionBiometrica" type="consultas:PrevalidarTokenBiometricoOutDTO" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="consultarParametroEnrolamientoBiometricoRequest">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0" /> 
+  <xsd:element name="tokenEnrolamiento" type="consultas:ConsultarTokenEnrolamientoBiometricoInDTO" nillable="true" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+ <xsd:element name="consultarParametroEnrolamientoBiometricoResponse">
+ <xsd:complexType>
+ <xsd:sequence>
+  <xsd:element name="parametroEnrolamientoBiometria" type="consultas:ConsultarTokenEnrolamientoBiometricoOutDTO" /> 
+  </xsd:sequence>
+  </xsd:complexType>
+  </xsd:element>
+  </xsd:schema>
+  </types>
+ <message name="verificarEstadoWSRequest">
+  <part name="parameters" element="tns:verificarEstadoWS" /> 
+  </message>
+ <message name="verificarEstadoWSResponse">
+  <part name="parameters" element="tns:verificarEstadoWSResponse" /> 
+  </message>
+ <message name="consultarTemplateHuellaDigitalRequest">
+  <part name="parameters" element="tns:consultarTemplateHuellaDigital" /> 
+  </message>
+ <message name="consultarTemplateHuellaDigitalResponse">
+  <part name="parameters" element="tns:consultarTemplateHuellaDigitalResponse" /> 
+  </message>
+ <message name="consultarTemplateHuellaDigitalUsuarioRequest">
+  <part name="parameters" element="tns:consultarTemplateHuellaDigitalUsuario" /> 
+  </message>
+ <message name="consultarTemplateHuellaDigitalUsuarioResponse">
+  <part name="parameters" element="tns:consultarTemplateHuellaDigitalUsuarioResponse" /> 
+  </message>
+ <message name="consultarParametroValidacionBiometricaRequest">
+  <part name="parameters" element="tns:consultarParametroValidacionBiometricaRequest" /> 
+  </message>
+ <message name="consultarParametroValidacionBiometricaResponse">
+  <part name="parameters" element="tns:consultarParametroValidacionBiometricaResponse" /> 
+  </message>
+ <message name="prevalidarTokenBiometricoRequest">
+  <part name="parameters" element="tns:prevalidarTokenBiometricoRequest" /> 
+  </message>
+ <message name="prevalidarTokenBiometricoResponse">
+  <part name="parameters" element="tns:prevalidarTokenBiometricoResponse" /> 
+  </message>
+ <message name="consultarParametroEnrolamientoBiometricoRequest">
+  <part name="parameters" element="tns:consultarParametroEnrolamientoBiometricoRequest" /> 
+  </message>
+ <message name="consultarParametroEnrolamientoBiometricoResponse">
+  <part name="parameters" element="tns:consultarParametroEnrolamientoBiometricoResponse" /> 
+  </message>
+ <message name="NewOperationResponse">
+  <part name="parameters" element="tns:NewOperationResponse" /> 
+  </message>
+ <portType name="CommonService">
+ <operation name="verificarEstadoWS">
+  <input message="tns:verificarEstadoWSRequest" /> 
+  <output message="tns:verificarEstadoWSResponse" /> 
+  </operation>
+ <operation name="consultarTemplateHuellaDigital">
+  <input message="tns:consultarTemplateHuellaDigitalRequest" /> 
+  <output message="tns:consultarTemplateHuellaDigitalResponse" /> 
+  </operation>
+ <operation name="consultarTemplateHuellaDigitalUsuario">
+  <input message="tns:consultarTemplateHuellaDigitalUsuarioRequest" /> 
+  <output message="tns:consultarTemplateHuellaDigitalUsuarioResponse" /> 
+  </operation>
+ <operation name="consultarParametroValidacionBiometrica">
+  <input message="tns:consultarParametroValidacionBiometricaRequest" /> 
+  <output message="tns:consultarParametroValidacionBiometricaResponse" /> 
+  </operation>
+ <operation name="prevalidarTokenBiometrico">
+  <input message="tns:prevalidarTokenBiometricoRequest" /> 
+  <output message="tns:prevalidarTokenBiometricoResponse" /> 
+  </operation>
+ <operation name="consultarParametroEnrolamientoBiometrico">
+  <input message="tns:consultarParametroEnrolamientoBiometricoRequest" /> 
+  <output message="tns:consultarParametroEnrolamientoBiometricoResponse" /> 
+  </operation>
+  </portType>
+ <binding name="CommonServiceSOAP" type="tns:CommonService">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+ <operation name="verificarEstadoWS">
+  <soap:operation soapAction="http://client.common.runt.heinsohn.com//verificarEstadoWS" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+ <operation name="consultarTemplateHuellaDigital">
+  <soap:operation soapAction="http://client.common.runt.heinsohn.com//consultarTemplateHuellaDigital" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+ <operation name="consultarTemplateHuellaDigitalUsuario">
+  <soap:operation soapAction="http://client.common.runt.heinsohn.com//consultarTemplateHuellaDigitalUsuario" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+ <operation name="consultarParametroValidacionBiometrica">
+  <soap:operation soapAction="http://client.common.runt.heinsohn.com//consultarParametroValidacionBiometrica" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+ <operation name="prevalidarTokenBiometrico">
+  <soap:operation soapAction="http://client.common.runt.heinsohn.com//prevalidarTokenBiometrico" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+ <operation name="consultarParametroEnrolamientoBiometrico">
+  <soap:operation soapAction="http://client.common.runt.heinsohn.com//consultarParametroEnrolamientoBiometrico" /> 
+ <input>
+  <soap:body use="literal" /> 
+  </input>
+ <output>
+  <soap:body use="literal" /> 
+  </output>
+  </operation>
+  </binding>
+ <service name="CommonService">
+ <port name="CommonServiceSOAP" binding="tns:CommonServiceSOAP">
+  <soap:address location="http://wsm.runt.com.co:80/gateway/services/SID0003002" /> 
+  </port>
+  </service>
+  </definitions>

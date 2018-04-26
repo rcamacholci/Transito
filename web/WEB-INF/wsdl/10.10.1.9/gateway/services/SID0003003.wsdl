@@ -1,0 +1,260 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns0="http://client.liquidacion.runt.heinsohn.com/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://client.liquidacion.runt.heinsohn.com/" name="LiquidacionService" targetNamespace="http://client.liquidacion.runt.heinsohn.com/">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:identificadores="http://identificaciones.general.runt.heinsohn.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:solicitud="http://solicitudes.general.runt.heinsohn.com" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://client.liquidacion.runt.heinsohn.com/types/" targetNamespace="http://client.liquidacion.runt.heinsohn.com/types/" elementFormDefault="qualified">
+            <import namespace="http://solicitudes.general.runt.heinsohn.com" schemaLocation="SID0003003/P889979426/OwsmImport.xsd"/>
+            <import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="SID0003003/P724965611/OwsmImport.xsd"/>
+            <element name="consultarDatosLiquidacionElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="consultaLiquidacionInDTO" type="solicitud:ConsultaLiquidacionINDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarDatosLiquidacionResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:LiquidacionOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="registrarLiquidacionElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="liquidacion" type="solicitud:RegistrarLiquidacionInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="registrarLiquidacionResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:LiquidacionOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="registrarLiquidacionSIRENA">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="in" type="solicitud:RegistrarLiquidacionSIRENAInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="registrarLiquidacionSIRENAResponse">
+                <complexType>
+                    <sequence>
+                        <element name="status" type="identificadores:StatusDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <xsd:element name="verificarEstadoWS">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="verificarEstadoWSResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <element name="status" type="identificadores:StatusDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="registrarLiquidacionFaltanteServicioElement">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="in" type="solicitud:RegistrarLiquidacionFaltanteServicioInDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="registrarLiquidacionFaltanteServicioResponseElement">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <element name="result" type="solicitud:RegistrarLiquidacionFaltanteServicioOutDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <element name="solicitarLiquidacionCUPLAjusteTarifa">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="in" type="solicitud:LiquidacionCUPLAjusteTarifaInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="solicitarLiquidacionCUPLAjusteTarifaResponse">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:LiquidacionCUPLAjusteTarifaOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <xsd:schema xmlns:Q2="http://identificaciones.general.runt.heinsohn.com" xmlns:Q1="http://solicitudes.general.runt.heinsohn.com" targetNamespace="http://client.liquidacion.runt.heinsohn.com/">
+            <xsd:import schemaLocation="SID0003003/P724965611/OwsmImport.xsd" namespace="http://identificaciones.general.runt.heinsohn.com"/>
+            <xsd:import schemaLocation="SID0003003/P889979426/OwsmImport.xsd" namespace="http://solicitudes.general.runt.heinsohn.com"/>
+            <xsd:element name="consultarCUPL">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="header" type="Q2:CommonHeaderDTO" maxOccurs="1" minOccurs="0"/>
+                        <xsd:element name="in" type="Q1:ConsultaCUPLInDTO"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="consultarCUPLResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="result" type="Q1:CUPLOutDTO"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </types>
+    <message name="LiquidacionService_consultarDatosLiquidacion">
+        <part name="parameters" element="tns0:consultarDatosLiquidacionElement"/>
+    </message>
+    <message name="LiquidacionService_consultarDatosLiquidacionResponse">
+        <part name="parameters" element="tns0:consultarDatosLiquidacionResponseElement"/>
+    </message>
+    <message name="LiquidacionService_registrarLiquidacion">
+        <part name="parameters" element="tns0:registrarLiquidacionElement"/>
+    </message>
+    <message name="LiquidacionService_registrarLiquidacionResponse">
+        <part name="parameters" element="tns0:registrarLiquidacionResponseElement"/>
+    </message>
+    <message name="registrarLiquidacionSIRENARequest">
+        <part name="parameters" element="tns0:registrarLiquidacionSIRENA"/>
+    </message>
+    <message name="registrarLiquidacionSIRENAResponse">
+        <part name="parameters" element="tns0:registrarLiquidacionSIRENAResponse"/>
+    </message>
+    <message name="verificarEstadoWSRequest">
+        <part name="parameters" element="tns0:verificarEstadoWS"/>
+    </message>
+    <message name="verificarEstadoWSResponse">
+        <part name="parameters" element="tns0:verificarEstadoWSResponse"/>
+    </message>
+    <message name="consultarCUPLRequest">
+        <part name="parameters" element="tns:consultarCUPL"/>
+    </message>
+    <message name="consultarCUPLResponse">
+        <part name="parameters" element="tns:consultarCUPLResponse"/>
+    </message>
+    <message name="registrarLiquidacionFaltanteServicioRequest">
+        <part name="parameters" element="tns0:registrarLiquidacionFaltanteServicioElement"/>
+    </message>
+    <message name="registrarLiquidacionFaltanteServicioResponse">
+        <part name="parameters" element="tns0:registrarLiquidacionFaltanteServicioResponseElement"/>
+    </message>
+    <message name="solicitarLiquidacionCUPLAjusteTarifaRequest">
+        <part name="parameters" element="tns0:solicitarLiquidacionCUPLAjusteTarifa"/>
+    </message>
+    <message name="solicitarLiquidacionCUPLAjusteTarifaResponse">
+        <part name="parameters" element="tns0:solicitarLiquidacionCUPLAjusteTarifaResponse"/>
+    </message>
+    <portType name="LiquidacionService">
+        <operation name="consultarDatosLiquidacion">
+            <input message="tns:LiquidacionService_consultarDatosLiquidacion"/>
+            <output message="tns:LiquidacionService_consultarDatosLiquidacionResponse"/>
+        </operation>
+        <operation name="registrarLiquidacion">
+            <input message="tns:LiquidacionService_registrarLiquidacion"/>
+            <output message="tns:LiquidacionService_registrarLiquidacionResponse"/>
+        </operation>
+        <operation name="registrarLiquidacionSIRENA">
+            <input message="tns:registrarLiquidacionSIRENARequest"/>
+            <output message="tns:registrarLiquidacionSIRENAResponse"/>
+        </operation>
+        <operation name="verificarEstadoWS">
+            <input message="tns:verificarEstadoWSRequest"/>
+            <output message="tns:verificarEstadoWSResponse"/>
+        </operation>
+        <operation name="consultarCUPL">
+            <input message="tns:consultarCUPLRequest"/>
+            <output message="tns:consultarCUPLResponse"/>
+        </operation>
+        <operation name="registrarLiquidacionFaltanteServicio">
+            <input message="tns:registrarLiquidacionFaltanteServicioRequest"/>
+            <output message="tns:registrarLiquidacionFaltanteServicioResponse"/>
+        </operation>
+        <operation name="solicitarLiquidacionCUPLAjusteTarifa">
+            <input message="tns:solicitarLiquidacionCUPLAjusteTarifaRequest"/>
+            <output message="tns:solicitarLiquidacionCUPLAjusteTarifaResponse"/>
+        </operation>
+    </portType>
+    <binding name="LiquidacionServiceSoapHttp" type="tns:LiquidacionService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="consultarDatosLiquidacion">
+            <soap:operation soapAction="http://client.liquidacion.runt.heinsohn.com//consultarDatosLiquidacion"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="registrarLiquidacion">
+            <soap:operation soapAction="http://client.liquidacion.runt.heinsohn.com//registrarLiquidacion"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="registrarLiquidacionSIRENA">
+            <soap:operation soapAction="http://client.liquidacion.runt.heinsohn.com//registrarLiquidacionSIRENA"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="verificarEstadoWS">
+            <soap:operation soapAction="http://client.liquidacion.runt.heinsohn.com//verificarEstadoWS"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarCUPL">
+            <soap:operation soapAction="http://client.liquidacion.runt.heinsohn.com//consultarCUPL"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="registrarLiquidacionFaltanteServicio">
+            <soap:operation soapAction="http://client.liquidacion.runt.heinsohn.com//registrarLiquidacionFaltanteServicio"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="solicitarLiquidacionCUPLAjusteTarifa">
+            <soap:operation soapAction="http://client.liquidacion.runt.heinsohn.com//solicitarLiquidacionCUPLAjusteTarifa"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="LiquidacionService">
+        <port name="LiquidacionServiceSoapHttpPort" binding="tns:LiquidacionServiceSoapHttp">
+            <soap:address location="http://wsm.runt.com.co:80/gateway/services/SID0003003"/>
+        </port>
+    </service>
+</definitions>

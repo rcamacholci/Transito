@@ -1,0 +1,155 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://client.param.runt.heinsohn.com/" name="DatosParametricosService" targetNamespace="http://client.param.runt.heinsohn.com/">
+    <types>
+        <xsd:schema xmlns:identificadores="http://identificaciones.general.runt.heinsohn.com" xmlns:param="http://param.general.runt.heinsohn.com" targetNamespace="http://client.param.runt.heinsohn.com/">
+            <xsd:import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="SID0003010/P724965611/OwsmImport.xsd"/>
+            <xsd:import namespace="http://param.general.runt.heinsohn.com" schemaLocation="SID0003010/N2103348129/OwsmImport.xsd"/>
+            <xsd:element name="consultarTablasParametricas">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="header" type="identificadores:CommonHeaderDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="consultarTablasParametricasResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="identificadores:StatusDTO" nillable="true"/>
+                        <xsd:element name="out" type="param:TablasParametricasOutDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="consultarTabla">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="header" type="identificadores:CommonHeaderDTO" nillable="true"/>
+                        <xsd:element name="idTablaParametrica" type="xsd:string" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="consultarTablaResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="identificadores:StatusDTO" nillable="true"/>
+                        <xsd:element name="out" type="param:ParametrosOutDTO" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="consultarTablaCSV">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="header" type="identificadores:CommonHeaderDTO" nillable="true"/>
+                        <xsd:element name="idTablaParametrica" type="xsd:string" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="consultarTablaCSVResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="out" type="xsd:string" nillable="true"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="verificarEstadoWS">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="header" type="identificadores:CommonHeaderDTO" maxOccurs="1" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="verificarEstadoWSResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="identificadores:StatusDTO"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </types>
+    <message name="consultarTablasParametricasRequest">
+        <part name="parameters" element="tns:consultarTablasParametricas"/>
+    </message>
+    <message name="consultarTablasParametricasResponse">
+        <part name="parameters" element="tns:consultarTablasParametricasResponse"/>
+    </message>
+    <message name="consultarTablaRequest">
+        <part name="parameters" element="tns:consultarTabla"/>
+    </message>
+    <message name="consultarTablaResponse">
+        <part name="parameters" element="tns:consultarTablaResponse"/>
+    </message>
+    <message name="consultarTablaCSVRequest">
+        <part name="parameters" element="tns:consultarTablaCSV"/>
+    </message>
+    <message name="consultarTablaCSVResponse">
+        <part name="parameters" element="tns:consultarTablaCSVResponse"/>
+    </message>
+    <message name="verificarEstadoWSRequest">
+        <part name="parameters" element="tns:verificarEstadoWS"/>
+    </message>
+    <message name="verificarEstadoWSResponse">
+        <part name="parameters" element="tns:verificarEstadoWSResponse"/>
+    </message>
+    <portType name="DatosParametricosService">
+        <operation name="consultarTablasParametricas">
+            <input message="tns:consultarTablasParametricasRequest"/>
+            <output message="tns:consultarTablasParametricasResponse"/>
+        </operation>
+        <operation name="consultarTabla">
+            <input message="tns:consultarTablaRequest"/>
+            <output message="tns:consultarTablaResponse"/>
+        </operation>
+        <operation name="consultarTablaCSV">
+            <input message="tns:consultarTablaCSVRequest"/>
+            <output message="tns:consultarTablaCSVResponse"/>
+        </operation>
+        <operation name="verificarEstadoWS">
+            <input message="tns:verificarEstadoWSRequest"/>
+            <output message="tns:verificarEstadoWSResponse"/>
+        </operation>
+    </portType>
+    <binding name="DatosParametricosServiceSOAP" type="tns:DatosParametricosService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="verificarEstadoWS">
+            <soap:operation soapAction="http://client.param.runt.heinsohn.com//verificarEstadoWS"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarTablasParametricas">
+            <soap:operation soapAction="http://client.param.runt.heinsohn.com//consultarTablasParametricas"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarTabla">
+            <soap:operation soapAction="http://client.param.runt.heinsohn.com//consultarTabla"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarTablaCSV">
+            <soap:operation soapAction="http://client.param.runt.heinsohn.com//consultarTablaCSV"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="DatosParametricosService">
+        <port name="DatosParametricosServiceSOAP" binding="tns:DatosParametricosServiceSOAP">
+            <soap:address location="http://wsm.runt.com.co:80/gateway/services/SID0003010"/>
+        </port>
+    </service>
+</definitions>

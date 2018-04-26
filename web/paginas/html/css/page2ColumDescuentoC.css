@@ -1,0 +1,62 @@
+/* 
+    Document   : page2ColumDescuentoC
+    Created on : 15/02/2013, 02:01:58 PM
+    Author     : Jefrey
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+/*
+    Document   : page2Colum
+    Created on : 8/02/2013, 04:19:00 PM
+    Author     : Jefrey
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root {
+    display: block;
+}
+
+#contenedor{
+text-align: left;
+width: 1024px;
+margin: auto;}
+
+#lateral{
+width: 480px;  /*Este será el ancho que tendrá tu columna*/
+background-color: #FFFFFF;  /*Aquí pon el color del fondo que quieras para este lateral*/
+float:left; /*Aqui determinas de lado quieres quede esta "columna" */
+background-position:center;
+}
+
+#principal{
+margin-left:520px; /*Este margen hace que no se encime el contenido en tu menúlateral, es     importante que pongas un pocos pixeles más que el ancho  de tu columna lateral*/
+background-color: #FFFFFF;
+border:#000000 0px solid; /*ponemos un dorde para que se vea bonito*/
+}
+
+input[type=text] {
+border: 0px solid #eeeeee;
+background-color: #eeeeee;
+color: #000000;
+font-color: #000000;
+font-size: 16px;
+font-family: Arial;
+overflow: auto;
+height: 22px;
+}

@@ -1,0 +1,1725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions targetNamespace="http://client.registroinformacion.runt.heinsohn.com/" name="RegistrarInformacionService" xmlns:tns="http://client.registroinformacion.runt.heinsohn.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+
+<types>
+
+
+<xsd:schema targetNamespace="http://client.registroinformacion.runt.heinsohn.com/" xmlns:Q1="http://identificaciones.general.runt.heinsohn.com" xmlns:Q2="http://registroinformacion.general.runt.heinsohn.com" xmlns:Q3="http://consultas.general.runt.heinsohn.com">
+
+<xsd:import namespace="http://consultas.general.runt.heinsohn.com" schemaLocation="Consultas.xsd"/>
+
+<xsd:import namespace="http://registroinformacion.general.runt.heinsohn.com" schemaLocation="RegistroInformacion.xsd"/>
+
+<xsd:import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="Identificadores.xsd"/>
+
+
+<xsd:element name="registrarCertificadoBlindajeDesblindaje">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarCertificadoBlindajeDesblindajeInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarCertificadoBlindajeDesblindajeResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarActaRemateAdjudicacion">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarActaRemateAdjudicacionInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarActaRemateAdjudicacionResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarCertificadoConversionGNV">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarCertificadoConversionGNVInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarCertificadoConversionGNVResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarDesintegracionFisica">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarDesintegracionFisicaInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarDesintegracionFisicaResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="solicitarCambioDocumentoDatosPersona">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:SolicitarCambioDocumentoDatosPersonaInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="solicitarCambioDocumentoDatosPersonaResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="verificarEstadoWS">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="verificarEstadoWSResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarActaImportacionDetalleVehiculo">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarActaImportacionDetalleVehiculoInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarActaImportacionDetalleVehiculoResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarMedidaCautelar">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarMedidaCautelarInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarMedidaCautelarResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="levantarMedidaCautelar">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:LevantarMedidaCautelarInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="levantarMedidaCautelarResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="cargarInformacionBatch">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:CargarInformacionBatchInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="cargarInformacionBatchResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="resultado" type="Q2:CargarInformacionBatchOutDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarSustratosEntregados">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarSustratosEntregadosInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarSustratosEntregadosResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarRevisionTecnicoMecanica">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarRevisionTecnicoMecanicaInDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarRevisionTecnicoMecanicaResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="out" type="Q2:RegistrarRevisionTecnicoMecanicaOutDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarCertificadoRegistroRNRYS">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:InformacionCertificadoRegistroInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarCertificadoRegistroRNRYSResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarPolizaSOAT">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:InformacionPolizaSOATInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarPolizaSOATResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarComparendo">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarComparendoInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarComparendoResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarNumeroFthAutomotor">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarNumeroFthAutomotorInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarNumeroFthAutomotorResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="modificarComparendo">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:ModificarComparendoInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="modificarComparendoResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarNovedadComparendoResolucion">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarNovedadComparendoResolucionInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarNovedadComparendoResolucionResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarResolucion">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarResolucionInDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarResolucionResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarLevantamientoLimitacionEnajenacionBienes">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarLevLimitacionEnajenacionInDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarLevantamientoLimitacionEnajenacionBienesResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarLimitacionEnajenacionBienes">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="header" minOccurs="0" type="Q1:CommonHeaderDTO"/>
+
+<xsd:element name="in" type="Q2:RegistrarLimitacionEnajenacionInDTO"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+
+<xsd:element name="registrarLimitacionEnajenacionBienesResponse">
+
+
+<xsd:complexType>
+
+
+<xsd:sequence>
+
+<xsd:element name="status" type="Q1:StatusDTO" nillable="true"/>
+
+</xsd:sequence>
+
+</xsd:complexType>
+
+</xsd:element>
+
+<xsd:complexType name="NewElementType"/>
+
+</xsd:schema>
+
+</types>
+
+
+<message name="registrarCertificadoBlindajeDesblindajeRequest">
+
+<part name="parameters" element="tns:registrarCertificadoBlindajeDesblindaje"/>
+
+</message>
+
+
+<message name="registrarCertificadoBlindajeDesblindajeResponse">
+
+<part name="parameters" element="tns:registrarCertificadoBlindajeDesblindajeResponse"/>
+
+</message>
+
+
+<message name="registrarActaRemateAdjudicacionRequest">
+
+<part name="parameters" element="tns:registrarActaRemateAdjudicacion"/>
+
+</message>
+
+
+<message name="registrarActaRemateAdjudicacionResponse">
+
+<part name="parameters" element="tns:registrarActaRemateAdjudicacionResponse"/>
+
+</message>
+
+
+<message name="registrarCertificadoConversionGNVRequest">
+
+<part name="parameters" element="tns:registrarCertificadoConversionGNV"/>
+
+</message>
+
+
+<message name="registrarCertificadoConversionGNVResponse">
+
+<part name="parameters" element="tns:registrarCertificadoConversionGNVResponse"/>
+
+</message>
+
+
+<message name="registrarDesintegracionFisicaRequest">
+
+<part name="parameters" element="tns:registrarDesintegracionFisica"/>
+
+</message>
+
+
+<message name="registrarDesintegracionFisicaResponse">
+
+<part name="parameters" element="tns:registrarDesintegracionFisicaResponse"/>
+
+</message>
+
+
+<message name="solicitarCambioDocumentoDatosPersonaRequest">
+
+<part name="parameters" element="tns:solicitarCambioDocumentoDatosPersona"/>
+
+</message>
+
+
+<message name="solicitarCambioDocumentoDatosPersonaResponse">
+
+<part name="parameters" element="tns:solicitarCambioDocumentoDatosPersonaResponse"/>
+
+</message>
+
+
+<message name="verificarEstadoWSRequest">
+
+<part name="parameters" element="tns:verificarEstadoWS"/>
+
+</message>
+
+
+<message name="verificarEstadoWSResponse">
+
+<part name="parameters" element="tns:verificarEstadoWSResponse"/>
+
+</message>
+
+
+<message name="registrarActaImportacionDetalleVehiculoRequest">
+
+<part name="parameters" element="tns:registrarActaImportacionDetalleVehiculo"/>
+
+</message>
+
+
+<message name="registrarActaImportacionDetalleVehiculoResponse">
+
+<part name="parameters" element="tns:registrarActaImportacionDetalleVehiculoResponse"/>
+
+</message>
+
+
+<message name="registrarMedidaCautelarRequest">
+
+<part name="parameters" element="tns:registrarMedidaCautelar"/>
+
+</message>
+
+
+<message name="registrarMedidaCautelarResponse">
+
+<part name="parameters" element="tns:registrarMedidaCautelarResponse"/>
+
+</message>
+
+
+<message name="levantarMedidaCautelarRequest">
+
+<part name="parameters" element="tns:levantarMedidaCautelar"/>
+
+</message>
+
+
+<message name="levantarMedidaCautelarResponse">
+
+<part name="parameters" element="tns:levantarMedidaCautelarResponse"/>
+
+</message>
+
+
+<message name="cargarInformacionBatchRequest">
+
+<part name="parameters" element="tns:cargarInformacionBatch"/>
+
+</message>
+
+
+<message name="cargarInformacionBatchResponse">
+
+<part name="parameters" element="tns:cargarInformacionBatchResponse"/>
+
+</message>
+
+
+<message name="registrarSustratosEntregadosRequest">
+
+<part name="parameters" element="tns:registrarSustratosEntregados"/>
+
+</message>
+
+
+<message name="registrarSustratosEntregadosResponse">
+
+<part name="parameters" element="tns:registrarSustratosEntregadosResponse"/>
+
+</message>
+
+
+<message name="registrarRevisionTecnicoMecanicaRequest">
+
+<part name="parameters" element="tns:registrarRevisionTecnicoMecanica"/>
+
+</message>
+
+
+<message name="registrarRevisionTecnicoMecanicaResponse">
+
+<part name="parameters" element="tns:registrarRevisionTecnicoMecanicaResponse"/>
+
+</message>
+
+
+<message name="registrarCertificadoRegistroRNRYSRequest">
+
+<part name="parameters" element="tns:registrarCertificadoRegistroRNRYS"/>
+
+</message>
+
+
+<message name="registrarCertificadoRegistroRNRYSResponse">
+
+<part name="parameters" element="tns:registrarCertificadoRegistroRNRYSResponse"/>
+
+</message>
+
+
+<message name="registrarPolizaSOATRequest">
+
+<part name="parameters" element="tns:registrarPolizaSOAT"/>
+
+</message>
+
+
+<message name="registrarPolizaSOATResponse">
+
+<part name="parameters" element="tns:registrarPolizaSOATResponse"/>
+
+</message>
+
+
+<message name="registrarComparendoRequest">
+
+<part name="parameters" element="tns:registrarComparendo"/>
+
+</message>
+
+
+<message name="registrarComparendoResponse">
+
+<part name="parameters" element="tns:registrarComparendoResponse"/>
+
+</message>
+
+
+<message name="registrarNumeroFthAutomotorRequest">
+
+<part name="parameters" element="tns:registrarNumeroFthAutomotor"/>
+
+</message>
+
+
+<message name="registrarNumeroFthAutomotorResponse">
+
+<part name="parameters" element="tns:registrarNumeroFthAutomotorResponse"/>
+
+</message>
+
+
+<message name="modificarComparendoRequest">
+
+<part name="parameters" element="tns:modificarComparendo"/>
+
+</message>
+
+
+<message name="modificarComparendoResponse">
+
+<part name="parameters" element="tns:modificarComparendoResponse"/>
+
+</message>
+
+
+<message name="registrarNovedadComparendoResolucionRequest">
+
+<part name="parameters" element="tns:registrarNovedadComparendoResolucion"/>
+
+</message>
+
+
+<message name="registrarNovedadComparendoResolucionResponse">
+
+<part name="parameters" element="tns:registrarNovedadComparendoResolucionResponse"/>
+
+</message>
+
+
+<message name="registrarResolucionRequest">
+
+<part name="parameters" element="tns:registrarResolucion"/>
+
+</message>
+
+
+<message name="registrarResolucionResponse">
+
+<part name="parameters" element="tns:registrarResolucionResponse"/>
+
+</message>
+
+
+<message name="registrarLevantamientoLimitacionEnajenacionBienesRequest">
+
+<part name="parameters" element="tns:registrarLevantamientoLimitacionEnajenacionBienes"/>
+
+</message>
+
+
+<message name="registrarLevantamientoLimitacionEnajenacionBienesResponse">
+
+<part name="parameters" element="tns:registrarLevantamientoLimitacionEnajenacionBienesResponse"/>
+
+</message>
+
+
+<message name="registrarLimitacionEnajenacionBienesRequest">
+
+<part name="parameters" element="tns:registrarLimitacionEnajenacionBienes"/>
+
+</message>
+
+
+<message name="registrarLimitacionEnajenacionBienesResponse">
+
+<part name="parameters" element="tns:registrarLimitacionEnajenacionBienesResponse"/>
+
+</message>
+
+
+<portType name="RegistrarInformacionService">
+
+
+<operation name="registrarCertificadoBlindajeDesblindaje">
+
+<input message="tns:registrarCertificadoBlindajeDesblindajeRequest"/>
+
+<output message="tns:registrarCertificadoBlindajeDesblindajeResponse"/>
+
+</operation>
+
+
+<operation name="registrarActaRemateAdjudicacion">
+
+<input message="tns:registrarActaRemateAdjudicacionRequest"/>
+
+<output message="tns:registrarActaRemateAdjudicacionResponse"/>
+
+</operation>
+
+
+<operation name="registrarCertificadoConversionGNV">
+
+<input message="tns:registrarCertificadoConversionGNVRequest"/>
+
+<output message="tns:registrarCertificadoConversionGNVResponse"/>
+
+</operation>
+
+
+<operation name="registrarDesintegracionFisica">
+
+<input message="tns:registrarDesintegracionFisicaRequest"/>
+
+<output message="tns:registrarDesintegracionFisicaResponse"/>
+
+</operation>
+
+
+<operation name="solicitarCambioDocumentoDatosPersona">
+
+<input message="tns:solicitarCambioDocumentoDatosPersonaRequest"/>
+
+<output message="tns:solicitarCambioDocumentoDatosPersonaResponse"/>
+
+</operation>
+
+
+<operation name="verificarEstadoWS">
+
+<input message="tns:verificarEstadoWSRequest"/>
+
+<output message="tns:verificarEstadoWSResponse"/>
+
+</operation>
+
+
+<operation name="registrarActaImportacionDetalleVehiculo">
+
+<input message="tns:registrarActaImportacionDetalleVehiculoRequest"/>
+
+<output message="tns:registrarActaImportacionDetalleVehiculoResponse"/>
+
+</operation>
+
+
+<operation name="registrarMedidaCautelar">
+
+<input message="tns:registrarMedidaCautelarRequest"/>
+
+<output message="tns:registrarMedidaCautelarResponse"/>
+
+</operation>
+
+
+<operation name="levantarMedidaCautelar">
+
+<input message="tns:levantarMedidaCautelarRequest"/>
+
+<output message="tns:levantarMedidaCautelarResponse"/>
+
+</operation>
+
+
+<operation name="cargarInformacionBatch">
+
+<input message="tns:cargarInformacionBatchRequest"/>
+
+<output message="tns:cargarInformacionBatchResponse"/>
+
+</operation>
+
+
+<operation name="registrarSustratosEntregados">
+
+<input message="tns:registrarSustratosEntregadosRequest"/>
+
+<output message="tns:registrarSustratosEntregadosResponse"/>
+
+</operation>
+
+
+<operation name="registrarRevisionTecnicoMecanica">
+
+<input message="tns:registrarRevisionTecnicoMecanicaRequest"/>
+
+<output message="tns:registrarRevisionTecnicoMecanicaResponse"/>
+
+</operation>
+
+
+<operation name="registrarCertificadoRegistroRNRYS">
+
+<input message="tns:registrarCertificadoRegistroRNRYSRequest"/>
+
+<output message="tns:registrarCertificadoRegistroRNRYSResponse"/>
+
+</operation>
+
+
+<operation name="registrarPolizaSOAT">
+
+<input message="tns:registrarPolizaSOATRequest"/>
+
+<output message="tns:registrarPolizaSOATResponse"/>
+
+</operation>
+
+
+<operation name="registrarComparendo">
+
+<input message="tns:registrarComparendoRequest"/>
+
+<output message="tns:registrarComparendoResponse"/>
+
+</operation>
+
+
+<operation name="registrarNumeroFthAutomotor">
+
+<input message="tns:registrarNumeroFthAutomotorRequest"/>
+
+<output message="tns:registrarNumeroFthAutomotorResponse"/>
+
+</operation>
+
+
+<operation name="modificarComparendo">
+
+<input message="tns:modificarComparendoRequest"/>
+
+<output message="tns:modificarComparendoResponse"/>
+
+</operation>
+
+
+<operation name="registrarNovedadComparendoResolucion">
+
+<input message="tns:registrarNovedadComparendoResolucionRequest"/>
+
+<output message="tns:registrarNovedadComparendoResolucionResponse"/>
+
+</operation>
+
+
+<operation name="registrarResolucion">
+
+<input message="tns:registrarResolucionRequest"/>
+
+<output message="tns:registrarResolucionResponse"/>
+
+</operation>
+
+
+<operation name="registrarLevantamientoLimitacionEnajenacionBienes">
+
+<input message="tns:registrarLevantamientoLimitacionEnajenacionBienesRequest"/>
+
+<output message="tns:registrarLevantamientoLimitacionEnajenacionBienesResponse"/>
+
+</operation>
+
+
+<operation name="registrarLimitacionEnajenacionBienes">
+
+<input message="tns:registrarLimitacionEnajenacionBienesRequest"/>
+
+<output message="tns:registrarLimitacionEnajenacionBienesResponse"/>
+
+</operation>
+
+</portType>
+
+
+<binding name="RegistrarInformacionServiceSOAP" type="tns:RegistrarInformacionService">
+
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+
+
+<operation name="registrarCertificadoBlindajeDesblindaje">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarCertificadoBlindajeDesblindaje"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarActaRemateAdjudicacion">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarActaRemateAdjudicacion"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarCertificadoConversionGNV">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarCertificadoConversionGNV"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarDesintegracionFisica">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarDesintegracionFisica"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="solicitarCambioDocumentoDatosPersona">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//solicitarCambioDocumentoDatosPersona"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="verificarEstadoWS">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//verificarEstadoWS"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarActaImportacionDetalleVehiculo">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarActaImportacionDetalleVehiculo"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarMedidaCautelar">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarMedidaCautelar"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="levantarMedidaCautelar">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//levantarMedidaCautelar"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="cargarInformacionBatch">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//cargarInformacionBatch"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarSustratosEntregados">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarSustratosEntregados"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarRevisionTecnicoMecanica">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarRevisionTecnicoMecanica"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarCertificadoRegistroRNRYS">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarCertificadoRegistroRNRYS"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarPolizaSOAT">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarPolizaSOAT"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarComparendo">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarComparendo"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarNumeroFthAutomotor">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarNumeroFthAutomotor"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="modificarComparendo">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//modificarComparendo"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarNovedadComparendoResolucion">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarNovedadComparendoResolucion"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarResolucion">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarResolucion"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarLevantamientoLimitacionEnajenacionBienes">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarLevantamientoLimitacionEnajenacionBienes"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+
+<operation name="registrarLimitacionEnajenacionBienes">
+
+<soap:operation soapAction="http://client.registroinformacion.runt.heinsohn.com//registrarLimitacionEnajenacionBienes"/>
+
+
+<input>
+
+<soap:body use="literal"/>
+
+</input>
+
+
+<output>
+
+<soap:body use="literal"/>
+
+</output>
+
+</operation>
+
+</binding>
+
+
+<service name="RegistrarInformacionService">
+
+
+<port name="RegistrarInformacionServiceSOAP" binding="tns:RegistrarInformacionServiceSOAP">
+
+<soap:address location="http://wsm.runt.com.co:80/gateway/services/SID0003009"/>
+
+</port>
+
+</service>
+
+</definitions>

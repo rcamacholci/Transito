@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="AcuerdoPago_vehiculo"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="612"
+		 pageHeight="792"
+		 columnWidth="552"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ID_FINANCIACION" isForPrompting="true" class="java.lang.Long"/>
+	<queryString><![CDATA[select f.id_financiacion_imp id_financiacion,f.numero,f.fecha,
+DECODE(p.tipo_documento,'1','Cedula Ciudadania','3','Cedula Extranjeria','2','Tarjeta de Identidad') tipo_doc,
+p.documento cedula,p.nombre_1||' '||p.apellido_1 nombre, f.valor,U.NOMBRE USUARIO,v.placa
+from financiaciones_imp f,personas p,USUARIOS U,vehiculos v
+where p.id_persona = f.fk_persona
+and v.id_vehiculo =f.fk_vehiculo
+AND F.FK_USUARIO = U.ID_USUARIO
+and f.id_financiacion_imp = $P{ID_FINANCIACION}]]></queryString>
+
+	<field name="ID_FINANCIACION" class="java.lang.Long"/>
+	<field name="NUMERO" class="java.lang.String"/>
+	<field name="FECHA" class="java.sql.Timestamp"/>
+	<field name="TIPO_DOC" class="java.lang.String"/>
+	<field name="CEDULA" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="VALOR" class="java.math.BigDecimal"/>
+	<field name="USUARIO" class="java.lang.String"/>
+	<field name="PLACA" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="96"  isSplitAllowed="true" >
+				<line direction="TopDown">
+					<reportElement
+						x="30"
+						y="77"
+						width="491"
+						height="0"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="30"
+						y="13"
+						width="76"
+						height="35"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\html\\images\\transito1.png"]]></imageExpression>
+				</image>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="453"
+						y="11"
+						width="29"
+						height="49"
+						key="image-2"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\html\\images\\icontec.PNG"]]></imageExpression>
+				</image>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="483"
+						y="11"
+						width="31"
+						height="49"
+						key="image-3"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\html\\images\\icontec2.PNG"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="47"
+						y="51"
+						width="59"
+						height="9"
+						key="staticText-18"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica" size="6" isBold="false"/>
+					</textElement>
+				<text><![CDATA[NIT. 800.115.102- 1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="136"
+						y="18"
+						width="281"
+						height="18"
+						key="staticText-19"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-BoldOblique" size="13" isBold="true" isItalic="true"/>
+					</textElement>
+				<text><![CDATA[INSTITUTO DE TRÁNSITO DEL ATLÁNTICO]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="136"
+						y="40"
+						width="283"
+						height="17"
+						key="textField-4"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-BoldOblique" size="10" isBold="true" isItalic="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Acuerdo de Pago No. "+$F{NUMERO}]]></textFieldExpression>
+				</textField>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="372"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="30"
+						y="4"
+						width="491"
+						height="107"
+						key="textField-2"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["En Barranquilla, el  "+new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{FECHA})+",entre los suscritos; en su condición de Profesional Especializada del  Grupo Jurídico del instituto de Tránsito del Atlántico y en ejercicio de la jurisdicción administrativa  y  coactiva por delegación  efectuada por el (la) Director(a) del Instituto de Tránsito del Atlántico según  Resolución  No.  010  de   enero   11  del   2008,  y  el  señor(a) "+$F{NOMBRE}+" , identificado(a) con "+$F{TIPO_DOC}+" No. "+$F{CEDULA}+" ,propietario(a) y/o poseedor del rodante placa No. "+$F{PLACA}+" quien  se  ha  acogido  dentro  del  proceso  de  cobro  al  presente Acuerdo de pago como  Deudor  moroso del Instituto de Tránsito del Atlántico, por concepto de los siguientes Derechos de Transito y un valor total de $ "+new java.text.DecimalFormat("#,##0").format($F{VALOR})]]></textFieldExpression>
+				</textField>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="129"
+						y="171"
+						width="344"
+						height="14"
+						key="subreport-2"
+						positionType="Float"/>
+					<subreportParameter  name="FK_FINANCIACION">
+						<subreportParameterExpression><![CDATA[$F{ID_FINANCIACION}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "financiaciones_imp/AcuerdoPago_SubReporte.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement
+						x="30"
+						y="136"
+						width="493"
+						height="27"
+						key="staticText-13"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[Hemos convenido en celebrar el presente Acuerdo de pago donde el Deudor Moroso  se  compromete pagar la obligación pendiente a favor del Instituto de Tránsito del Atlántico de la siguiente manera :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="30"
+						y="189"
+						width="493"
+						height="183"
+						key="staticText-15"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[El valor abonado a la firma del presente acuerdo y el de las cuotas se imputará al valor del monto total de la obligación y deberá ser cancelado única y exclusivamente en Entidades Financieras Autorizadas y/o en la(s) caja(s) del Instituto de Tránsito del Atlántico a su favor, solamente en efectivo, cheque de gerencia o pago electrónico. La no presentación de la copia del recibo de caja se tendrá como no efectuado el pago. Las partes que firman el presente acuerdo celebrado dentro de esta etapa de cobro, dejan clara y expresa constancia que los gastos que se han generado y se llegaren a generar, seran a costas del deudor, asi como el incumplimiento del deudor en cualquiera de los pagos en las fechas acordadas, dará lugar a la terminación del presente acuerdo de pago y se continuará con el proceso de cobro coactivo y consecuencialmente el embargo y remate de los bienes, muebles o inmuebles que son objeto de cautela hasta que culmine el proceso y se verifique el pago de la obligación, haciéndose exigible las costas y gastos del mismo a cargo del deudor.]]></text>
+				</staticText>
+				<subreport  isUsingCache="true">
+					<reportElement
+						mode="Transparent"
+						x="127"
+						y="117"
+						width="344"
+						height="14"
+						key="subreport-1"
+						positionType="Float"/>
+					<subreportParameter  name="FK_FINANCIACION">
+						<subreportParameterExpression><![CDATA[$P{ID_FINANCIACION}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "financiaciones_imp/AcuerdoPago_SubReporte_2_Vehiculo.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="16"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8"
+						y="3"
+						width="280"
+						height="11"
+						key="textField-3"/>
+					<box></box>
+					<textElement>
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Civitrans - Generado por "+$F{USUARIO}+" el dia "+new java.text.SimpleDateFormat("dd/MM/yyyy hh:mm:ss a").format(new java.util.Date())]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="60"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="31"
+						y="5"
+						width="205"
+						height="17"
+						key="staticText-16"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[MABEL MOSCOTE MOSCOTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="31"
+						y="22"
+						width="242"
+						height="17"
+						key="staticText-17"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica" size="9" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[GRUPO JURIDICO]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="32"
+						y="3"
+						width="204"
+						height="0"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="299"
+						y="4"
+						width="204"
+						height="0"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="299"
+						y="6"
+						width="235"
+						height="15"
+						key="textField-1"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="298"
+						y="21"
+						width="115"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TIPO_DOC}+" : "]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="414"
+						y="21"
+						width="119"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CEDULA}]]></textFieldExpression>
+				</textField>
+			</band>
+		</summary>
+</jasperReport>

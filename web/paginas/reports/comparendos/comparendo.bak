@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="comparendo"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="COMPARENDO" isForPrompting="true" class="java.lang.String"/>
+	<queryString><![CDATA[SELECT C.NUMERO,C.FECHA,C.LUGAR,C.PLACA,C.LICENCIA_CONDUCCION,C.LICENCIA_TRANSITO,
+(SELECT CL.NOMBRE FROM PARAMETROS CL WHERE CL.CODIGO = C.CLASE AND CL.FK_GRUPO = 1) CLASE,
+(SELECT S.NOMBRE FROM PARAMETROS S WHERE S.CODIGO = C.SERVICIO AND S.FK_GRUPO = 3) SERVICIO,
+(SELECT P.DOCUMENTO FROM PERSONAS P WHERE P.ID_PERSONA = C.FK_PERSONA) DOCUMENTO,
+(SELECT P.NOMBRE_1||' '||P.APELLIDO_1 FROM PERSONAS P WHERE P.ID_PERSONA = C.FK_PERSONA) PERSONA,
+(SELECT S.NOMBRE FROM PARAMETROS S WHERE S.CODIGO = C.SERVICIO AND S.FK_GRUPO = 6) TIPO_INFRACTOR,
+(SELECT  A.PLACA FROM AGENTES A WHERE A.ID_AGENTE = C.FK_AGENTE) PLACA_AGENTE,
+(SELECT I.FK_CODIGO_TRANSITO||' O '||I.NUMERO FROM INFRACCIONES I WHERE I.ID_INFRACCION = C.FK_INFRACCION) COD_INFRACCION,
+(SELECT I.DESCRIPCION FROM INFRACCIONES I WHERE I.ID_INFRACCION = C.FK_INFRACCION) INFRACCION,
+(SELECT  A.NOMBRE FROM AGENTES A WHERE A.ID_AGENTE = C.FK_AGENTE) AGENTE,C.OBSERVACIONES
+FROM COMPARENDOS C WHERE NUMERO = $P{COMPARENDO}
+]]></queryString>
+
+	<field name="NUMERO" class="java.lang.String"/>
+	<field name="FECHA" class="java.util.Date"/>
+	<field name="LUGAR" class="java.lang.String"/>
+	<field name="PLACA" class="java.lang.String"/>
+	<field name="LICENCIA_CONDUCCION" class="java.lang.String"/>
+	<field name="LICENCIA_TRANSITO" class="java.lang.String"/>
+	<field name="CLASE" class="java.lang.String"/>
+	<field name="SERVICIO" class="java.lang.String"/>
+	<field name="DOCUMENTO" class="java.lang.String"/>
+	<field name="PERSONA" class="java.lang.String"/>
+	<field name="TIPO_INFRACTOR" class="java.lang.String"/>
+	<field name="PLACA_AGENTE" class="java.math.BigDecimal"/>
+	<field name="COD_INFRACCION" class="java.lang.String"/>
+	<field name="INFRACCION" class="java.lang.String"/>
+	<field name="AGENTE" class="java.lang.String"/>
+	<field name="OBSERVACIONES" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="69"  isSplitAllowed="true" >
+				<rectangle radius="10" >
+					<reportElement
+						x="18"
+						y="10"
+						width="499"
+						height="54"
+						key="rectangle-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="58"
+						y="22"
+						width="370"
+						height="29"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\reports\\images\\logo_.png"]]></imageExpression>
+				</image>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="437"
+						y="22"
+						width="38"
+						height="29"
+						key="image-2"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["C:\\Civitrans\\transito\\web\\paginas\\html\\images\\colombia.png"]]></imageExpression>
+				</image>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="454"  isSplitAllowed="true" >
+				<rectangle radius="10" >
+					<reportElement
+						x="18"
+						y="19"
+						width="499"
+						height="435"
+						key="rectangle-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle radius="8" >
+					<reportElement
+						mode="Transparent"
+						x="27"
+						y="199"
+						width="484"
+						height="46"
+						key="rectangle-9"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle radius="8" >
+					<reportElement
+						x="26"
+						y="371"
+						width="485"
+						height="47"
+						key="rectangle-8"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle radius="8" >
+					<reportElement
+						x="27"
+						y="46"
+						width="484"
+						height="62"
+						key="rectangle-7"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle radius="8" >
+					<reportElement
+						x="27"
+						y="117"
+						width="484"
+						height="76"
+						key="rectangle-5"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle radius="8" >
+					<reportElement
+						x="82"
+						y="9"
+						width="375"
+						height="21"
+						key="rectangle-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="89"
+						y="12"
+						width="223"
+						height="14"
+						forecolor="#000000"
+						key="staticText-3"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[ORDEN COMPARENDO NACIONAL N°]]></text>
+				</staticText>
+				<rectangle radius="8" >
+					<reportElement
+						x="26"
+						y="251"
+						width="484"
+						height="65"
+						key="rectangle-4"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="196"
+						y="256"
+						width="149"
+						height="15"
+						forecolor="#000000"
+						key="staticText-6"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[DATOS VEHICULO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="196"
+						y="122"
+						width="149"
+						height="15"
+						forecolor="#000000"
+						key="staticText-8"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[DATOS INFRACTOR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="50"
+						y="272"
+						width="45"
+						height="17"
+						forecolor="#000000"
+						key="staticText-12"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[PLACA: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="273"
+						width="44"
+						height="14"
+						forecolor="#000000"
+						key="staticText-13"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[CLASE :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="50"
+						y="292"
+						width="60"
+						height="17"
+						forecolor="#000000"
+						key="staticText-14"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[SERVICIO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="266"
+						y="292"
+						width="95"
+						height="18"
+						forecolor="#000000"
+						key="staticText-16"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[LIC. DE TRANSITO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="48"
+						y="142"
+						width="97"
+						height="14"
+						forecolor="#000000"
+						key="staticText-20"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[DOCUMENTO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="48"
+						y="160"
+						width="97"
+						height="14"
+						forecolor="#000000"
+						key="staticText-23"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[TIPO INFRACTOR:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="261"
+						y="142"
+						width="51"
+						height="14"
+						forecolor="#000000"
+						key="staticText-24"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[NOMBRE:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="260"
+						y="160"
+						width="114"
+						height="14"
+						forecolor="#000000"
+						key="staticText-26"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[LIC. DE CONDUCCION:]]></text>
+				</staticText>
+				<rectangle radius="8" >
+					<reportElement
+						x="27"
+						y="323"
+						width="483"
+						height="40"
+						key="rectangle-6"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="196"
+						y="327"
+						width="149"
+						height="15"
+						forecolor="#000000"
+						key="staticText-27"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[DATOS AGENTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="47"
+						y="344"
+						width="37"
+						height="14"
+						forecolor="#000000"
+						key="staticText-28"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[PLACA: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="72"
+						y="66"
+						width="55"
+						height="17"
+						forecolor="#000000"
+						key="staticText-29"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[FECHA : ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="72"
+						y="87"
+						width="54"
+						height="16"
+						forecolor="#000000"
+						key="staticText-31"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[LUGAR:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="196"
+						y="49"
+						width="149"
+						height="15"
+						forecolor="#000000"
+						key="staticText-32"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[DATOS COMPARENDO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="226"
+						y="344"
+						width="47"
+						height="14"
+						forecolor="#000000"
+						key="staticText-33"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[NOMBRE:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="196"
+						y="374"
+						width="149"
+						height="15"
+						forecolor="#000000"
+						key="staticText-34"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[OBSERVACIONES]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="yyyy.MMMMM.dd GGG hh:mm aaa" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="149"
+						y="429"
+						width="175"
+						height="15"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="33"
+						y="429"
+						width="103"
+						height="15"
+						forecolor="#000000"
+						key="staticText-35"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[GENERADO :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="47"
+						y="217"
+						width="80"
+						height="14"
+						forecolor="#000000"
+						key="staticText-37"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[DESCRIPCION :]]></text>
+				</staticText>
+				<rectangle radius="8" >
+					<reportElement
+						x="178"
+						y="186"
+						width="187"
+						height="21"
+						key="rectangle-10"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="183"
+						y="190"
+						width="85"
+						height="14"
+						forecolor="#000000"
+						key="staticText-38"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[INFRACCION]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="312"
+						y="11"
+						width="133"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="132"
+						y="65"
+						width="100"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{FECHA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="132"
+						y="85"
+						width="313"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{LUGAR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="152"
+						y="140"
+						width="100"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DOCUMENTO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="319"
+						y="139"
+						width="173"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PERSONA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="152"
+						y="160"
+						width="100"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TIPO_INFRACTOR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="377"
+						y="159"
+						width="114"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{LICENCIA_CONDUCCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="270"
+						y="188"
+						width="86"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COD_INFRACCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="133"
+						y="208"
+						width="359"
+						height="31"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INFRACCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="115"
+						y="271"
+						width="77"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PLACA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="361"
+						y="273"
+						width="132"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLASE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="365"
+						y="292"
+						width="127"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{LICENCIA_TRANSITO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="115"
+						y="292"
+						width="123"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SERVICIO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="89"
+						y="342"
+						width="83"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PLACA_AGENTE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="285"
+						y="342"
+						width="207"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{AGENTE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="50"
+						y="389"
+						width="442"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{OBSERVACIONES}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

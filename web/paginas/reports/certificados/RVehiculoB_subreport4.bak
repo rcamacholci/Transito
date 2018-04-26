@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="RVehiculoB_subreport4"
+
+		 language="groovy"		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Landscape"
+		 pageWidth="572"
+		 pageHeight="50"
+		 columnWidth="555"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.zoom" value="1.0" />
+	<property name="ireport.x" value="0" />
+	<property name="ireport.y" value="0" />
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="ID_VEHICULO" isForPrompting="true" class="java.lang.String"/>
+	<queryString><![CDATA[SELECT 'MEDIDA DE TIPO : '|| PA.NOMBRE ||' FAVOR DE : '|| E.DEMANDANTE ||'   FECHA : '|| E.FECHA_PROCESO ||' OFICINA : '|| OJ.NOMBRE EMBARGO_ALERTA 
+FROM EMBARGOS E, PARAMETROS PA, OFICINAS_JURIDICAS OJ
+WHERE PA.CODIGO = E.TIPO
+AND OJ.ID_OFICINA = E.FK_OFICINA
+AND PA.FK_GRUPO = 341
+AND E.FECHA_LEVANTAMIENTO IS NULL
+AND E.FK_VEHICULO =$P{ID_VEHICULO}
+UNION
+SELECT 'LIMITACION A LA PROPIEDAD O PRENDA A FAVOR DE : '||
+NVL(DECODE(A.FK_PERSONA,0,A.OBSERVACIONES),
+(SELECT PER.NOMBRE_1 ||' '|| PER.APELLIDO_1 FROM PERSONAS PER WHERE PER.ID_PERSONA = A.FK_PERSONA))
+FROM ALERTAS A
+WHERE A.FECHA_FIN IS NULL
+AND A.FK_VEHICULO =$P{ID_VEHICULO}
+UNION
+SELECT 'EL VEHICULO SE ENCUENTRA VINCULADO A LA EMPRESA: '||OBSERVACION
+FROM EMPRESAS_VINCULADORAS EV  
+WHERE EV.FK_VEHICULO = $P{ID_VEHICULO}
+AND FECHA_FIN IS NULL
+]]></queryString>
+
+	<field name="EMBARGO_ALERTA" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="13"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4"
+						y="0"
+						width="550"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font fontName="Tahoma" size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMBARGO_ALERTA}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

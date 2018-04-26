@@ -1,0 +1,99 @@
+<%@ page contentType="text/html; charset=utf-8" language="java"
+         import="java.sql.*" 
+         import="java.util.List" 
+         import="java.util.LinkedList" 
+         import="modelo.Model" 
+         import="modelo.Comparendo" 
+         import="modelo.Persona" 
+         import="modelo.Infraccion" 
+         import="modelo.Cartera" 
+         import="procesos.procesoContravencional" errorPage="" %>
+
+<%
+    Model model = (Model) session.getAttribute("model");
+
+    if (model != null) {
+        List<Comparendo> listComparendos = model.listarComparendosParaSancion(1);
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link title="win2k-cold-1" media="all" href="../../html/css/style.css" type="text/css" rel="stylesheet"/>
+        <title>Civitrans</title>
+        <script type="text/javascript" language="javascript">
+            function init(){
+                var tableHeader = document.getElementById("tableHeaderComparendos") ;
+                //alert(tableHeader.style.width) ;
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <form name="form" id="form" action="procesarSancionListadoComparendos.jsp" method="post">
+            <div align="center">  
+                <div style="width: 95%;" align="left">
+                    <table id="tableHeaderComparendos" width="99%" border="1">
+                        <tr>
+                            <td style="font-weight: bold">Resolucion: </td>
+                            <td>
+                                <input type="text" name="resolucion" id="resolucion"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold">Valor: </td>
+                            <td>
+                                <input type="text" name="valor" id="valor"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold">Observacion: </td>
+                            <td>
+                                <input type="text" name="observacion" id="observacion"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table id="tableHeaderComparendos" width="99%" border="1">
+                        <col width="5%" align="center"></col>
+                        <col width="10%" align="center"></col>
+                        <col width="10%" align="center"></col>
+                        <col width="50%" align="center"></col>
+                        <col width="25%" align="center"></col>
+                        <tr class="title_">
+                            <th>Numero</th>
+                            <th>Infraccion</th>
+                            <th>Nombre</th>
+                            <th>Valor</th>
+                        </tr>
+                    </table>
+                </div>
+                <div style=" width:95%;height: 500px;overflow: scroll">
+                    <table width="100%" border="1">
+                        <col width="5%" align="center"></col>
+                        <col width="10%" align="center"></col>
+                        <col width="10%" align="center"></col>
+                        <col width="50%" align="left"></col>
+                        <col width="25%" align="right"></col>
+                        <%
+                            for (Comparendo comparendo : listComparendos) {
+                                Persona persona = model.consultarPersona(comparendo.getFk_persona());
+                                Infraccion infraccion = model.consultarInfraccion(comparendo.getFk_infraccion());
+                                Cartera cartera = model.consultarCartera(comparendo.getFk_cartera());
+                        %>
+                        <tr>
+                            <td><input type="checkbox" name="chkComparendo" value="<%= comparendo.getId_comparendo()%>"/></td>    
+                            <td><%= comparendo.getNumero()%></td>
+                            <td><%= infraccion.getNumero()%></td>
+                            <td><%= persona.getNombreCompleto()%></td>
+                            <td><%= cartera.getValor()%></td>
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </table>
+                </div>
+            </div>
+        </form>	
+    </body>
+</html>
+<%}%>

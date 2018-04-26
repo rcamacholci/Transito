@@ -1,0 +1,266 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://personas.general.runt.heinsohn.com" xmlns:identificador="http://identificaciones.general.runt.heinsohn.com" targetNamespace="http://personas.general.runt.heinsohn.com" elementFormDefault="qualified">
+    <xsd:import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="SID0003004/P724965611/OwsmImport.xsd"/>
+    <xsd:complexType name="RepresentanteLegalDTO">
+        <xsd:sequence>
+            <xsd:element name="fechaVigenciaRepresentacion" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="identificacion" type="identificador:IdentificacionPersonaDTO" nillable="true"/>
+            <xsd:element name="tipoContrato" type="xsd:string" nillable="true"/>
+            <xsd:element name="fechaInicioRepresentacion" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="estadoRepresentacionLegal" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>15</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="fechaRegistroRepresentacion" type="xsd:dateTime" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="EmpresaDTO">
+        <xsd:sequence>
+            <xsd:element name="ubicacion" type="identificador:IdentificadorGeografiaDTO" nillable="true" minOccurs="0"/>
+            <xsd:element name="patrimonioLiq" type="xsd:double" nillable="true"/>
+            <xsd:element name="tipoSociedad" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>16</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="fechaVigenciaReg" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="direccionEstado" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>15</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="certExistenciaRepre" type="xsd:string" nillable="true"/>
+            <xsd:element name="direccionEmail" type="xsd:string" nillable="true"/>
+            <xsd:element name="tipoEntidad" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>42</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="razonSocial" type="xsd:string" nillable="true"/>
+            <xsd:element name="sigla" type="xsd:string" nillable="true"/>
+            <xsd:element name="nroRegMerc" type="xsd:string" nillable="true"/>
+            <xsd:element name="celular" type="xsd:string" nillable="true"/>
+            <xsd:element name="entidadCertExist" type="xsd:string" nillable="true"/>
+            <xsd:element name="fechaVenciRegMerc" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="direccionTelefono" type="xsd:string" nillable="true"/>
+            <xsd:element name="fechaRegistro" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="direccion" type="xsd:string" nillable="true" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PersonaJuridicaDTO">
+        <xsd:sequence>
+            <xsd:element name="personaEstado" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>19</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="represenLegalEstado" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>15</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sucursales" type="PersonaJuridicaDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="identificacion" type="identificador:IdentificacionPersonaDTO" nillable="true"/>
+            <xsd:element name="represenLegalTipoAutoriza" type="xsd:string" nillable="true"/>
+            <xsd:element name="represenLegal" type="RepresentanteLegalDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="personaTipoPersona" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>63</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="empresa" type="EmpresaDTO" nillable="true" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SucursalDTO">
+        <xsd:sequence>
+            <xsd:element name="nombreRazonSocial" type="xsd:string" nillable="true"/>
+            <xsd:element name="sigla" type="xsd:string" nillable="true"/>
+            <xsd:element name="identificacion" type="identificador:IdentificacionPersonaDTO" nillable="true"/>
+            <xsd:element name="represenLegal" type="RepresentanteLegalDTO" nillable="true" minOccurs="0"/>
+            <xsd:element name="direccion" type="DireccionDTO" nillable="true" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="email" type="xsd:string" nillable="true"/>
+            <xsd:element name="celular" type="xsd:string" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PersonaNaturalDTO">
+        <xsd:sequence>
+            <xsd:element name="segundoApellidoPersona" type="xsd:string" nillable="true"/>
+            <xsd:element name="fechaVencimiento" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="sexoPersona" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>75</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="emailPersona" type="xsd:string" nillable="true"/>
+            <xsd:element name="fechaRegistroInicialPersona" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="primerApellidoPersona" type="xsd:string" nillable="true"/>
+            <xsd:element name="estadoPersona" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>19</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="fechaExpedicionDocumento" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="primerNombrePersona" type="xsd:string" nillable="true"/>
+            <xsd:element name="segundoNombrePersona" type="xsd:string" nillable="true"/>
+            <xsd:element name="identificacion" type="identificador:IdentificacionPersonaDTO" nillable="true" minOccurs="0"/>
+            <xsd:element name="tipoPersona" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>63</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="fechaNacimientoPersona" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="grupoSanguineoPersona" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>64</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="celularPersona" type="xsd:string" nillable="true"/>
+            <xsd:element name="direcciones" type="DireccionDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="paisNacimiento" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>33</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="departamentoNacimiento" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>77</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="municipioNacimiento" type="identificador:IdentificadorGeografiaDTO" nillable="true"/>
+            <xsd:element name="lugarNacimientoExtranjero" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>98</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PropietarioDTO">
+        <xsd:sequence>
+            <xsd:element name="persona" type="identificador:IdentificacionPersonaDTO" nillable="true" minOccurs="0"/>
+            <xsd:element name="apoderado" type="identificador:IdentificacionPersonaDTO" nillable="true" minOccurs="0"/>
+            <xsd:element name="fechaInicioPropiedad" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="fechaFinPropiedad" type="xsd:dateTime" nillable="true"/>
+            <xsd:element name="proindiviso" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>S,N</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="porcentajePropiedad" type="xsd:double" nillable="true"/>
+            <xsd:element name="idTipoPropiedad" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>47</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PropietarioRNRYSDTO">
+        <xsd:sequence>
+            <xsd:element name="persona" type="identificador:IdentificacionPersonaDTO" nillable="true" minOccurs="0"/>
+            <xsd:element name="datosApoderado" type="identificador:IdentificacionPersonaDTO" nillable="true" minOccurs="0"/>
+            <xsd:element name="proindiviso" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>S,N</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="propietarioSolidario" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>S,N</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="porcentajePropiedad" type="xsd:double" nillable="true"/>
+            <xsd:element name="idTipoPropiedad" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>47</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AutoridadTransitoDTO">
+        <xsd:sequence>
+            <xsd:element name="identificador" type="xsd:string" nillable="true"/>
+            <xsd:element name="nombreAutoridadTransito" type="xsd:string" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CompradorDTO">
+        <xsd:sequence>
+            <xsd:element name="idTipoPropiedad" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>47</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="datosComprador" type="identificador:IdentificacionPersonaDTO" nillable="true" minOccurs="0"/>
+            <xsd:element name="datosApoderado" type="identificador:IdentificacionPersonaDTO" nillable="true" minOccurs="0"/>
+            <xsd:element name="proindiviso" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>S,N</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="VendedorDTO">
+        <xsd:sequence>
+            <xsd:element name="datosVendedor" nillable="true" type="identificador:IdentificacionPersonaDTO" minOccurs="0"/>
+            <xsd:element name="datosApoderado" type="identificador:IdentificacionPersonaDTO" nillable="true" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DatosNuevoAcreedorPrendarioDTO">
+        <xsd:sequence>
+            <xsd:element name="numeroDocumento" type="xsd:string" nillable="true"/>
+            <xsd:element name="tipoDocumento" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>7</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="tipoPersona" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>63</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="primerNombre" type="xsd:string" nillable="true"/>
+            <xsd:element name="segundoNombre" type="xsd:string" nillable="true"/>
+            <xsd:element name="primerApellido" type="xsd:string" nillable="true"/>
+            <xsd:element name="segundoApellido" type="xsd:string" nillable="true"/>
+            <xsd:element name="direccion" type="xsd:string" nillable="true"/>
+            <xsd:element name="telefono" type="xsd:string" nillable="true"/>
+            <xsd:element name="ciudad" type="identificador:IdentificadorGeografiaDTO" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DireccionDTO">
+        <xsd:sequence>
+            <xsd:element name="tipoDireccion" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>81</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="direccion" type="xsd:string" nillable="true"/>
+            <xsd:element name="municipio" type="identificador:IdentificadorGeografiaDTO" nillable="true"/>
+            <xsd:element name="telefono" type="xsd:string" nillable="true"/>
+            <xsd:element name="fax" type="xsd:string" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PropietarioCertificadoBlindajeDTO">
+        <xsd:sequence>
+            <xsd:element name="tipoDocumento" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>7</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="numeroDocumento" type="xsd:string" nillable="true"/>
+            <xsd:element name="nombresRazonSocialPropietario" type="xsd:string" nillable="true"/>
+            <xsd:element name="apellidosPropietario" type="xsd:string" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PersonaDTO">
+        <xsd:sequence>
+            <xsd:element name="tipoDocumento" type="xsd:string" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>7</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="numeroDocumento" type="xsd:string" nillable="true"/>
+            <xsd:element name="nombreORazonSocial" type="xsd:string" nillable="true"/>
+            <xsd:element name="apellidos" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

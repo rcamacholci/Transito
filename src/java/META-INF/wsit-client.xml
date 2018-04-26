@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="mainclientconfig"
+ >
+    <import location="SID0003003.xml" namespace="http://client.liquidacion.runt.heinsohn.com/"/>
+    <import location="SID0003001.xml" namespace="http://client.bancos.runt.heinsohn.com/"/>
+</definitions>
+
+
+
+
+
+
+

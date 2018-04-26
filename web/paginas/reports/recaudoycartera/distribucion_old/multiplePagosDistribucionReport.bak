@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="multiplePagosDistribucionReport"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="FECHA_INI" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="FECHA_FIN" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String"/>
+	<queryString><![CDATA[SELECT T.ID_TIQUETE TIQUETE,NVL(DECODE(DT.FK_CARTERA,NULL,'N'),'S') CARTERA,DT.FK_TRAMITE TRAMITE,DT.FK_CONCEPTO CONCEPTO, SUM(DT.VALOR_TOTAL) VALOR,
+T.NUMERO_TIQUETE NUMERO,TO_CHAR(T.FECHA,'dd/MM/yyyy') FECHA,
+(SELECT S.NOMBRE_CORTO||' '||P.DOCUMENTO FROM PERSONAS P,PARAMETROS S WHERE P.ID_PERSONA = T.FK_PERSONA AND S.CODIGO = P.TIPO_DOCUMENTO AND S.FK_GRUPO = 5) NRO_DOC,
+(SELECT P.NOMBRE_1||' '||NVL(P.NOMBRE_2,'')||' '||P.APELLIDO_1||' '||NVL(P.APELLIDO_2,'') FROM PERSONAS P WHERE P.ID_PERSONA = T.FK_PERSONA) NOMBRE,
+(SELECT NVL(V.PLACA,NVL(T.DESCRIPCION,'')) FROM VEHICULOS V WHERE V.ID_VEHICULO = T.FK_VEHICULO) PLACA
+FROM PAGOS G,TIQUETES T,DETALLE_TIQUETES DT
+WHERE G.FK_TIQUETE = T.ID_TIQUETE
+AND T.ID_TIQUETE = DT.FK_TIQUETE
+AND G.ESTADO = 3
+AND T.ESTADO = 3
+AND (DT.FK_TRAMITE != 1 OR DT.FK_TRAMITE IS NULL)
+AND T.FK_TAQUILLA IN(
+SELECT ID_TAQUILLA FROM TAQUILLAS WHERE TO_CHAR(FECHA_INI,'dd/MM/yyyy') between $P{FECHA_INI} and $P{FECHA_FIN})
+GROUP BY T.ID_TIQUETE,NVL(DECODE(DT.FK_CARTERA,NULL,'N'),'S'),DT.FK_TRAMITE,DT.FK_CONCEPTO,T.NUMERO_TIQUETE,T.FECHA,T.FK_PERSONA,T.FK_VEHICULO,T.DESCRIPCION
+UNION
+SELECT T.ID_TIQUETE TIQUETE,NVL(DECODE(DT.FK_CARTERA,NULL,'N'),'S') CARTERA,DT.FK_TRAMITE,C.CLASE_CONCEPTO FK_CONCEPTO,SUM(TC.VALOR) VALOR,
+T.NUMERO_TIQUETE NUMERO,TO_CHAR(T.FECHA,'dd/MM/yyyy') FECHA,
+(SELECT S.NOMBRE_CORTO||' '||P.DOCUMENTO FROM PERSONAS P,PARAMETROS S WHERE P.ID_PERSONA = T.FK_PERSONA AND S.CODIGO = P.TIPO_DOCUMENTO AND S.FK_GRUPO = 5) NRO_DOC,
+(SELECT P.NOMBRE_1||' '||NVL(P.NOMBRE_2,'')||' '||P.APELLIDO_1||' '||NVL(P.APELLIDO_2,'') FROM PERSONAS P WHERE P.ID_PERSONA = T.FK_PERSONA) NOMBRE,
+(SELECT NVL(V.PLACA,NVL(T.DESCRIPCION,'')) FROM VEHICULOS V WHERE V.ID_VEHICULO = T.FK_VEHICULO) PLACA
+FROM PAGOS G,TIQUETES T,DETALLE_TIQUETES DT,TIQUETE_CONCEPTOS TC,CONCEPTOS C
+WHERE G.FK_TIQUETE = T.ID_TIQUETE
+AND T.ID_TIQUETE = DT.FK_TIQUETE
+AND G.ESTADO = 3
+AND T.ESTADO = 3
+AND DT.ID_DET_TIQUETE = TC.FK_DETALLE_TIQUETE
+AND TC.FK_CONCEPTO = C.ID_CONCEPTO
+AND DT.FK_TRAMITE = 1
+AND T.FK_TAQUILLA IN(
+SELECT ID_TAQUILLA FROM TAQUILLAS WHERE TO_CHAR(FECHA_INI,'dd/MM/yyyy') between $P{FECHA_INI} and $P{FECHA_FIN})
+GROUP BY T.ID_TIQUETE,NVL(DECODE(DT.FK_CARTERA,NULL,'N'),'S'),DT.FK_TRAMITE,C.CLASE_CONCEPTO,T.NUMERO_TIQUETE,T.FECHA,T.FK_PERSONA,T.FK_VEHICULO,T.DESCRIPCION
+ORDER BY NUMERO]]></queryString>
+
+	<field name="CARTERA" class="java.lang.String"/>
+	<field name="TRAMITE" class="java.lang.Long"/>
+	<field name="CONCEPTO" class="java.lang.Long"/>
+	<field name="VALOR" class="java.lang.Float"/>
+	<field name="NUMERO" class="java.lang.Integer"/>
+	<field name="FECHA" class="java.lang.String"/>
+	<field name="NRO_DOC" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="PLACA" class="java.lang.String"/>
+	<field name="TIQUETE" class="java.lang.Long"/>
+
+	<variable name="SUMAT" class="java.lang.Long" resetType="Report" calculation="Nothing">
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="3"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="131"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="5"
+						width="100"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Integer"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="18"
+						width="248"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="251"
+						y="18"
+						width="100"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NRO_DOC}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="357"
+						y="18"
+						width="77"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PLACA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="438"
+						y="18"
+						width="86"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{FECHA_FIN}]]></textFieldExpression>
+				</textField>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="40"
+						width="535"
+						height="28"
+						key="subreport-1"/>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="FECHA_INI">
+						<subreportParameterExpression><![CDATA[$P{FECHA_INI}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="FECHA_FIN">
+						<subreportParameterExpression><![CDATA[$P{FECHA_FIN}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="NUMERO">
+						<subreportParameterExpression><![CDATA[$F{NUMERO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="CARTERA">
+						<subreportParameterExpression><![CDATA[$F{CARTERA}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="TRAMITE">
+						<subreportParameterExpression><![CDATA[$F{TRAMITE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="CONCEPTO">
+						<subreportParameterExpression><![CDATA[$F{CONCEPTO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="VALOR">
+						<subreportParameterExpression><![CDATA[$F{VALOR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="FECHA">
+						<subreportParameterExpression><![CDATA[$F{FECHA}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="TIQUETE">
+						<subreportParameterExpression><![CDATA[$F{TIQUETE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<returnValue subreportVariable="SUMA" toVariable="SUMAT" calculation="Highest"/>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR}+"recaudoycartera\\distribucion\\multipleDetallePagosDistribucionReport.jasper"]]></subreportExpression>
+				</subreport>
+				<rectangle>
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="17"
+						width="535"
+						height="62"
+						key="rectangle-1"
+						stretchType="RelativeToTallestObject"
+						positionType="Float"/>
+					<graphicElement stretchType="RelativeToTallestObject"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="17"
+						width="535"
+						height="19"
+						key="rectangle-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="251"
+						y="18"
+						width="0"
+						height="18"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="356"
+						y="18"
+						width="0"
+						height="18"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="437"
+						y="18"
+						width="0"
+						height="18"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<rectangle radius="5" >
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="4"
+						width="112"
+						height="13"
+						key="rectangle-4"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

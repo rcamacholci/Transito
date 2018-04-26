@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.4-b01-. --><xs:schema xmlns:tns="http://simit.curso.gov.co/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://simit.curso.gov.co/">
+
+<xs:element name="WS_Simit_ComparendosDescuentos" type="tns:WS_Simit_ComparendosDescuentos"></xs:element>
+
+<xs:element name="WS_Simit_ComparendosDescuentosResponse" type="tns:WS_Simit_ComparendosDescuentosResponse"></xs:element>
+
+<xs:element name="WS_Simit_CursoCia" type="tns:WS_Simit_CursoCia"></xs:element>
+
+<xs:element name="WS_Simit_CursoCiaResponse" type="tns:WS_Simit_CursoCiaResponse"></xs:element>
+
+<xs:element name="WS_Simit_PagoCia" type="tns:WS_Simit_PagoCia"></xs:element>
+
+<xs:element name="WS_Simit_PagoCiaResponse" type="tns:WS_Simit_PagoCiaResponse"></xs:element>
+
+<xs:complexType name="WS_Simit_ComparendosDescuentos">
+<xs:sequence>
+<xs:element name="oe" type="tns:datosEntradaComparendosDescuento" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datosEntradaComparendosDescuento">
+<xs:sequence>
+<xs:element name="ciudadCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoSedeCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="direccionAdquiriente" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="funcionarioConsulta" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="horaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="identificacionInfractor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroSecuencia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tipoIdentificacion" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="WS_Simit_ComparendosDescuentosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:datosSalidaComparendosDescuento" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datosSalidaComparendosDescuento">
+<xs:sequence>
+<xs:element name="codigoRespuesta" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="comparendosDescuento" type="tns:comparendoDescuento" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="fechaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="horaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="identificacionInfractor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="mensajeRespuesta" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nombreInfractor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numAutorizacion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroResolucion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroSecuencia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tipoIdentificacion" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="comparendoDescuento">
+<xs:sequence>
+<xs:element name="codigoInfraccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="descripcionInfraccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaComparendo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nombreOrganismo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroComparendo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroResolucion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="organismoTransito" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="porcentajeDescuento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="referenciaDescuento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tipoComparendo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="valorAdicional" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="valorCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="valorDescuento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="valorInfraccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="valorOtros" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="valorTotal" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="WS_Simit_CursoCia">
+<xs:sequence>
+<xs:element name="oe" type="tns:datosEntradaCursoCia" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datosEntradaCursoCia">
+<xs:sequence>
+<xs:element name="ciudadCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoCurso" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoSedeCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="comparendos" type="tns:cursoComparendo" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="direccionAdquiriente" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaRealizacionCurso" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="funcionarioRegistra" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="horaFinCurso" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="horaInicioCurso" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="horaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="identificacionInfractor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="identificacionInstructor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroSecuencia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tipoIdentificacion" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cursoComparendo">
+<xs:sequence>
+<xs:element name="fechaComparendo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroCertificado" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroComparendo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroResolucion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="organismoTransito" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="referenciaDescuento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tipoComparendo" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="WS_Simit_CursoCiaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:datosSalidaCursoCia" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datosSalidaCursoCia">
+<xs:sequence>
+<xs:element name="codigoRespuesta" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="horaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="mensajeRespuesta" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numAutorizacion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroSecuencia" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="WS_Simit_PagoCia">
+<xs:sequence>
+<xs:element name="oe" type="tns:datosEntradaPagoCia" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datosEntradaPagoCia">
+<xs:sequence>
+<xs:element name="ciudadCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoCurso" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoSedeCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codigoTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="comparendos" type="tns:pagoComparendo" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="direccionAdquiriente" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaPago" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaProgCurso" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="funcionarioPago" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="horaProgCurso" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="horaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="identificacionInfractor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroSecuencia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tipoIdentificacion" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pagoComparendo">
+<xs:sequence>
+<xs:element name="fechaComparendo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroComparendo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroResolucion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="organismoTransito" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="porcentajeDescuento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="referenciaDescuento" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tipoComparendo" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="valorCia" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="valorInfraccion" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="WS_Simit_PagoCiaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:datosSalidaPagoCia" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datosSalidaPagoCia">
+<xs:sequence>
+<xs:element name="codigoRespuesta" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fechaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="horaTransaccion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="mensajeRespuesta" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numAutorizacion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="numeroSecuencia" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

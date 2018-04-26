@@ -1,0 +1,325 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns0="http://autorizador.runt.heinsohn.com/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://autorizador.runt.heinsohn.com/" name="RadicacionService" targetNamespace="http://autorizador.runt.heinsohn.com/">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:identificadores="http://identificaciones.general.runt.heinsohn.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:solicitud="http://solicitudes.general.runt.heinsohn.com" xmlns:ns1="http://autorizador.runt.heinsohn.com/types/" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:Q1="http://consultas.general.runt.heinsohn.com" targetNamespace="http://autorizador.runt.heinsohn.com/" elementFormDefault="qualified">
+            <import schemaLocation="SID0003004/N68354002/OwsmImport.xsd" namespace="http://consultas.general.runt.heinsohn.com"/>
+            <import namespace="http://solicitudes.general.runt.heinsohn.com" schemaLocation="SID0003004/P889979426/OwsmImport.xsd"/>
+            <import namespace="http://identificaciones.general.runt.heinsohn.com" schemaLocation="SID0003004/P724965611/OwsmImport.xsd"/>
+            <element name="consultaResultadoSolicitudServicioElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="consultaResultado" type="solicitud:ConsultaResultadoSolicitudInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultaResultadoSolicitudServicioResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:ConsultaResultadoSolicitudOUTDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="radicarSolicitudElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="solicitudDTO" type="solicitud:RadicarSolicitudInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="radicarSolicitudResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:RadicarSolicitudOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="registrarInformacionEntregaResultadoElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="registrarInformacionEntregaIn" type="solicitud:InformacionEntregaResultadoInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="registrarInformacionEntregaResultadoResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:InformacionEntregaResultadoOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="inscribirPersonaNatural">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="in" type="solicitud:InscribirPersonaNaturalInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="inscribirPersonaNaturalResponse">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:InscribirPersonaOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="inscribirPersonaJuridica">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="in" type="solicitud:InscribirPersonaJuridicaInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="inscribirPersonaJuridicaResponse">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:InscribirPersonaOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="verificarEstadoWS">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="verificarEstadoWSResponse">
+                <complexType>
+                    <sequence>
+                        <element name="status" type="identificadores:StatusDTO" minOccurs="0" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarResultadoTramiteCertificadoTradicionElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="consultaResultado" type="solicitud:ConsultaResultadoSolicitudInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="consultarResultadoTramiteCertificadoTradicionResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:ConsultaResultadoTramiteCertificadoTradicionOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="generarInformacionCertificadoConductor">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO"/>
+                        <element name="certificadoConductor" type="solicitud:GenerarCertificadoConductorInDTO"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="generarInformacionCertificadoConductorResponse">
+                <complexType>
+                    <sequence>
+                        <element name="resultadoCertificadoConductor" type="solicitud:GenerarCertificadoConductorOutDTO"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="aprobarRevisionDocumentalSolicitudElement">
+                <complexType>
+                    <sequence>
+                        <element name="header" type="identificadores:CommonHeaderDTO" minOccurs="0"/>
+                        <element name="aprobarRevisionDocumentalInDTO" type="solicitud:AprobarRevisionDocumentalInDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="aprobarRevisionDocumentalSolicitudResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="solicitud:AprobarRevisionDocumentalOutDTO" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+    <message name="RadicacionService_consultaResultadoSolicitudServicio">
+        <part name="parameters" element="tns:consultaResultadoSolicitudServicioElement"/>
+    </message>
+    <message name="RadicacionService_consultaResultadoSolicitudServicioResponse">
+        <part name="parameters" element="tns:consultaResultadoSolicitudServicioResponseElement"/>
+    </message>
+    <message name="RadicacionService_radicarSolicitud">
+        <part name="parameters" element="tns:radicarSolicitudElement"/>
+    </message>
+    <message name="RadicacionService_radicarSolicitudResponse">
+        <part name="parameters" element="tns:radicarSolicitudResponseElement"/>
+    </message>
+    <message name="RadicacionService_registrarInformacionEntregaResultado">
+        <part name="parameters" element="tns:registrarInformacionEntregaResultadoElement"/>
+    </message>
+    <message name="RadicacionService_registrarInformacionEntregaResultadoResponse">
+        <part name="parameters" element="tns:registrarInformacionEntregaResultadoResponseElement"/>
+    </message>
+    <message name="inscribirPersonaNaturalRequest">
+        <part name="parameters" element="tns:inscribirPersonaNatural"/>
+    </message>
+    <message name="inscribirPersonaNaturalResponse">
+        <part name="parameters" element="tns:inscribirPersonaNaturalResponse"/>
+    </message>
+    <message name="inscribirPersonaJuridicaRequest">
+        <part name="parameters" element="tns:inscribirPersonaJuridica"/>
+    </message>
+    <message name="inscribirPersonaJuridicaResponse">
+        <part name="parameters" element="tns:inscribirPersonaJuridicaResponse"/>
+    </message>
+    <message name="verificarEstadoWSRequest">
+        <part name="parameters" element="tns:verificarEstadoWS"/>
+    </message>
+    <message name="verificarEstadoWSResponse">
+        <part name="parameters" element="tns:verificarEstadoWSResponse"/>
+    </message>
+    <message name="consultarResultadoTramiteCertificadoTradicionRequest">
+        <part name="parameters" element="tns:consultarResultadoTramiteCertificadoTradicionElement"/>
+    </message>
+    <message name="consultarResultadoTramiteCertificadoTradicionResponse">
+        <part name="parameters" element="tns:consultarResultadoTramiteCertificadoTradicionResponseElement"/>
+    </message>
+    <message name="generarInformacionCertificadoConductorRequest">
+        <part name="parameters" element="tns:generarInformacionCertificadoConductor"/>
+    </message>
+    <message name="generarInformacionCertificadoConductorResponse">
+        <part name="parameters" element="tns:generarInformacionCertificadoConductorResponse"/>
+    </message>
+    <message name="aprobarRevisionDocumentalSolicitudRequest">
+        <part name="parameters" element="tns:aprobarRevisionDocumentalSolicitudElement"/>
+    </message>
+    <message name="aprobarRevisionDocumentalSolicitudResponse">
+        <part name="parameters" element="tns:aprobarRevisionDocumentalSolicitudResponseElement"/>
+    </message>
+    <portType name="RadicacionService">
+        <operation name="consultaResultadoSolicitudServicio">
+            <input message="tns:RadicacionService_consultaResultadoSolicitudServicio"/>
+            <output message="tns:RadicacionService_consultaResultadoSolicitudServicioResponse"/>
+        </operation>
+        <operation name="radicarSolicitud">
+            <input message="tns:RadicacionService_radicarSolicitud"/>
+            <output message="tns:RadicacionService_radicarSolicitudResponse"/>
+        </operation>
+        <operation name="registrarInformacionEntregaResultado">
+            <input message="tns:RadicacionService_registrarInformacionEntregaResultado"/>
+            <output message="tns:RadicacionService_registrarInformacionEntregaResultadoResponse"/>
+        </operation>
+        <operation name="inscribirPersonaNatural">
+            <input message="tns:inscribirPersonaNaturalRequest"/>
+            <output message="tns:inscribirPersonaNaturalResponse"/>
+        </operation>
+        <operation name="inscribirPersonaJuridica">
+            <input message="tns:inscribirPersonaJuridicaRequest"/>
+            <output message="tns:inscribirPersonaJuridicaResponse"/>
+        </operation>
+        <operation name="verificarEstadoWS">
+            <input message="tns:verificarEstadoWSRequest"/>
+            <output message="tns:verificarEstadoWSResponse"/>
+        </operation>
+        <operation name="consultarResultadoTramiteCertificadoTradicion">
+            <input message="tns:consultarResultadoTramiteCertificadoTradicionRequest"/>
+            <output message="tns:consultarResultadoTramiteCertificadoTradicionResponse"/>
+        </operation>
+        <operation name="generarInformacionCertificadoConductor">
+            <input message="tns:generarInformacionCertificadoConductorRequest"/>
+            <output message="tns:generarInformacionCertificadoConductorResponse"/>
+        </operation>
+        <operation name="aprobarRevisionDocumentalSolicitud">
+            <input message="tns:aprobarRevisionDocumentalSolicitudRequest"/>
+            <output message="tns:aprobarRevisionDocumentalSolicitudResponse"/>
+        </operation>
+    </portType>
+    <binding name="RadicacionServiceSoapHttp" type="tns:RadicacionService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="consultaResultadoSolicitudServicio">
+            <soap:operation soapAction="http://autorizador.runt.heinsohn.com//consultaResultadoSolicitudServicio"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="radicarSolicitud">
+            <soap:operation soapAction="http://autorizador.runt.heinsohn.com//radicarSolicitud"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="registrarInformacionEntregaResultado">
+            <soap:operation soapAction="http://autorizador.runt.heinsohn.com//registrarInformacionEntregaResultado"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="inscribirPersonaNatural">
+            <soap:operation soapAction="http://autorizador.runt.heinsohn.com//inscribirPersonaNatural"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="inscribirPersonaJuridica">
+            <soap:operation soapAction="http://autorizador.runt.heinsohn.com//inscribirPersonaJuridica"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="verificarEstadoWS">
+            <soap:operation soapAction="http://autorizador.runt.heinsohn.com//verificarEstadoWS"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="consultarResultadoTramiteCertificadoTradicion">
+            <soap:operation soapAction="http://autorizador.runt.heinsohn.com//consultarResultadoTramiteCertificadoTradicion"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="generarInformacionCertificadoConductor">
+            <soap:operation soapAction="http://autorizador.runt.heinsohn.com//generarInformacionCertificadoConductor"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="aprobarRevisionDocumentalSolicitud">
+            <soap:operation soapAction="http://autorizador.runt.heinsohn.com//aprobarRevisionDocumentalSolicitud"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="RadicacionService">
+        <port name="RadicacionServiceSoapHttpPort" binding="tns:RadicacionServiceSoapHttp">
+            <soap:address location="http://wsm.runt.com.co:80/gateway/services/SID0003004"/>
+        </port>
+    </service>
+</definitions>
